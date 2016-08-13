@@ -1,0 +1,19 @@
+{
+  "name": "fabschurt-portfolio",
+  "description": "Portfolio professionnel de Fabien Schurter, développeur web.",
+  "license": "",
+  "authors": [
+    {
+      "name": "Fabien Schurter",
+      "email": "fabien@fabschurt.com"
+    }
+  ],
+  "homepage": "http://cv.fabschurt.com/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fabschurt/portfolio.git"
+  },
+  "dependencies": {
+    "material-design-lite": "^1.2"
+  }
+}

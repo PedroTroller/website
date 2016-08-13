@@ -1,0 +1,32 @@
+{
+  "name": "@fabschurt/portfolio",
+  "description": "Portfolio professionnel de Fabien Schurter, développeur web.",
+  "homepage": "http://cv.fabschurt.com/",
+  "bugs": {
+    "email": "dev@fabschurt.com"
+  },
+  "license": "",
+  "author": {
+    "name": "Fabien Schurter",
+    "email": "fabien@fabschurt.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fabschurt/portfolio.git"
+  },
+  "dependencies": {
+    "bower": "^1.7",
+    "gulp-util": "^3.0",
+    "del": "^2.2",
+    "gulp": "^3.9",
+    "run-sequence": "^1.2",
+    "gulp-sass": "^2.3",
+    "gulp-autoprefixer": "^3.1",
+    "gulp-concat": "^2.6",
+    "gulp-uglify": "^2.0",
+    "gulp-file-include": "^0.14"
+  },
+  "devDependencies": {
+    "gulp-sourcemaps": "^1.6"
+  }
+}

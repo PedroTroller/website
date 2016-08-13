@@ -1,0 +1,35 @@
+/*
+ * This file is part of the fabschurt/portfolio package.
+ *
+ * (c) 2016 Fabien Schurter <fabien@fabschurt.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+.main-container {
+  @extend .mdl-layout, .mdl-layout--fixed-header;
+}
+
+.main-header {
+  @extend .mdl-layout__header;
+}
+
+.main-title {
+  padding: 0 24px;
+  line-height: 1;
+}
+
+.main-content {
+  @extend .mdl-layout__content;
+}
+
+.main-wrapper {
+  @extend .mdl-grid;
+  max-width: 960px;
+
+  > * {
+    @extend .mdl-cell, .mdl-cell--12-col, .mdl-shadow--3dp;
+    padding: 32px 24px 16px;
+  }
+}

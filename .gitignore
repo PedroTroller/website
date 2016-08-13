@@ -1,0 +1,4 @@
+/node_modules/
+/web/assets/
+/web/vendor/
+/web/**/*.html

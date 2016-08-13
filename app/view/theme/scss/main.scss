@@ -1,0 +1,28 @@
+/*!
+ * This file is part of the fabschurt/portfolio package.
+ *
+ * (c) 2016 Fabien Schurter <fabien@fabschurt.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+// Paths
+$theme-url: "../..";
+$img-url:   "#{$theme-url}/assets/img";
+
+// MDL
+$image_path: "/vendor/material-design-lite/src/images";
+@import "material-design-lite/src/variables";
+@import "material-design-lite/src/mixins";
+@import "material-design-lite/src/resets/resets";
+@import "material-design-lite/src/typography/typography";
+@import "material-design-lite/src/palette/palette";
+@import "material-design-lite/src/ripple/ripple";
+@import "material-design-lite/src/animation/animation";
+@import "material-design-lite/src/shadow/shadow";
+@import "material-design-lite/src/layout/layout";
+@import "material-design-lite/src/grid/grid";
+
+// Modules
+@import "modules/global"
