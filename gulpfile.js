@@ -22,9 +22,11 @@ var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var concat       = require('gulp-concat');
 var uglify       = require('gulp-uglify');
+var preprocess   = require ('gulp-preprocess');
 var fileinclude  = require('gulp-file-include');
 if (isDev) {
   var sourcemaps = require('gulp-sourcemaps');
+  var livereload = require('gulp-livereload');
 }
 
 // Paths
@@ -79,6 +81,7 @@ gulp.task('sass', function (cb) {
     }))
     .pipe(isDev ? sourcemaps.write('maps') : util.noop())
     .pipe(gulp.dest(paths.build.scss))
+    .pipe(isDev ? livereload() : util.noop())
   ;
   cb();
 });
@@ -94,6 +97,7 @@ gulp.task('js', function (cb) {
       .pipe(isDev ? util.noop() : uglify())
       .pipe(isDev ? sourcemaps.write('maps') : util.noop())
       .pipe(gulp.dest(paths.build.js))
+      .pipe(isDev ? livereload() : util.noop())
     ;
   }
   cb();
@@ -104,6 +108,7 @@ gulp.task('img', function (cb) {
   gulp
     .src(paths.src.img)
     .pipe(gulp.dest(paths.build.img))
+    .pipe(isDev ? livereload() : util.noop())
   ;
   cb();
 });
@@ -112,6 +117,11 @@ gulp.task('img', function (cb) {
 gulp.task('html', function (cb) {
   gulp
     .src(paths.src.html)
+    .pipe(preprocess({
+      context: {
+        IS_DEV: isDev,
+      },
+    }))
     .pipe(fileinclude({
       basepath: 'app/content',
       filters: {
@@ -119,6 +129,7 @@ gulp.task('html', function (cb) {
       },
     }))
     .pipe(gulp.dest(paths.build.html))
+    .pipe(isDev ? livereload() : util.noop())
   ;
   cb();
 });
@@ -126,6 +137,7 @@ gulp.task('html', function (cb) {
 // Watch
 gulp.task('watch', function (cb) {
   if (isDev) {
+    livereload.listen({host: '127.0.0.1', port: 44100});
     gulp.watch(paths.src.scss,                ['sass'], cb);
     gulp.watch(basePaths.src + '/js/**/*.js', ['js'],   cb);
     gulp.watch(paths.src.img,                 ['img'],  cb);

@@ -25,9 +25,11 @@
     "gulp-autoprefixer": "^3.1",
     "gulp-concat": "^2.6",
     "gulp-uglify": "^2.0",
+    "gulp-preprocess": "^2.0",
     "gulp-file-include": "^0.14"
   },
   "devDependencies": {
-    "gulp-sourcemaps": "^1.6"
+    "gulp-sourcemaps": "^1.6",
+    "gulp-livereload": "^3.8"
   }
 }
