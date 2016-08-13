@@ -13,6 +13,7 @@
 var isDev = (process.env.ENVIRONMENT === 'dev');
 
 // Imports
+var marked       = require('marked');
 var del          = require('del');
 var gulp         = require('gulp');
 var util         = require('gulp-util');
@@ -45,6 +46,7 @@ var paths = {
     },
     img:  basePaths.src + '/img/**/*.{jpg,png,gif,ico}',
     html: basePaths.src + '/html/**/*.html',
+    md:   'app/content/**/*.md',
   },
   build: {
     scss: basePaths.build + '/css',
@@ -112,6 +114,9 @@ gulp.task('html', function (cb) {
     .src(paths.src.html)
     .pipe(fileinclude({
       basepath: 'app/content',
+      filters: {
+        markdown: marked,
+      },
     }))
     .pipe(gulp.dest(paths.build.html))
   ;
@@ -125,6 +130,7 @@ gulp.task('watch', function (cb) {
     gulp.watch(basePaths.src + '/js/**/*.js', ['js'],   cb);
     gulp.watch(paths.src.img,                 ['img'],  cb);
     gulp.watch(paths.src.html,                ['html'], cb);
+    gulp.watch(paths.src.md,                  ['html'], cb);
   } else {
     cb();
   }

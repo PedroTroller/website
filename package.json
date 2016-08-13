@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "bower": "^1.7",
+    "marked": "^0.3",
     "gulp-util": "^3.0",
     "del": "^2.2",
     "gulp": "^3.9",
