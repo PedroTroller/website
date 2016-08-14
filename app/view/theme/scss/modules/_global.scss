@@ -7,12 +7,20 @@
  * file that was distributed with this source code.
  */
 
+body {
+  @include retina-image("#{$img-url}/bg", 75px 87px);
+}
+
 .main-container {
   @extend .mdl-layout, .mdl-layout--fixed-header;
 }
 
 .main-header {
   @extend .mdl-layout__header;
+
+  small {
+    white-space: nowrap;
+  }
 }
 
 .main-title {
@@ -22,14 +30,46 @@
 
 .main-content {
   @extend .mdl-layout__content;
+  padding: 24px 0 36px;
+
+  p {
+    @include typo-preferred-font;
+    font-size: 16px;
+  }
 }
 
 .main-wrapper {
   @extend .mdl-grid;
-  max-width: 960px;
+  max-width: 720px;
+}
 
-  > * {
-    @extend .mdl-cell, .mdl-cell--12-col, .mdl-shadow--3dp;
-    padding: 32px 24px 16px;
+.content-item {
+  @extend .mdl-cell, .mdl-cell--12-col, .mdl-color--white, .mdl-shadow--3dp;
+  padding: 16px 24px 24px;
+
+  h2 {
+    display: inline-block;
+    padding: 0 16px 8px 0;
+    border-bottom: {
+      width: 4px;
+      style: solid;
+    }
+
+    .material-icons {
+      font-size: inherit;
+      vertical-align: -7px;
+    }
+  }
+}
+
+@each $item, $color in $content-item-colors {
+  .content-item-#{$item} {
+    h2 {
+      border-bottom-color: $color;
+    }
+
+    .material-icons {
+      color: $color;
+    }
   }
 }

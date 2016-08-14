@@ -16,8 +16,7 @@ $img-url:   "#{$theme-url}/assets/img";
 
 // Colors (MDL)
 @import "material-design-lite/src/color-definitions";
-$text-color-primary:     palette-color-rgb($palette-grey-700);
-$layout-header-bg-color: palette-color-rgb($palette-green-400);
+@import "modules/colors";
 
 // MDL
 $image_path: "/vendor/material-design-lite/src/images";
@@ -31,6 +30,11 @@ $image_path: "/vendor/material-design-lite/src/images";
 @import "material-design-lite/src/shadow/shadow";
 @import "material-design-lite/src/layout/layout";
 @import "material-design-lite/src/grid/grid";
+
+// Bourbon
+@import "bourbon/app/assets/stylesheets/settings/asset-pipeline";
+@import "bourbon/app/assets/stylesheets/css3/hidpi-media-query";
+@import "bourbon/app/assets/stylesheets/addons/retina-image";
 
 // Modules
 @import "modules/global";
