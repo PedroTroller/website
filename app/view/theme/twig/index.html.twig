@@ -1,3 +1,11 @@
+{#
+ # This file is part of the fabschurt/portfolio package.
+ #
+ # (c) 2016 Fabien Schurter <fabien@fabschurt.com>
+ #
+ # For the full copyright and license information, please view the LICENSE
+ # file that was distributed with this source code.
+ #}
 <!DOCTYPE html>
 <html lang="fr-FR">
     <head>
@@ -29,13 +37,16 @@
             <div class="main-content">
                 <div class="main-wrapper">
                     <main>
-                        {% for section in ['intro', 'skills'] %}
-                            <div class="content-item content-item-{{ section }}">
-                                <section id="{{ section }}">
-                                    @@include(markdown('{{ section }}.md'))
-                                </section>
-                            </div>
-                        {% endfor %}
+                        <div class="content-section content-section-intro">
+                            <section id="intro">
+                                @@include(markdown('intro.md'))
+                            </section>
+                        </div>
+                        <div class="content-section content-section-skills">
+                            <section id="skills">
+                                @@include(markdown('skills.md'))
+                            </section>
+                        </div>
                     </main>
                 </div>
             </div>

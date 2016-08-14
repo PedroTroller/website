@@ -43,7 +43,7 @@ body {
   max-width: 720px;
 }
 
-.content-item {
+.content-section {
   @extend .mdl-cell, .mdl-cell--12-col, .mdl-color--white, .mdl-shadow--3dp;
   padding: 16px 24px 24px;
   margin-bottom: 32px;
@@ -63,8 +63,8 @@ body {
   }
 }
 
-@each $item, $color in $content-item-colors {
-  .content-item-#{$item} {
+@each $section, $color in $content-section-colors {
+  .content-section-#{$section} {
     h2 {
       border-bottom-color: $color;
     }
@@ -73,4 +73,18 @@ body {
       color: $color;
     }
   }
+}
+
+.chip-list {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.chip-list-item {
+  @extend .mdl-chip;
+  display: inline-block;
+}
+
+.chip-list-item-text {
+  @extend .mdl-chip__text;
 }

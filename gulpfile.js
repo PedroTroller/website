@@ -32,9 +32,10 @@ if (isDev) {
 
 // Paths
 var basePaths = {
-  src:    'app/view/theme',
-  build:  'web/assets',
-  vendor: 'web/vendor',
+  src:     'app/view/theme',
+  build:   'web/assets',
+  vendor:  'web/vendor',
+  content: 'app/content',
 };
 var paths = {
   src: {
@@ -47,9 +48,12 @@ var paths = {
         ],
       },
     },
-    img:  basePaths.src + '/img/**/*.{jpg,png,gif,ico}',
-    twig: basePaths.src + '/twig/**/*.twig',
-    md:   'app/content/**/*.md',
+    img:  basePaths.src     + '/img/**/*.{jpg,png,gif,ico}',
+    twig: [
+      basePaths.src + '/twig/**/*.twig',
+      '!' + basePaths.src + '/twig/**/_*.twig',
+    ],
+    md: basePaths.content + '/**/*.md',
   },
   build: {
     scss: basePaths.build + '/css',
@@ -123,10 +127,10 @@ gulp.task('twig', function (cb) {
       data: {
         is_dev: isDev,
       },
-      base: 'app/view/theme/twig',
+      base: basePaths.src + '/twig',
     }))
     .pipe(fileinclude({
-      basepath: 'app/content',
+      basepath: basePaths.content,
       filters: {
         markdown: md.render.bind(md),
       },
