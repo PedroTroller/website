@@ -29,9 +29,13 @@
             <div class="main-content">
                 <div class="main-wrapper">
                     <main>
-                        <div class="content-item content-item-intro">
-                            @@include(markdown('intro.md'))
-                        </div>
+                        {% for section in ['intro', 'skills'] %}
+                            <div class="content-item content-item-{{ section }}">
+                                <section id="{{ section }}">
+                                    @@include(markdown('{{ section }}.md'))
+                                </section>
+                            </div>
+                        {% endfor %}
                     </main>
                 </div>
             </div>
@@ -39,8 +43,8 @@
 
         <!-- Assets -->
         <script src="/assets/js/main.js"></script>
-        <!-- @if IS_DEV -->
+        {% if is_dev %}
             <script src="http://127.0.0.1:44100/livereload.js"></script>
-        <!-- @endif -->
+        {% endif %}
     </body>
 </html>

@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "bower": "^1.7",
-    "marked": "^0.3",
+    "markdown-it": "^7.0",
     "gulp-util": "^3.0",
     "del": "^2.2",
     "gulp": "^3.9",
@@ -25,8 +25,9 @@
     "gulp-autoprefixer": "^3.1",
     "gulp-concat": "^2.6",
     "gulp-uglify": "^2.0",
-    "gulp-preprocess": "^2.0",
-    "gulp-file-include": "^0.14"
+    "gulp-twig": "^0.5",
+    "gulp-file-include": "^0.14",
+    "gulp-ext-replace": "^0.3"
   },
   "devDependencies": {
     "gulp-sourcemaps": "^1.6",

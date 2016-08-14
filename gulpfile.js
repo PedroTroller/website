@@ -13,7 +13,7 @@
 var isDev = (process.env.ENVIRONMENT === 'dev');
 
 // Imports
-var marked       = require('marked');
+var markdown     = require('markdown-it');
 var del          = require('del');
 var gulp         = require('gulp');
 var util         = require('gulp-util');
@@ -22,8 +22,9 @@ var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var concat       = require('gulp-concat');
 var uglify       = require('gulp-uglify');
-var preprocess   = require ('gulp-preprocess');
+var twig         = require('gulp-twig');
 var fileinclude  = require('gulp-file-include');
+var extreplace   = require('gulp-ext-replace');
 if (isDev) {
   var sourcemaps = require('gulp-sourcemaps');
   var livereload = require('gulp-livereload');
@@ -47,14 +48,14 @@ var paths = {
       },
     },
     img:  basePaths.src + '/img/**/*.{jpg,png,gif,ico}',
-    html: basePaths.src + '/html/**/*.html',
+    twig: basePaths.src + '/twig/**/*.twig',
     md:   'app/content/**/*.md',
   },
   build: {
     scss: basePaths.build + '/css',
     js:   basePaths.build + '/js',
     img:  basePaths.build + '/img',
-    html: 'web',
+    twig: 'web',
   },
 };
 
@@ -113,22 +114,25 @@ gulp.task('img', function (cb) {
   cb();
 });
 
-// HTML + Markdown
-gulp.task('html', function (cb) {
+// Twig + Markdown
+gulp.task('twig', function (cb) {
+  var md = new markdown('commonmark');
   gulp
-    .src(paths.src.html)
-    .pipe(preprocess({
-      context: {
-        IS_DEV: isDev,
+    .src(paths.src.twig)
+    .pipe(twig({
+      data: {
+        is_dev: isDev,
       },
+      base: 'app/view/theme/twig',
     }))
     .pipe(fileinclude({
       basepath: 'app/content',
       filters: {
-        markdown: marked,
+        markdown: md.render.bind(md),
       },
     }))
-    .pipe(gulp.dest(paths.build.html))
+    .pipe(extreplace(''))
+    .pipe(gulp.dest(paths.build.twig))
     .pipe(isDev ? livereload() : util.noop())
   ;
   cb();
@@ -141,8 +145,8 @@ gulp.task('watch', function (cb) {
     gulp.watch(paths.src.scss,                ['sass'], cb);
     gulp.watch(basePaths.src + '/js/**/*.js', ['js'],   cb);
     gulp.watch(paths.src.img,                 ['img'],  cb);
-    gulp.watch(paths.src.html,                ['html'], cb);
-    gulp.watch(paths.src.md,                  ['html'], cb);
+    gulp.watch(paths.src.twig,                ['twig'], cb);
+    gulp.watch(paths.src.md,                  ['twig'], cb);
   } else {
     cb();
   }
@@ -156,7 +160,7 @@ gulp.task('clean', function (cb) {
 
 // Build
 gulp.task('build', function (cb) {
-  runsequence('clean', ['sass', 'js', 'img', 'html'], cb);
+  runsequence('clean', ['sass', 'js', 'img', 'twig'], cb);
 });
 
 // Default task (build and watch)
