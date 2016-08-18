@@ -1,3 +1,7 @@
+---
+title: Portfolio
+---
+
 ## <i class="material-icons">&#xE813;</i> Merci
 
 …de prendre le temps de consulter mon portfolio.

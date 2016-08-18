@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+    <head>
+        <!-- Technical -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Semantics -->
+        <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+        <meta name="description" content="{{ page.description }}" />
+
+        <!-- Assets -->
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+    </head>
+    <body>
+        <!-- Content -->
+        <div class="main-container mdl-js-layout">
+            <div class="main-header">
+                <header>
+                    <h1 class="main-title">
+                        {{ page.main_title }}
+                        <small class="main-title-sub">{{ page.main_subtitle }}</small>
+                    </h1>
+                </header>
+            </div>
+            <div class="main-content">
+                <div class="main-wrapper">
+                    <div class="content-section content-section-{{ page.slug }}">
+                        <main>
+                            {{ content }}
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Assets -->
+        <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+        {% if jekyll.environment == 'dev' %}
+            <script src="//127.0.0.1:44100/livereload.js"></script>
+        {% endif %}
+    </body>
+</html>

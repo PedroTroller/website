@@ -12,19 +12,9 @@
 // Get current environment
 var isDev = (process.env.ENVIRONMENT === 'dev');
 
-// Imports
-var markdown     = require('markdown-it');
-var del          = require('del');
-var gulp         = require('gulp');
-var util         = require('gulp-util');
-var runsequence  = require('run-sequence');
-var sass         = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var concat       = require('gulp-concat');
-var uglify       = require('gulp-uglify');
-var twig         = require('gulp-twig');
-var fileinclude  = require('gulp-file-include');
-var extreplace   = require('gulp-ext-replace');
+// Common imports
+var gulp = require('gulp');
+var util = require('gulp-util');
 if (isDev) {
   var sourcemaps = require('gulp-sourcemaps');
   var livereload = require('gulp-livereload');
@@ -32,49 +22,75 @@ if (isDev) {
 
 // Paths
 var basePaths = {
-  src:     'app/view/theme',
-  build:   'web/assets',
-  vendor:  'web/vendor',
-  content: 'app/content',
+  src:   'app',
+  build: 'web',
 };
 var paths = {
   src: {
-    scss: basePaths.src + '/scss/**/*.scss',
+    jekyll: {
+      path: basePaths.src + '/jekyll',
+      glob: basePaths.src + '/jekyll/**/*',
+    },
+    scss: basePaths.src + '/view/theme/scss/**/*.scss',
     js: {
       modules: {
         main: [
-          basePaths.vendor + '/material-design-lite/material.js',
-          basePaths.src    + '/js/modules/**/*.js',
+          basePaths.build + '/vendor/material-design-lite/material.js',
+          basePaths.src   + '/view/theme/js/modules/**/*.js',
         ],
       },
+      glob: basePaths.src + '/view/theme/js/**/*.js',
     },
-    img:  basePaths.src     + '/img/**/*.{jpg,png,gif,ico}',
-    twig: [
-      basePaths.src + '/twig/**/*.twig',
-      '!' + basePaths.src + '/twig/**/_*.twig',
-    ],
-    md: basePaths.content + '/**/*.md',
+    img: basePaths.src + '/view/theme/img/**/*.{jpg,png,gif,ico}',
   },
   build: {
-    scss: basePaths.build + '/css',
-    js:   basePaths.build + '/js',
-    img:  basePaths.build + '/img',
-    twig: 'web',
+    jekyll: basePaths.build,
+    scss:   basePaths.build + '/assets/css',
+    js:     basePaths.build + '/assets/js',
+    img:    basePaths.build + '/assets/img',
   },
 };
 
+// Jekyll
+gulp.task('jekyll', function (cb) {
+  var jekyllEnv = Object.assign({}, process.env);
+  jekyllEnv.JEKYLL_ENV = jekyllEnv.ENVIRONMENT;
+  require('child_process').spawnSync(
+    'bundle',
+    [
+      'exec',
+      'jekyll',
+      'build',
+      '--source',
+      paths.src.jekyll.path,
+      '--destination',
+      paths.build.jekyll,
+    ],
+    {
+      stdio: 'inherit',
+      env:   jekyllEnv,
+    }
+  );
+  gulp
+    .src(paths.src.jekyll.glob)
+    .pipe(isDev ? livereload() : util.noop())
+  ;
+  cb();
+});
+
 // Sass
 gulp.task('sass', function (cb) {
+  var sass = require('gulp-sass');
   gulp
     .src(paths.src.scss)
     .pipe(isDev ? sourcemaps.init() : util.noop())
     .pipe(sass({
       outputStyle: isDev ? null : 'compressed',
       includePaths: [
-        basePaths.vendor
+        basePaths.build + '/vendor',
       ],
     }).on('error', sass.logError))
-    .pipe(autoprefixer({
+    .pipe(require('gulp-autoprefixer')({
       browsers: [
         'last 5 versions',
         'last 20 firefox versions',
@@ -98,13 +114,16 @@ gulp.task('js', function (cb) {
     gulp
       .src(modules[module])
       .pipe(isDev ? sourcemaps.init() : util.noop())
-      .pipe(concat(module + '.js'))
-      .pipe(isDev ? util.noop() : uglify())
+      .pipe(require('gulp-concat')(module + '.js'))
+      .pipe(isDev ? util.noop() : require('gulp-uglify')())
       .pipe(isDev ? sourcemaps.write('maps') : util.noop())
       .pipe(gulp.dest(paths.build.js))
-      .pipe(isDev ? livereload() : util.noop())
     ;
   }
+  gulp
+    .src(paths.src.js.glob)
+    .pipe(isDev ? livereload() : util.noop())
+  ;
   cb();
 });
 
@@ -118,39 +137,14 @@ gulp.task('img', function (cb) {
   cb();
 });
 
-// Twig + Markdown
-gulp.task('twig', function (cb) {
-  var md = new markdown('commonmark');
-  gulp
-    .src(paths.src.twig)
-    .pipe(twig({
-      data: {
-        is_dev: isDev,
-      },
-      base: basePaths.src + '/twig',
-    }))
-    .pipe(fileinclude({
-      basepath: basePaths.content,
-      filters: {
-        markdown: md.render.bind(md),
-      },
-    }))
-    .pipe(extreplace(''))
-    .pipe(gulp.dest(paths.build.twig))
-    .pipe(isDev ? livereload() : util.noop())
-  ;
-  cb();
-});
-
 // Watch
 gulp.task('watch', function (cb) {
   if (isDev) {
     livereload.listen({host: '127.0.0.1', port: 44100});
-    gulp.watch(paths.src.scss,                ['sass'], cb);
-    gulp.watch(basePaths.src + '/js/**/*.js', ['js'],   cb);
-    gulp.watch(paths.src.img,                 ['img'],  cb);
-    gulp.watch(paths.src.twig,                ['twig'], cb);
-    gulp.watch(paths.src.md,                  ['twig'], cb);
+    gulp.watch(paths.src.jekyll.glob, ['jekyll'], cb);
+    gulp.watch(paths.src.scss,        ['sass'],   cb);
+    gulp.watch(paths.src.js.glob,     ['js'],     cb);
+    gulp.watch(paths.src.img,         ['img'],    cb);
   } else {
     cb();
   }
@@ -158,13 +152,17 @@ gulp.task('watch', function (cb) {
 
 // Clean
 gulp.task('clean', function (cb) {
-  del.sync(basePaths.build);
+  require('del').sync([
+    paths.build.scss,
+    paths.build.js,
+    paths.build.img,
+  ]);
   cb();
 });
 
 // Build
 gulp.task('build', function (cb) {
-  runsequence('clean', ['sass', 'js', 'img', 'twig'], cb);
+  require('run-sequence')('clean', 'jekyll', ['sass', 'js', 'img'], cb);
 });
 
 // Default task (build and watch)

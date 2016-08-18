@@ -1,4 +1,6 @@
+/.bundle/
+/vendor/
 /node_modules/
-/web/assets/
-/web/vendor/
-/web/**/*.html
+/web/
+/app/jekyll/.jekyll-metadata
+/Gemfile.lock
