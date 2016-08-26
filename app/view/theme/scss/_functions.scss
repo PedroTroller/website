@@ -7,6 +7,6 @@
  * file that was distributed with this source code.
  */
 
-@function palette-color-rgb($color) {
-  @return unquote("rgb(#{$color})");
+@function palette-color-rgb($color, $opacity: 1.0) {
+  @return unquote("rgba(#{$color},#{$opacity})");
 }
