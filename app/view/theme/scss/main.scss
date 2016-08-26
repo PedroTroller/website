@@ -14,12 +14,10 @@ $img-url:   "#{$theme-url}/assets/img";
 // Core
 @import "functions";
 
-// Colors (MDL)
-@import "material-design-lite/src/color-definitions";
-@import "modules/colors";
-
-// MDL
+// MDL (palette colors are included first in order to use them in overrides)
 $image_path: "/vendor/material-design-lite/src/images";
+@import "material-design-lite/src/color-definitions";
+@import "modules/mdl-overrides";
 @import "material-design-lite/src/variables";
 @import "material-design-lite/src/mixins";
 @import "material-design-lite/src/resets/resets";

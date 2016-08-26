@@ -7,9 +7,6 @@
  * file that was distributed with this source code.
  */
 
-$text-color-primary:     palette-color-rgb($palette-grey-700);
+$text-color-primary: palette-color-rgb($palette-grey-700);
 $layout-header-bg-color: palette-color-rgb($palette-green-400);
-$content-section-colors: (
-  index:  palette-color-rgb($palette-yellow-A700),
-  skills: palette-color-rgb($palette-blue-500),
-);
+$layout-header-mobile-row-height: 64px;

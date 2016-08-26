@@ -94,6 +94,11 @@ main {
   }
 }
 
+$content-section-colors: (
+  index:  palette-color-rgb($palette-yellow-A700),
+  skills: palette-color-rgb($palette-blue-500),
+);
+
 @each $section, $color in $content-section-colors {
   .content-section-#{$section} {
     h2 {
