@@ -15,15 +15,17 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" />
     </head>
-    <body>
+    <body class="page-{{ page.name }}">
         <!-- Content -->
         <div class="container mdl-js-layout">
             <div class="header-wrapper">
                 <div class="header">
                     <header class="header-title-wrapper">
                         <h1 class="header-title">
-                            {{ page.header_title }}
-                            <small class="header-subtitle">{{ page.header_subtitle }}</small>
+                            <a class="header-title-link" href="{{ site.data.nav[page.lang].root }}">
+                                {{ page.header_title }}
+                                <small class="header-subtitle">{{ page.header_subtitle }}</small>
+                            </a>
                         </h1>
                     </header>
                     <div class="spacer"></div>
@@ -33,9 +35,12 @@
             <div class="mdl-layout__drawer">
                 {% include nav.html for_mobile=true %}
             </div>
-            <div class="content-wrapper">
-                <div class="content">
-                    <main class="content-section content-section-{{ page.section_name }}">
+            <div class="central-column-wrapper">
+                <div class="central-column">
+                    <div class="central-column-title-wrapper">
+                        <h2 class="central-column-title">{{ page.content_title }}</h2>
+                    </div>
+                    <main class="content">
                         {{ content }}
                     </main>
                 </div>

@@ -1,16 +1,14 @@
 ---
+name: index
 title: Portfolio
-section_name: index
+content_title: Merci
 ---
-
-## <i class="material-icons">&#xE813;</i> Merci
 
 …de prendre le temps de consulter mon portfolio.
 
-Je m’appelle Fabien, j’ai 29 ans, je suis développeur web depuis 7 ans, et
-j’adore mon métier. J’aime me voir comme un artisan, cherchant en permanence la
-justesse dans le fond comme dans la forme, tout en industrialisant au maximum
-les process.
+Moi c’est Fabien, j’ai 29 ans, je suis développeur web depuis 6 ans, et j’adore
+mon métier. J’aime me voir comme un artisan, cherchant en permanence la justesse
+dans le fond comme dans la forme, tout en industrialisant au maximum les process.
 
 Comme une petite checklist vaut mieux qu’un long discours, voici quelques mots
 qui auront pour ambition de parler un peu de moi&nbsp;:

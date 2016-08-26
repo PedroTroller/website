@@ -7,6 +7,17 @@
  * file that was distributed with this source code.
  */
 
+$page-colors: (
+  index:  palette-color-rgb($palette-yellow-A700),
+  skills: palette-color-rgb($palette-blue-500),
+);
+$reference-margin: 24px;
+$content-title-border-width: 6px;
+
+.spacer {
+  @extend .mdl-layout-spacer;
+}
+
 body {
   @include typo-preferred-font;
   background: url("#{$img-url}/bg.jpg") center 72px no-repeat;
@@ -15,10 +26,6 @@ body {
 
 .container {
   @extend .mdl-layout, .mdl-layout--fixed-header, .mdl-layout--no-desktop-drawer-button;
-}
-
-.spacer {
-  @extend .mdl-layout-spacer;
 }
 
 .header-wrapper {
@@ -35,6 +42,11 @@ body {
 
 .header-title-wrapper {
   @extend .mdl-layout-title;
+}
+
+.header-title-link {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .header-title {
@@ -68,9 +80,9 @@ body {
   right: 0;
 }
 
-.mdl-layout__drawer {
+.mdl-layout__drawer { // Nesting level needed by MDL
   .mobile-header-nav-title {
-    @extend .mdl-layout-title, .mdl-color--grey-200;
+    @extend .mdl-layout-title, .mdl-color--grey-300;
     margin: {
       top: 0;
       bottom: 0;
@@ -87,72 +99,86 @@ body {
   }
 }
 
-.content-wrapper {
+.central-column-wrapper {
   @extend .mdl-layout__content;
-  padding: 24px 0 48px;
+  padding: $reference-margin 0 ($reference-margin * 2);
 
   @media (max-width: $layout-screen-size-threshold) {
-    padding: 12px 0 24px;
+    padding: ($reference-margin / 2) 0 $reference-margin;
   }
 }
 
-.content {
+.central-column {
   @extend .mdl-grid;
   max-width: 960px;
 }
 
-.content-section {
-  @extend .mdl-cell, .mdl-cell--12-col, .mdl-shadow--8dp;
-  padding: 16px 24px 24px;
+.central-column-title-wrapper,
+.content {
+  @extend .mdl-cell, .mdl-cell--12-col, .mdl-shadow--4dp;
   background-color: palette-color-rgb($color-white,0.9);
+}
 
-  h2 {
-    @include typo-display-1;
-    display: inline-block;
-    padding: 0 12px 6px;
-    border-bottom: {
-      width: 4px;
-      style: solid;
-    }
+.central-column-title-wrapper {
+  padding: $reference-margin $reference-margin ($reference-margin - $content-title-border-width);
+  border-bottom: {
+    width: $content-title-border-width;
+    style: solid;
+  }
 
-    .material-icons {
-      font-size: inherit;
-      vertical-align: -6px;
+  @each $name, $color in $page-colors {
+    .page-#{$name} & {
+      border-bottom-color: $color;
     }
   }
+}
+
+.central-column-title {
+  @include typo-display-1;
+  margin: 0;
+}
+
+.content {
+  padding: ($reference-margin + 16px) $reference-margin $reference-margin;
 
   p, li {
     font-size: 16px;
   }
 }
 
-$content-section-colors: (
-  index:  palette-color-rgb($palette-yellow-A700),
-  skills: palette-color-rgb($palette-blue-500),
-);
-
-@each $section, $color in $content-section-colors {
-  .content-section-#{$section} {
-    h2 {
-      border-bottom-color: $color;
-    }
-
-    .material-icons {
-      color: $color;
-    }
-  }
+.skill-list-item-wrapper {
+  display: inline-block;
+  max-width: 240px;
 }
 
-.chip-list {
-  padding-left: 0;
+.skill-list-item {
+  @extend .mdl-card, .mdl-shadow--2dp;
+  width: inherit;
+}
+
+.skill-list-item-title-wrapper {
+  @extend .mdl-card__title, .mdl-color--grey-700, .mdl-color-text--white;
+}
+
+.skill-list-item-title {
+  @extend .mdl-card__title-text;
+}
+
+.skill-sublist-wrapper {
+  @extend .mdl-card__supporting-text;
+}
+
+.skill-sublist {
+  padding: 0;
+  margin: 0;
   list-style-type: none;
 }
 
-.chip-list-item {
+.skill-sublist-item {
   @extend .mdl-chip;
   display: inline-block;
 }
 
-.chip-list-item-text {
+.skill-sublist-item-text {
   @extend .mdl-chip__text;
 }

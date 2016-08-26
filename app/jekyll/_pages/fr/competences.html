@@ -1,0 +1,25 @@
+---
+name: skills
+title: Compétences
+content_title: Compétences
+---
+<div class="skill-list">
+    {% for skill_section in site.data.skills[page.lang] %}
+        <div class="skill-list-item-wrapper">
+            <div class="skill-list-item">
+                <div class="skill-list-item-title-wrapper">
+                    <h4 class="skill-list-item-title">{{ skill_section[0] }}</h4>
+                </div>
+                <div class="skill-sublist-wrapper">
+                    <ul class="skill-sublist">
+                        {% for skill in skill_section[1] %}
+                            <li class="skill-sublist-item">
+                                <span class="skill-sublist-item-text">{{ skill }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
