@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <!-- Semantics -->
-        <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+        <title>{{ page.title }} | {{ site.title }}</title>
         <meta name="description" content="{{ page.description }}" />
 
         <!-- Assets -->
@@ -20,31 +20,24 @@
         <div class="container mdl-js-layout">
             <div class="header-wrapper">
                 <div class="header">
-                    <div class="header-title-wrapper">
-                        <header>
-                            <h1 class="header-title">
-                                {{ page.header_title }}
-                                <small class="header-subtitle">{{ page.header_subtitle }}</small>
-                            </h1>
-                        </header>
-                    </div>
+                    <header class="header-title-wrapper">
+                        <h1 class="header-title">
+                            {{ page.header_title }}
+                            <small class="header-subtitle">{{ page.header_subtitle }}</small>
+                        </h1>
+                    </header>
                     <div class="spacer"></div>
-                    <div class="header-nav-wrapper">
-                        <nav>
-                            {% for link in site.data.nav[page.lang].header %}
-                                <a href="{{ link[1] }}" class="header-nav-link">{{ link[0] }}</a>
-                            {% endfor %}
-                        </nav>
-                    </div>
+                    {% include nav.html %}
                 </div>
+            </div>
+            <div class="mdl-layout__drawer">
+                {% include nav.html for_mobile=true %}
             </div>
             <div class="content-wrapper">
                 <div class="content">
-                    <div class="content-section content-section-{{ page.slug }}">
-                        <main>
-                            {{ content }}
-                        </main>
-                    </div>
+                    <main class="content-section content-section-{{ page.section_name }}">
+                        {{ content }}
+                    </main>
                 </div>
             </div>
         </div>

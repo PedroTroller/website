@@ -9,4 +9,5 @@
 
 $text-color-primary: palette-color-rgb($palette-grey-700);
 $layout-header-bg-color: palette-color-rgb($palette-green-400);
-$layout-header-mobile-row-height: 64px;
+$layout-header-desktop-row-height: 72px;
+$layout-header-mobile-row-height: $layout-header-desktop-row-height;

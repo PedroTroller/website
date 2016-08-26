@@ -12,14 +12,8 @@ body {
   @include typo-preferred-font;
 }
 
-header,
-nav,
-main {
-  display: inherit;
-}
-
 .container {
-  @extend .mdl-layout, .mdl-layout--fixed-header;
+  @extend .mdl-layout, .mdl-layout--fixed-header, .mdl-layout--no-desktop-drawer-button;
 }
 
 .spacer {
@@ -45,6 +39,7 @@ main {
 .header-title {
   @include typo-display-1;
   padding-top: 8px;
+  margin: 0;
   line-height: 0.75;
 }
 
@@ -61,14 +56,43 @@ main {
   @extend .mdl-navigation__link;
 }
 
+.mdl-layout__drawer-button {
+  @extend .mdl-color-text--white;
+  left: auto;
+  right: 0;
+}
+
+.mdl-layout__drawer {
+  .mobile-header-nav-title {
+    @extend .mdl-layout-title, .mdl-color--grey-200;
+    margin: {
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  .mobile-header-nav-wrapper {
+    @extend .mdl-navigation;
+    padding-top: 0;
+  }
+
+  .mobile-header-nav-link {
+    @extend .mdl-navigation__link;
+  }
+}
+
 .content-wrapper {
   @extend .mdl-layout__content;
-  padding: 24px 0;
+  padding: 24px 0 48px;
+
+  @media (max-width: $layout-screen-size-threshold) {
+    padding: 12px 0 24px;
+  }
 }
 
 .content {
   @extend .mdl-grid;
-  max-width: 720px;
+  max-width: 960px;
 }
 
 .content-section {
