@@ -1,9 +1,9 @@
 {% if include.for_mobile %}
     {% assign class_prefix = 'mobile-' %}
-    <h3 class="mobile-header-nav-title">{{ page.menu_title }}</h3>
+    <h3 class="mobile-header-nav-title">{{ i18n.menu_title }}</h3>
 {% endif %}
 <nav class="{{ class_prefix }}header-nav-wrapper">
-    {% for link in site.data.nav[page.lang].header %}
+    {% for link in nav.header %}
         <a href="{{ link[1] }}" class="{{ class_prefix }}header-nav-link">{{ link[0] }}</a>
     {% endfor %}
 </nav>

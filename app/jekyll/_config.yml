@@ -18,7 +18,3 @@ defaults:
       path: _pages/fr
     values:
       lang: fr-FR
-      description: Portfolio professionnel de Fabien Schurter, développeur web.
-      header_title: Fabien Schurter
-      header_subtitle: Développeur web
-      menu_title: Menu

@@ -1,3 +1,5 @@
+{% assign i18n = site.data.i18n[page.lang] %}
+{% assign nav  = site.data.nav[page.lang] %}
 <!DOCTYPE html>
 <html lang="{{ page.lang }}">
     <head>
@@ -8,7 +10,7 @@
 
         <!-- Semantics -->
         <title>{{ page.title }} | {{ site.title }}</title>
-        <meta name="description" content="{{ page.description }}" />
+        <meta name="description" content="{{ i18n.description }}" />
 
         <!-- Assets -->
         <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
@@ -22,9 +24,9 @@
                 <div class="header">
                     <header class="header-title-wrapper">
                         <h1 class="header-title">
-                            <a class="header-title-link" href="{{ site.data.nav[page.lang].root }}">
-                                {{ page.header_title }}
-                                <small class="header-subtitle">{{ page.header_subtitle }}</small>
+                            <a class="header-title-link" href="{{ nav.root }}" title="{{ i18n.back_to_root }}">
+                                {{ i18n.header_title }}
+                                <small class="header-subtitle">{{ i18n.header_subtitle }}</small>
                             </a>
                         </h1>
                     </header>
