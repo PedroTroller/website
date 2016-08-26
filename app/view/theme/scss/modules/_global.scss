@@ -54,6 +54,11 @@ body {
 
 .header-nav-link {
   @extend .mdl-navigation__link;
+
+  &:hover {
+    @extend .mdl-color--green-600;
+    transition: background-color 0.5s;
+  }
 }
 
 .mdl-layout__drawer-button {
@@ -100,8 +105,9 @@ body {
   padding: 16px 24px 24px;
 
   h2 {
+    @include typo-display-1;
     display: inline-block;
-    padding: 0 16px 8px 0;
+    padding: 0 12px 6px;
     border-bottom: {
       width: 4px;
       style: solid;
@@ -109,7 +115,7 @@ body {
 
     .material-icons {
       font-size: inherit;
-      vertical-align: -7px;
+      vertical-align: -6px;
     }
   }
 
