@@ -8,8 +8,9 @@
  */
 
 body {
-  @include retina-image("#{$img-url}/bg", 75px 87px);
   @include typo-preferred-font;
+  background: url("#{$img-url}/bg.jpg") center 72px no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -38,7 +39,7 @@ body {
 
 .header-title {
   @include typo-display-1;
-  padding-top: 8px;
+  padding-top: 6px;
   margin: 0;
   line-height: 0.75;
 }
@@ -101,8 +102,9 @@ body {
 }
 
 .content-section {
-  @extend .mdl-cell, .mdl-cell--12-col, .mdl-color--white, .mdl-shadow--3dp;
+  @extend .mdl-cell, .mdl-cell--12-col, .mdl-shadow--8dp;
   padding: 16px 24px 24px;
+  background-color: palette-color-rgb($color-white,0.9);
 
   h2 {
     @include typo-display-1;
