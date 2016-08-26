@@ -11,34 +11,48 @@ body {
   @include retina-image("#{$img-url}/bg", 75px 87px);
 }
 
-.main-container {
-  @extend .mdl-layout, .mdl-layout--fixed-header;
+.container {
+  @extend .mdl-layout;
 }
 
-.main-header {
+.spacer {
+  @extend .mdl-layout-spacer;
+}
+
+.header-wrapper {
   @extend .mdl-layout__header;
+}
+
+.header {
+  @extend .mdl-layout__header-row;
+}
+
+.header-title-wrapper {
+  @extend .mdl-layout-title;
+}
+
+.header-title {
+  line-height: 1;
 
   small {
     white-space: nowrap;
   }
 }
 
-.main-title {
-  padding: 0 24px;
-  line-height: 1;
+.header-nav-wrapper {
+  @extend .mdl-navigation;
 }
 
-.main-content {
+.header-nav-link {
+  @extend .mdl-navigation__link;
+}
+
+.content-wrapper {
   @extend .mdl-layout__content;
   padding: 24px 0;
-
-  p, li {
-    @include typo-preferred-font;
-    font-size: 16px;
-  }
 }
 
-.main-wrapper {
+.content {
   @extend .mdl-grid;
   max-width: 720px;
 }
@@ -59,6 +73,11 @@ body {
       font-size: inherit;
       vertical-align: -7px;
     }
+  }
+
+  p, li {
+    @include typo-preferred-font;
+    font-size: 16px;
   }
 }
 

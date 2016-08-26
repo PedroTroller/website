@@ -19,5 +19,5 @@ defaults:
     values:
       lang: fr-FR
       description: Portfolio professionnel de Fabien Schurter, développeur web.
-      main_title: Fabien Schurter
-      main_subtitle: Développeur web
+      header_title: Fabien Schurter
+      header_subtitle: Développeur web
