@@ -11,8 +11,14 @@ body {
   @include retina-image("#{$img-url}/bg", 75px 87px);
 }
 
+header,
+nav,
+main {
+  display: inherit;
+}
+
 .container {
-  @extend .mdl-layout;
+  @extend .mdl-layout, .mdl-layout--fixed-header;
 }
 
 .spacer {
@@ -25,6 +31,10 @@ body {
 
 .header {
   @extend .mdl-layout__header-row;
+
+  @media (max-width: $layout-screen-size-threshold) {
+    padding-left: 16px;
+  }
 }
 
 .header-title-wrapper {
@@ -32,15 +42,18 @@ body {
 }
 
 .header-title {
-  line-height: 1;
+  @include typo-display-1;
+  padding-top: 8px;
+  line-height: 0.75;
+}
 
-  small {
-    white-space: nowrap;
-  }
+.header-subtitle {
+  display: block;
+  white-space: nowrap;
 }
 
 .header-nav-wrapper {
-  @extend .mdl-navigation;
+  @extend .mdl-navigation, .mdl-layout--large-screen-only;
 }
 
 .header-nav-link {
