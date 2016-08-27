@@ -64,6 +64,7 @@ body {
 }
 
 .header-subtitle {
+  @extend .mdl-typography--font-light;
   display: block;
   white-space: nowrap;
 }
@@ -141,6 +142,7 @@ body {
 }
 
 .central-column-title {
+  @extend .mdl-typography--font-light;
   @include typo-display-1;
   margin: 0;
 }
@@ -148,8 +150,12 @@ body {
 .content {
   padding: ($default-margin + 16px) $default-margin $default-margin;
 
+  p,
+  li:not(.skill-sublist-item) {
+    @extend .mdl-typography--font-thin;
+  }
+
   p {
-    @extend .mdl-typography--font-light;
     font-size: 16px;
   }
 
