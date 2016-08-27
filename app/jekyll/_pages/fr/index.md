@@ -6,17 +6,17 @@ content_title: Merci
 
 …de prendre le temps de consulter mon portfolio.
 
-Moi c’est Fabien, j’ai 29 ans, je suis développeur web depuis 6 ans, et j’adore
-mon métier. J’aime me voir comme un artisan, cherchant en permanence la justesse
-dans le fond comme dans la forme, tout en industrialisant au maximum les process.
+Quelques mots pour me présenter&nbsp;:
 
-Comme une petite checklist vaut mieux qu’un long discours, voici quelques mots
-qui auront pour ambition de parler un peu de moi&nbsp;:
+* 29 ans
+* Développeur web depuis 6 ans
+* Passionné
+* Curieux
+* Ouvert d’esprit
 
-* Passion
-* Curiosité
-* Ouverture d’esprit
-* Amélioration continue
+J’aime me voir comme un artisan, cherchant en permanence la justesse dans le
+fond comme dans la forme, tout en industrialisant les process au maximum, dans
+un souci d’amélioration continue.
 
 Ce que j’essaie de m’imposer en permanence dans mon travail&nbsp;:
 
