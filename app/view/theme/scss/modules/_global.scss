@@ -11,7 +11,9 @@ $page-colors: (
   index:  palette-color-rgb($palette-yellow-A700),
   skills: palette-color-rgb($palette-blue-500),
 );
-$reference-margin: 24px;
+$default-margin: 24px;
+$default-transition-duration: 0.5s;
+$default-background-opacity: 0.9;
 $content-title-border-width: 6px;
 
 .spacer {
@@ -47,6 +49,11 @@ body {
 .header-title-link {
   color: inherit;
   text-decoration: inherit;
+  transition: opacity $default-transition-duration;
+
+  &:hover {
+    opacity: 0.54;
+  }
 }
 
 .header-title {
@@ -67,10 +74,10 @@ body {
 
 .header-nav-link {
   @extend .mdl-navigation__link;
+  transition: background-color $default-transition-duration;
 
   &:hover {
     @extend .mdl-color--green-600;
-    transition: background-color 0.5s;
   }
 }
 
@@ -101,26 +108,26 @@ body {
 
 .central-column-wrapper {
   @extend .mdl-layout__content;
-  padding: $reference-margin 0 ($reference-margin * 2);
+  padding: $default-margin 0 ($default-margin * 2);
 
   @media (max-width: $layout-screen-size-threshold) {
-    padding: ($reference-margin / 2) 0 $reference-margin;
+    padding: ($default-margin / 2) 0 $default-margin;
   }
 }
 
 .central-column {
   @extend .mdl-grid;
-  max-width: 960px;
+  max-width: 720px;
 }
 
 .central-column-title-wrapper,
 .content {
   @extend .mdl-cell, .mdl-cell--12-col, .mdl-shadow--4dp;
-  background-color: palette-color-rgb($color-white,0.9);
+  background-color: palette-color-rgb($color-white,$default-background-opacity);
 }
 
 .central-column-title-wrapper {
-  padding: $reference-margin $reference-margin ($reference-margin - $content-title-border-width);
+  padding: $default-margin $default-margin ($default-margin - $content-title-border-width);
   border-bottom: {
     width: $content-title-border-width;
     style: solid;
@@ -139,25 +146,43 @@ body {
 }
 
 .content {
-  padding: ($reference-margin + 16px) $reference-margin $reference-margin;
+  padding: ($default-margin + 16px) $default-margin $default-margin;
 
-  p, li {
+  p {
+    @extend .mdl-typography--font-light;
     font-size: 16px;
+  }
+
+  .page-skills & {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
   }
 }
 
 .skill-list-item-wrapper {
-  display: inline-block;
-  max-width: 240px;
+  width: 100%;
+  margin: $default-margin 0;
+
+  &:first-child {
+    margin-top: 8px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .skill-list-item {
-  @extend .mdl-card, .mdl-shadow--2dp;
+  @extend .mdl-card, .mdl-shadow--4dp;
   width: inherit;
+  min-height: 0;
+  background-color: palette-color-rgb($color-white,$default-background-opacity);
 }
 
 .skill-list-item-title-wrapper {
-  @extend .mdl-card__title, .mdl-color--grey-700, .mdl-color-text--white;
+  @extend .mdl-card__title, .mdl-color-text--white;
+  background-color: map-get($page-colors, 'skills');
 }
 
 .skill-list-item-title {
