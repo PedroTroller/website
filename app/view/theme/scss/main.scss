@@ -7,27 +7,19 @@
  * file that was distributed with this source code.
  */
 
-// Paths
-$theme-url: "../..";
-$img-url:   "#{$theme-url}/assets/img";
-
 // Core
-@import "functions";
+@import "modules/variables";
 
-// MDL (palette colors are included first in order to use them in overrides)
-$image_path: "/vendor/material-design-lite/src/images";
-@import "material-design-lite/src/color-definitions";
-@import "modules/mdl-overrides";
-@import "material-design-lite/src/variables";
-@import "material-design-lite/src/mixins";
-@import "material-design-lite/src/resets/resets";
-@import "material-design-lite/src/typography/typography";
-@import "material-design-lite/src/palette/palette";
-@import "material-design-lite/src/card/card";
-@import "material-design-lite/src/chip/chip";
-@import "material-design-lite/src/layout/layout";
-@import "material-design-lite/src/shadow/shadow";
-@import "material-design-lite/src/grid/grid";
+// Bootstrap
+@import "modules/bootstrap-overrides";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/normalize";
+@import "bootstrap/print";
+@import "bootstrap/scaffolding";
+@import "bootstrap/type";
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
 
 // Modules
 @import "modules/global";

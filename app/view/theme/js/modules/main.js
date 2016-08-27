@@ -6,3 +6,29 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
+/**
+ * Executes once the YouTube embed API is loaded.
+ */
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('video-background', {
+    videoId: 'nY4uOZrzv0s',
+    //videoId: 'NZlfxWMr7nc',
+    playerVars: {
+      controls:        0,
+      disablekb:       1,
+      showinfo:        0,
+      cc_load_policty: 0,
+      iv_load_policy:  3,
+      modestbranding:  1,
+      rel:             0,
+      autoplay:        1,
+      loop:            1,
+    },
+    events: {
+      onReady: function(e) {
+        e.target.mute();
+      },
+    },
+  });
+}

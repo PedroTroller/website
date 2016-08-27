@@ -7,209 +7,84 @@
  * file that was distributed with this source code.
  */
 
-$page-colors: (
-  index:  palette-color-rgb($palette-yellow-A700),
-  skills: palette-color-rgb($palette-blue-500),
-);
-$default-margin: 24px;
-$default-transition-duration: 0.5s;
-$default-background-opacity: 0.9;
-$content-title-border-width: 6px;
-
-.spacer {
-  @extend .mdl-layout-spacer;
-}
-
+html,
 body {
-  @include typo-preferred-font;
-  background: url("#{$img-url}/bg.jpg") center 72px no-repeat;
-  background-size: cover;
+  height: 100%;
 }
 
-.container {
-  @extend .mdl-layout, .mdl-layout--fixed-header, .mdl-layout--no-desktop-drawer-button;
+.video-background-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
 }
 
-.header-wrapper {
-  @extend .mdl-layout__header;
+.video-background {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: 177.77777778vh;
+  min-width: 100%;
+  min-height: 56.25vw;
+  transform: translate(-50%, -50%);
+  border: 0;
 }
 
-.header {
-  @extend .mdl-layout__header-row;
+.page {
+  min-height: 100%;
+  padding: 24px 0;
+  background-color: rgba(0,0,0,0.5);
+}
 
-  @media (max-width: $layout-screen-size-threshold) {
-    padding-left: 16px;
+%section {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  text-align: center;
+
+  p,
+  li {
+    font-weight: $font-weight-light;
   }
 }
 
-.header-title-wrapper {
-  @extend .mdl-layout-title;
+%section-narrow {
+  @extend %section;
+  max-width: 480px;
 }
 
-.header-title-link {
-  color: inherit;
-  text-decoration: inherit;
-  transition: opacity $default-transition-duration;
-
-  &:hover {
-    opacity: 0.54;
-  }
+.section-header {
+  @extend %section;
 }
 
 .header-title {
-  @include typo-display-1;
-  padding-top: 6px;
-  margin: 0;
-  line-height: 0.75;
+  line-height: $headings-line-height / 1.5;
+  letter-spacing: 0.5em;
+  font: {
+    size: $font-size-base * 5;
+    weight: $font-weight-normal;
+    family: "Josefin Slab", sans-serif;
+    variant: small-caps;
+  }
 }
 
 .header-subtitle {
-  @extend .mdl-typography--font-light;
-  display: block;
-  white-space: nowrap;
+  color: darken($color-base-white, 25%);
+  letter-spacing: 0.1em;
+  font-size: $font-size-base * 2.5;
 }
 
-.header-nav-wrapper {
-  @extend .mdl-navigation, .mdl-layout--large-screen-only;
-}
+.section-intro {
+  @extend %section-narrow;
 
-.header-nav-link {
-  @extend .mdl-navigation__link;
-  transition: background-color $default-transition-duration;
-
-  &:hover {
-    @extend .mdl-color--green-600;
-  }
-}
-
-.mdl-layout__drawer-button {
-  @extend .mdl-color-text--white;
-  left: auto;
-  right: 0;
-}
-
-.mdl-layout__drawer { // Nesting level needed by MDL
-  .mobile-header-nav-title {
-    @extend .mdl-layout-title, .mdl-color--grey-300;
-    margin: {
-      top: 0;
-      bottom: 0;
-    }
+  ul {
+    @extend .list-inline;
+    font-size: $font-size-base - 1px;
   }
 
-  .mobile-header-nav-wrapper {
-    @extend .mdl-navigation;
-    padding-top: 0;
+  li::before {
+    content: "✩ ";
   }
-
-  .mobile-header-nav-link {
-    @extend .mdl-navigation__link;
-  }
-}
-
-.central-column-wrapper {
-  @extend .mdl-layout__content;
-  padding: $default-margin 0 ($default-margin * 2);
-
-  @media (max-width: $layout-screen-size-threshold) {
-    padding: ($default-margin / 2) 0 $default-margin;
-  }
-}
-
-.central-column {
-  @extend .mdl-grid;
-  max-width: 720px;
-}
-
-.central-column-title-wrapper,
-.content {
-  @extend .mdl-cell, .mdl-cell--12-col, .mdl-shadow--4dp;
-  background-color: palette-color-rgb($color-white,$default-background-opacity);
-}
-
-.central-column-title-wrapper {
-  padding: $default-margin $default-margin ($default-margin - $content-title-border-width);
-  border-bottom: {
-    width: $content-title-border-width;
-    style: solid;
-  }
-
-  @each $name, $color in $page-colors {
-    .page-#{$name} & {
-      border-bottom-color: $color;
-    }
-  }
-}
-
-.central-column-title {
-  @extend .mdl-typography--font-light;
-  @include typo-display-1;
-  margin: 0;
-}
-
-.content {
-  padding: ($default-margin + 16px) $default-margin $default-margin;
-
-  p,
-  li:not(.skill-sublist-item) {
-    @extend .mdl-typography--font-thin;
-  }
-
-  p {
-    font-size: 16px;
-  }
-
-  .page-skills & {
-    padding: 0;
-    background-color: transparent;
-    box-shadow: none;
-  }
-}
-
-.skill-list-item-wrapper {
-  width: 100%;
-  margin: $default-margin 0;
-
-  &:first-child {
-    margin-top: 8px;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.skill-list-item {
-  @extend .mdl-card, .mdl-shadow--4dp;
-  width: inherit;
-  min-height: 0;
-  background-color: palette-color-rgb($color-white,$default-background-opacity);
-}
-
-.skill-list-item-title-wrapper {
-  @extend .mdl-card__title, .mdl-color-text--white;
-  background-color: map-get($page-colors, 'skills');
-}
-
-.skill-list-item-title {
-  @extend .mdl-card__title-text;
-}
-
-.skill-sublist-wrapper {
-  @extend .mdl-card__supporting-text;
-}
-
-.skill-sublist {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-.skill-sublist-item {
-  @extend .mdl-chip;
-  display: inline-block;
-}
-
-.skill-sublist-item-text {
-  @extend .mdl-chip__text;
 }

@@ -1,0 +1,21 @@
+/*
+ * This file is part of the fabschurt/portfolio package.
+ *
+ * (c) 2016 Fabien Schurter <fabien@fabschurt.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+// Paths
+$theme-url:     "../..";
+$img-url:       "#{$theme-url}/assets/img";
+$bootstrap-url: "#{$theme-url}/vendor/bootstrap-sass/assets";
+
+// Colors
+$color-base-white: rgb(245, 245, 245);
+
+// Typography
+$font-weight-light:  300;
+$font-weight-normal: 400;
+$font-weight-bold:   600;

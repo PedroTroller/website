@@ -9,46 +9,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <!-- Semantics -->
-        <title>{{ page.title }} | {{ site.title }}</title>
+        <title>{{ i18n.site_title }}</title>
         <meta name="description" content="{{ i18n.description }}" />
 
         <!-- Assets -->
         <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500|Material+Icons" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Josefin+Slab:400" />
     </head>
-    <body class="page-{{ page.name }}">
+    <body>
         <!-- Content -->
-        <div class="container mdl-js-layout">
-            <div class="header-wrapper">
-                <div class="header">
-                    <header class="header-title-wrapper">
+        <div class="video-background-wrapper">
+            <div class="video-background" id="video-background"></div>
+        </div>
+        <div class="page">
+            <div class="section-wrapper">
+                <div class="section-header">
+                    <header id="header">
                         <h1 class="header-title">
-                            <a class="header-title-link" href="{{ nav.root }}" title="{{ i18n.back_to_root }}">
-                                {{ i18n.header_title }}
-                                <small class="header-subtitle">{{ i18n.header_subtitle }}</small>
-                            </a>
+                            {{ i18n.header_title }}<br />
+                            <small class="header-subtitle">{{ i18n.header_subtitle }}</small>
                         </h1>
                     </header>
-                    <div class="spacer"></div>
-                    {% include nav.html %}
                 </div>
             </div>
-            <div class="mdl-layout__drawer">
-                {% include nav.html for_mobile=true %}
-            </div>
-            <div class="central-column-wrapper">
-                <div class="central-column">
-                    <div class="central-column-title-wrapper">
-                        <h2 class="central-column-title">{{ page.content_title }}</h2>
-                    </div>
-                    <main class="content">
-                        {{ content }}
-                    </main>
+            <div class="section-wrapper">
+                <div class="section-intro">
+                    <section id="intro">
+                        {% capture md %}{% include content/{{ page.lang }}/intro.md %}{% endcapture %}
+                        {{ md|markdownify }}
+                    </section>
                 </div>
             </div>
         </div>
 
         <!-- Assets -->
+        <script src="https://www.youtube.com/iframe_api"></script>
         <script src="{{ site.baseurl }}/assets/js/main.js"></script>
         {% if jekyll.environment == 'dev' %}
             <script src="//127.0.0.1:44100/livereload.js"></script>

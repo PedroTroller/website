@@ -1,8 +1,4 @@
----
-name: index
-title: Portfolio
-content_title: Merci
----
+## Merci
 
 …de prendre le temps de consulter mon portfolio.
 
@@ -14,9 +10,8 @@ Quelques mots pour me présenter&nbsp;:
 * Curieux
 * Ouvert d’esprit
 
-J’aime me voir comme un artisan, cherchant en permanence la justesse dans le
-fond comme dans la forme, tout en industrialisant les process au maximum, dans
-un souci d’amélioration continue.
+J’aime me voir comme un artisan travaillant avec des méthodes d’industriel, dans
+un souci toujours renouvelé de maîtrise et de qualité.
 
 Ce que j’essaie de m’imposer en permanence dans mon travail&nbsp;:
 

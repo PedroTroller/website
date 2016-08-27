@@ -35,8 +35,7 @@ var paths = {
     js: {
       modules: {
         main: [
-          basePaths.build + '/vendor/material-design-lite/material.js',
-          basePaths.src   + '/view/theme/js/modules/**/*.js',
+          basePaths.src + '/view/theme/js/modules/**/*.js',
         ],
       },
       glob: basePaths.src + '/view/theme/js/**/*.js',
@@ -88,6 +87,7 @@ gulp.task('sass', function (cb) {
       outputStyle: isDev ? null : 'compressed',
       includePaths: [
         basePaths.build + '/vendor',
+        basePaths.build + '/vendor/bootstrap-sass/assets/stylesheets',
       ],
     }).on('error', sass.logError))
     .pipe(require('gulp-autoprefixer')({

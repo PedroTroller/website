@@ -1,4 +1,3 @@
-title: Fabien Schurter
 timezone: Europe/Paris
 keep_files:
   - assets
@@ -13,8 +12,3 @@ defaults:
       path: ''
     values:
       layout: default
-  -
-    scope:
-      path: _pages/fr
-    values:
-      lang: fr-FR
