@@ -84,6 +84,7 @@ gulp.task('sass', function (cb) {
     .src(paths.src.scss)
     .pipe(isDev ? sourcemaps.init() : util.noop())
     .pipe(sass({
+      precision:   9,
       outputStyle: isDev ? null : 'compressed',
       includePaths: [
         basePaths.build + '/vendor',
