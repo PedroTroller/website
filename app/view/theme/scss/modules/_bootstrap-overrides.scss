@@ -1,5 +1,5 @@
 /*
- * This file is part of the fabschurt/portfolio package.
+ * This file is part of the fabschurt/cv package.
  *
  * (c) 2016 Fabien Schurter <fabien@fabschurt.com>
  *

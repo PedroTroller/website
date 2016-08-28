@@ -1,6 +1,6 @@
 ## Merci
 
-…de prendre le temps de consulter mon portfolio.
+…de prendre le temps de consulter mon CV en ligne.
 
 Quelques mots pour me présenter&nbsp;:
 

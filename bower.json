@@ -1,6 +1,6 @@
 {
-  "name": "fabschurt-portfolio",
-  "description": "Portfolio professionnel de Fabien Schurter, développeur web.",
+  "name": "fabschurt-cv",
+  "description": "Fabien Schurter’s online CV.",
   "license": "",
   "authors": [
     {
@@ -11,7 +11,7 @@
   "homepage": "http://cv.fabschurt.com/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/fabschurt/portfolio.git"
+    "url": "git://github.com/fabschurt/cv.git"
   },
   "dependencies": {
     "bootstrap-sass": "^3.3"
