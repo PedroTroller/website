@@ -32,9 +32,22 @@ body {
 }
 
 .page {
-  min-height: 100%;
-  padding: 24px 0;
-  background-color: rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+%section-wrapper {
+  padding: 56px 24px 48px;
+  margin: 48px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.section-wrapper-header,
+.section-wrapper-intro {
+  @extend %section-wrapper;
+}
+
+.section-wrapper-header {
+  padding-top: 72px;
 }
 
 %section {
@@ -44,9 +57,25 @@ body {
   }
   text-align: center;
 
+  *:first-child {
+    margin-top: 0;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
   p,
   li {
     font-weight: $font-weight-light;
+  }
+
+  h2 {
+    @extend %font-special;
+    margin-bottom: $line-height-computed;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: ($font-size-h2 * 1.25);
   }
 }
 
@@ -59,32 +88,42 @@ body {
   @extend %section;
 }
 
+.section-intro {
+  @extend %section-narrow;
+
+  ul {
+    @extend %list-inline-stars;
+  }
+}
+
 .header-title {
-  line-height: $headings-line-height / 1.5;
+  @extend %font-special;
+  line-height: ($headings-line-height / 1.5);
   letter-spacing: 0.5em;
   font: {
-    size: $font-size-base * 5;
-    weight: $font-weight-normal;
-    family: "Josefin Slab", sans-serif;
     variant: small-caps;
+    size: ($font-size-base * 5);
   }
 }
 
 .header-subtitle {
   color: darken($color-base-white, 25%);
   letter-spacing: 0.1em;
-  font-size: $font-size-base * 2.5;
+  font-size: ($font-size-base * 2.5);
 }
 
-.section-intro {
-  @extend %section-narrow;
-
-  ul {
-    @extend .list-inline;
-    font-size: $font-size-base - 1px;
-  }
+%list-inline-stars {
+  @extend .list-inline;
+  font-size: ($font-size-base * 0.9375);
 
   li::before {
     content: "✩ ";
+  }
+}
+
+%font-special {
+  font: {
+    weight: $font-weight-normal;
+    family: "Josefin Slab", serif;
   }
 }
