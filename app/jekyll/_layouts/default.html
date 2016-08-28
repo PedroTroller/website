@@ -22,24 +22,13 @@
             <div class="video-background" id="video-background"></div>
         </div>
         <div class="page">
-            <div class="section-wrapper-header">
-                <div class="section-header">
-                    <header id="header">
-                        <h1 class="header-title">
-                            {{ i18n.header_title }}<br />
-                            <small class="header-subtitle">{{ i18n.header_subtitle }}</small>
-                        </h1>
-                    </header>
+            {% for section in site.sections %}
+                <div class="section-wrapper-{{ section }}">
+                    <div class="section-{{ section }}">
+                        {% include_content {{ page.lang }}/{{ section }} %}
+                    </div>
                 </div>
-            </div>
-            <div class="section-wrapper-intro">
-                <div class="section-intro">
-                    <section id="intro">
-                        {% capture md %}{% include content/{{ page.lang }}/intro.md %}{% endcapture %}
-                        {{ md|markdownify }}
-                    </section>
-                </div>
-            </div>
+            {% endfor %}
         </div>
 
         <!-- Assets -->

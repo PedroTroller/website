@@ -6,6 +6,10 @@ collections:
   pages:
     output: true
     permalink: /:path
+sections:
+  - header
+  - intro
+  - skills
 defaults:
   -
     scope:

@@ -42,7 +42,8 @@ body {
 }
 
 .section-wrapper-header,
-.section-wrapper-intro {
+.section-wrapper-intro,
+.section-wrapper-skills {
   @extend %section-wrapper;
 }
 
@@ -88,7 +89,8 @@ body {
   @extend %section;
 }
 
-.section-intro {
+.section-intro,
+.section-skills {
   @extend %section-narrow;
 
   ul {
