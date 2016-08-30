@@ -8,10 +8,10 @@
  */
 
 // Core
-@import "modules/variables";
+@import "includes/variables";
 
 // Bootstrap
-@import "modules/bootstrap-overrides";
+@import "includes/bootstrap-overrides";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 @import "bootstrap/normalize";
@@ -20,6 +20,5 @@
 @import "bootstrap/type";
 @import "bootstrap/responsive-utilities";
 
-// Modules
-@import "modules/lib";
-@import "modules/layout";
+// Includes
+@import "includes/style";
