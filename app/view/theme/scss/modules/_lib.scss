@@ -1,0 +1,60 @@
+/*
+ * This file is part of the fabschurt/cv package.
+ *
+ * (c) 2016 Fabien Schurter <fabien@fabschurt.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+%list-inline-stars {
+  @extend .list-inline;
+  font-size: ($font-size-base * 0.9375);
+
+  li::before {
+    content: "✩ ";
+  }
+}
+
+%font-special {
+  font: {
+    weight: $font-weight-normal;
+    family: "Josefin Slab", serif;
+  }
+}
+
+%section-wrapper {
+  padding: 36px 24px 48px;
+  margin: 48px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+%section {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  text-align: center;
+
+  p,
+  li {
+    font-weight: $font-weight-light;
+  }
+
+  h2 {
+    @extend %font-special;
+    margin-bottom: $line-height-computed;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: ($font-size-h2 * 1.25);
+  }
+
+  ul {
+    @extend %list-inline-stars;
+  }
+}
+
+%section-narrow {
+  @extend %section;
+  max-width: 480px;
+}

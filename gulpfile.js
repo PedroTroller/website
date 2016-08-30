@@ -22,8 +22,9 @@ if (isDev) {
 
 // Paths
 var basePaths = {
-  src:   'app',
-  build: 'web',
+  src:    'app',
+  build:  'web',
+  vendor: 'web/vendor',
 };
 var paths = {
   src: {
@@ -84,11 +85,11 @@ gulp.task('sass', function (cb) {
     .src(paths.src.scss)
     .pipe(isDev ? sourcemaps.init() : util.noop())
     .pipe(sass({
-      precision:   9,
+      precision: 9,
       outputStyle: isDev ? null : 'compressed',
       includePaths: [
-        basePaths.build + '/vendor',
-        basePaths.build + '/vendor/bootstrap-sass/assets/stylesheets',
+        basePaths.vendor,
+        basePaths.vendor + '/bootstrap-sass/assets/stylesheets',
       ],
     }).on('error', sass.logError))
     .pipe(require('gulp-autoprefixer')({

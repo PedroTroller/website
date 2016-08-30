@@ -8,14 +8,14 @@
  */
 
 // Paths
-$theme-url:     "../..";
-$img-url:       "#{$theme-url}/assets/img";
-$bootstrap-url: "#{$theme-url}/vendor/bootstrap-sass/assets";
+$root-url:      "../..";
+$img-url:       "#{$root-url}/assets/img";
+$bootstrap-url: "#{$root-url}/vendor/bootstrap-sass/assets";
 
 // Colors
 $color-base-white: rgb(245, 245, 245);
 
 // Typography
-$font-weight-light:  300;
+$font-weight-light:  200;
 $font-weight-normal: 400;
 $font-weight-bold:   700;
