@@ -27,8 +27,11 @@
     "Bootstrap",
     "Bourbon & Co.",
     "Materialize",
+    "OOCSS",
+    "Photoshop",
     "jQuery",
-    "Photoshop"
+    "SEO naturelle",
+    "Accessibilité"
   ],
   "Applications": [
     "Android SDK",
@@ -100,10 +103,7 @@
     "DRY",
     "12 Factor",
     "Microservices",
-    "TDD/BDD",
-    "OOCSS",
-    "SEO naturelle",
-    "Accessibilité"
+    "TDD/BDD"
   ],
   "Bureautique": [
     "Suite Office",
