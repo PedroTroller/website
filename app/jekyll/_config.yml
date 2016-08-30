@@ -10,6 +10,8 @@ sections:
   - header
   - intro
   - skills
+  - work
+  - footer
 defaults:
   -
     scope:

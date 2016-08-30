@@ -49,7 +49,7 @@
     font-size: ($font-size-h2 * 1.25);
   }
 
-  ul {
+  ul:not(.work-example-details, .work-example-tech-list) {
     @extend %list-inline-stars;
   }
 }
@@ -57,6 +57,17 @@
 %section-narrow {
   @extend %section;
   max-width: 480px;
+}
+
+%pseudo-grid-cell {
+  display: inline-block;
+  margin: 0 6px;
+  width: 292px;
+  vertical-align: top;
+
+  @media (max-width: $screen-xs-max) {
+    width: 100%;
+  }
 }
 
 html,
@@ -93,15 +104,27 @@ div[class^="section-wrapper-"] {
   &.section-wrapper-header {
     padding-top: 64px;
   }
-}
 
-.section-header,
-.section-skills {
-  @extend %section;
-}
+  &.section-wrapper-footer {
+    padding: 24px;
+  }
 
-.section-intro {
-  @extend %section-narrow;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  div[class^="section-"]:not(.section-intro) {
+    @extend %section;
+  }
+
+  .section-intro {
+    @extend %section-narrow;
+  }
+
+  .section-footer p {
+    margin-bottom: 0;
+    font-size: ($font-size-base * 0.777777778);
+  }
 }
 
 .header-title {
@@ -121,12 +144,54 @@ div[class^="section-wrapper-"] {
 }
 
 .skill-group {
-  display: inline-block;
-  margin: 0 6px;
-  width: 292px;
-  vertical-align: top;
+  @extend %pseudo-grid-cell;
+}
 
-  @media (max-width: $screen-sm-max) {
-    width: 100%;
+.work-example-list {
+  margin: 0 auto;
+}
+
+.work-example {
+  @extend %pseudo-grid-cell, .panel, .panel-default;
+  margin: 8px 6px;
+  color: $gray-dark;
+}
+
+.work-example-title-wrapper {
+  @extend .panel-heading;
+}
+
+.work-example-title {
+  @extend .panel-title;
+}
+
+.work-example-body {
+  @extend .panel-body;
+  font-size: ($font-size-base * 0.888888889);
+
+  *:last-child {
+    margin-bottom: 0;
   }
+}
+
+.work-example-details {
+  @extend .list-group;
+
+  > li {
+    @extend .list-group-item;
+  }
+}
+
+.work-example-tech-list {
+  @extend .list-inline;
+}
+
+.work-example-tech-list-item {
+  @extend .label, .label-success;
+}
+
+.work-example-no-img {
+  @extend .glyphicon, .glyphicon-ban-circle;
+  color: $brand-danger;
+  font-size: ($font-size-base * 6);
 }

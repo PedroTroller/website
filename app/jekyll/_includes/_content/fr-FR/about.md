@@ -1,3 +1,5 @@
+## À propos de moi
+
 Je suis adepte d’un web moderne et ergonomique. Je suis relativement sceptique
 au sujet , car je considère qu’ils procurent une expérience dégradée du web.
 

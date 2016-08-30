@@ -1,0 +1,26 @@
+<div class="work-example-list">
+    {% for work_example in site.data.work[page.lang] %}
+        <div class="work-example">
+            <div class="work-example-title-wrapper">
+                <h3 class="work-example-title">{{ work_example[0] }}</h3>
+            </div>
+            <div class="work-example-body">
+                {{ work_example[1].desc|markdownify }}
+            </div>
+            <ul class="work-example-details">
+                <li class="work-example-img">
+                    <a href="{{ work_example[1].url }}" target="_blank" title="{{ i18n.click_to_open }}">
+                        <img src="{{ site.baseurl }}/assets/img/work/{{ work_example[1].img }}" alt="" width="260" />
+                    </a>
+                </li>
+                <li class="work-example-tech">
+                    <ul class="work-example-tech-list">
+                        {% for tech in work_example[1].tech %}
+                            <li class="work-example-tech-list-item">{{ tech }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    {% endfor %}
+</div>
