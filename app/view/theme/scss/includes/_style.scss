@@ -49,7 +49,7 @@
     font-size: ($font-size-h2 * 1.25);
   }
 
-  ul:not(.work-example-details, .work-example-tech-list) {
+  ul:not([class]) {
     @extend %list-inline-stars;
   }
 }
@@ -147,6 +147,10 @@ div[class^="section-wrapper-"] {
   @extend %pseudo-grid-cell;
 }
 
+.skill-sublist {
+  @extend %list-inline-stars;
+}
+
 .work-example-list {
   margin: 0 auto;
 }
@@ -188,10 +192,4 @@ div[class^="section-wrapper-"] {
 
 .work-example-tech-list-item {
   @extend .label, .label-success;
-}
-
-.work-example-no-img {
-  @extend .glyphicon, .glyphicon-ban-circle;
-  color: $brand-danger;
-  font-size: ($font-size-base * 6);
 }
