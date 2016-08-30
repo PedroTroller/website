@@ -1,0 +1,113 @@
+{
+  "Langages": [
+    "PHP",
+    "Ruby",
+    "Java",
+    "ActionScript 3",
+    "SQL",
+    "HTML5",
+    "CSS 3",
+    "JavaScript (ES5)",
+    "Bash",
+    "PCRE"
+  ],
+  "Backend": [
+    "Symfony",
+    "Silex",
+    "Zend",
+    "MySQL",
+    "SQLite",
+    "Doctrine",
+    "Redis"
+  ],
+  "Frontend": [
+    "Twig",
+    "Smarty",
+    "Sass",
+    "Bootstrap",
+    "Bourbon & Co.",
+    "Materialize",
+    "jQuery",
+    "Photoshop"
+  ],
+  "Applications": [
+    "Android SDK",
+    "Flash/Flex"
+  ],
+  "CMS": [
+    "WordPress",
+    "Bolt",
+    "ProcessWire",
+    "Joomla",
+    "Drupal",
+    "Magento",
+    "PrestaShop"
+  ],
+  "Testing": [
+    "PHPUnit",
+    "Peridot",
+    "phpspec",
+    "Codeception",
+    "Behat",
+    "RSpec"
+  ],
+  "DevOps": [
+    "Composer",
+    "npm",
+    "Bower",
+    "Bundler",
+    "Robo",
+    "Gulp",
+    "Rake",
+    "Git",
+    "GitHub Flow",
+    "Capistrano",
+    "Docker",
+    "VirtualBox",
+    "Vagrant",
+    "Ansible",
+    "Heroku",
+    "Docker Cloud",
+    "AWS",
+    "CI"
+  ],
+  "Documentation": [
+    "PHPDoc",
+    "JSDoc",
+    "YARD",
+    "Markdown",
+    "reStructuredText",
+    "ApiGen",
+    "Sphinx",
+    "MkDocs"
+  ],
+  "Systèmes et réseaux": [
+    "Modèle OSI",
+    "Protocoles web",
+    "Architectures réseaux/matérielles",
+    "Administration Linux/Windows",
+    "Active Directory",
+    "Apache",
+    "Nginx",
+    "Bind",
+    "OpenSSH",
+    "GPG",
+    "Samba"
+  ],
+  "Bonnes pratiques": [
+    "Design patterns (GoF, PoEAA)",
+    "SOLID",
+    "DRY",
+    "12 Factor",
+    "Microservices",
+    "TDD/BDD",
+    "OOCSS",
+    "SEO naturelle",
+    "Accessibilité"
+  ],
+  "Bureautique": [
+    "Suite Office",
+    "Outlook",
+    "Tunderbird"
+  ]
+}
