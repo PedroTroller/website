@@ -41,7 +41,7 @@ var paths = {
       },
       glob: basePaths.src + '/view/theme/js/**/*.js',
     },
-    img: basePaths.src + '/view/theme/img/**/*.{jpg,png,gif,ico}',
+    img: basePaths.src + '/view/theme/img/**/*.{jpg,png,gif,ico,svg}',
   },
   build: {
     jekyll: basePaths.build,
