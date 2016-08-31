@@ -72,7 +72,9 @@
     "Heroku",
     "Docker Cloud",
     "AWS",
-    "CI"
+    "Travis",
+    "Coveralls",
+    "Codacy"
   ],
   "Documentation": [
     "PHPDoc",
