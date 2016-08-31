@@ -7,8 +7,16 @@
  * file that was distributed with this source code.
  */
 
+var columnWidth = 304;
+
 new Masonry(document.querySelector('.work-example-list'), {
   itemSelector: '.work-example',
-  columnWidth:  304,
+  columnWidth:  columnWidth,
+  fitWidth:     true,
+});
+
+new Masonry(document.querySelector('.skill-list'), {
+  itemSelector: '.skill-group',
+  columnWidth:  columnWidth,
   fitWidth:     true,
 });
