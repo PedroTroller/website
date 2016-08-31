@@ -11,6 +11,7 @@ sections:
   - intro
   - skills
   - work
+  - experience
   - footer
 defaults:
   -

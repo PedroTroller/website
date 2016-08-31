@@ -30,7 +30,7 @@
 %section-wrapper {
   padding: 36px 24px 48px;
   margin: 48px 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba($gray-base, 0.5);
 }
 
 %section {
@@ -45,7 +45,7 @@
     font-weight: $font-weight-light;
   }
 
-  h2 {
+  h2:not([class]) {
     @extend %font-special;
     margin-bottom: $line-height-computed;
     text-transform: uppercase;
@@ -76,6 +76,11 @@
   margin: 8px 6px;
   width: 292px;
   vertical-align: top;
+}
+
+%custom-panel {
+  @extend .panel, .panel-default;
+  color: $gray-dark;
 }
 
 /*
@@ -192,8 +197,7 @@ div[class^="section-wrapper-"] {
 }
 
 .work-example {
-  @extend %pseudo-grid-cell, .panel, .panel-default;
-  color: $gray-dark;
+  @extend %pseudo-grid-cell, %custom-panel;
 }
 
 .work-example-title-wrapper {
@@ -229,4 +233,93 @@ div[class^="section-wrapper-"] {
 .work-example-tech-list-item {
   @extend .label, .label-success;
   font-size: ($font-size-base * 0.777777778);
+}
+
+/*
+ * Past job list
+ */
+
+$timeline-line-width:  6px;
+$timeline-item-width:  400px;
+$timeline-left-offset: 56px;
+
+.past-job-list {
+  @extend .list-unstyled;
+}
+
+.past-job-list-item {
+  position: relative;
+  width: $timeline-line-width;
+  margin: 0 auto;
+  background-color: rgba($panel-bg, 0.5);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgb(240, 202, 69) url("#{$img-url}/icon-location.svg") center center no-repeat;
+    border: ($timeline-line-width - 2px) $panel-bg solid;
+  }
+}
+
+.past-job-wrapper {
+  position: relative;
+  width: $timeline-item-width;
+  padding: 24px 0;
+
+  .past-job-list-item:nth-child(odd) & {
+    left: $timeline-left-offset;
+  }
+
+  .past-job-list-item:nth-child(even) & {
+    left: (0 - $timeline-item-width - $timeline-left-offset + $timeline-line-width);
+  }
+}
+
+.past-job {
+  @extend %custom-panel;
+  margin-bottom: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  .past-job-list-item:nth-child(odd) &::before {
+    left: -15px;
+    border-width: 12px 16px 12px 0;
+    border-color: transparent $panel-bg transparent transparent;
+  }
+
+  .past-job-list-item:nth-child(even) &::before {
+    right: -15px;
+    border-width: 12px 0 12px 16px;
+    border-color: transparent transparent transparent $panel-bg;
+  }
+}
+
+.past-job-title-wrapper {
+  @extend .panel-heading;
+}
+
+.past-job-title {
+  @extend .panel-title;
+}
+
+.past-job-body {
+  @extend .panel-body;
+
+  *:last-child {
+    margin-bottom: 0;
+  }
 }
