@@ -14,6 +14,7 @@
     "url": "git://github.com/fabschurt/cv.git"
   },
   "dependencies": {
-    "bootstrap-sass": "^3.3"
+    "bootstrap-sass": "^3.3",
+    "masonry": "^4.1"
   }
 }
