@@ -1,6 +1,6 @@
-<div class="work-example-list">
+<ul class="work-example-list">
     {% for work_example in site.data.work[page.lang] %}
-        <div class="work-example">
+        <li class="work-example">
             <div class="work-example-title-wrapper">
                 <h3 class="work-example-title">{{ work_example[0] }}</h3>
             </div>
@@ -21,6 +21,6 @@
                     </ul>
                 </li>
             </ul>
-        </div>
+        </li>
     {% endfor %}
-</div>
+</ul>
