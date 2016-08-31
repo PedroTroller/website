@@ -7,6 +7,10 @@
  * file that was distributed with this source code.
  */
 
+/*
+ * Library
+ */
+
 %list-inline-stars {
   @extend .list-inline;
   font-size: ($font-size-base * 0.944444444);
@@ -74,28 +78,13 @@
   vertical-align: top;
 }
 
+/*
+ * Base containers
+ */
+
 html,
 body {
   height: 100%;
-}
-
-.video-background-wrapper {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -100;
-}
-
-.video-background {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  width: 177.77777778vh;
-  min-width: 100%;
-  min-height: 56.25vw;
-  border: 0;
 }
 
 .page {
@@ -131,6 +120,33 @@ div[class^="section-wrapper-"] {
   }
 }
 
+/*
+ * Full-screen video background
+ */
+
+.video-background-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+}
+
+.video-background {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  width: 177.77777778vh;
+  min-width: 100%;
+  min-height: 56.25vw;
+  border: 0;
+}
+
+/*
+ * Header
+ */
+
 .header-title {
   @extend %font-special;
   line-height: ($headings-line-height / 1.25);
@@ -147,6 +163,10 @@ div[class^="section-wrapper-"] {
   font-size: ($font-size-base * 2);
 }
 
+/*
+ * Skill list
+ */
+
 .skill-list {
   @extend %pseudo-grid;
 }
@@ -162,6 +182,10 @@ div[class^="section-wrapper-"] {
 .skill-sublist {
   @extend %list-inline-stars;
 }
+
+/*
+ * Work example list
+ */
 
 .work-example-list {
   @extend %pseudo-grid;
