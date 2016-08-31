@@ -9,7 +9,7 @@
 
 %list-inline-stars {
   @extend .list-inline;
-  font-size: ($font-size-base * 0.9375);
+  font-size: ($font-size-base * 0.944444444);
 
   li::before {
     content: "✩ ";
@@ -180,10 +180,11 @@ div[class^="section-wrapper-"] {
 
 .work-example-details {
   @extend .list-group;
+}
 
-  > li {
-    @extend .list-group-item;
-  }
+.work-example-img,
+.work-example-tech {
+  @extend .list-group-item;
 }
 
 .work-example-tech-list {
@@ -192,4 +193,5 @@ div[class^="section-wrapper-"] {
 
 .work-example-tech-list-item {
   @extend .label, .label-success;
+  font-size: ($font-size-base * 0.777777778);
 }
