@@ -6,9 +6,30 @@
                     <div class="past-job-title-wrapper">
                         <h3 class="past-job-title">{{ job.title }}</h3>
                     </div>
-                    <div class="past-job-body">
-                        <p class="past-job-company">{{ job.company }}</p>
-                    </div>
+                    <ul class="past-job-body">
+                        <li class="past-job-details">
+                            <p>
+                                <span class="past-job-years-icon"></span>
+                                <span class="past-job-start-year">{{ job.start_year }}</span>
+                                {% if job.end_year %}
+                                    ➞ <span class="past-job-end-year">{{ job.end_year }}</span>
+                                {% endif %}
+                                <span class="job-duration">({{ job.duration }})</span>
+                            </p>
+                            <p>
+                                <span class="past-job-location-icon"></span>
+                                <span class="past-job-company">{{ job.company }}</span> –
+                                <span class="past-job-city">{{ job.location }}</span>
+                            </p>
+                        </li>
+                        <li class="past-job-description">
+                            <ul class="past-job-description-lines">
+                                {% for desc_line in job.description %}
+                                    <li class="past-job-description-line">{{ desc_line }}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </li>

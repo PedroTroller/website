@@ -246,7 +246,7 @@ div[class^="section-wrapper-"] {
  */
 
 $timeline-line-width:  6px;
-$timeline-item-width:  400px;
+$timeline-item-width:  460px;
 $timeline-left-offset: 56px;
 
 .past-job-list {
@@ -269,7 +269,7 @@ $timeline-left-offset: 56px;
     height: 56px;
     border-radius: 50%;
     background: rgb(240, 202, 69) url("#{$img-url}/icon-location.svg") center center no-repeat;
-    border: ($timeline-line-width - 2px) $panel-bg solid;
+    border: solid ($timeline-line-width - 2px) $panel-bg;
   }
 }
 
@@ -303,14 +303,18 @@ $timeline-left-offset: 56px;
 
   .past-job-list-item:nth-child(odd) &::before {
     left: -15px;
-    border-width: 12px 16px 12px 0;
-    border-color: transparent $panel-bg transparent transparent;
+    border: {
+      width: 12px 16px 12px 0;
+      color: transparent $panel-bg transparent transparent;
+    }
   }
 
   .past-job-list-item:nth-child(even) &::before {
     right: -15px;
-    border-width: 12px 0 12px 16px;
-    border-color: transparent transparent transparent $panel-bg;
+    border: {
+      width: 12px 0 12px 16px;
+      color: transparent transparent transparent $panel-bg;
+    }
   }
 }
 
@@ -323,9 +327,49 @@ $timeline-left-offset: 56px;
 }
 
 .past-job-body {
-  @extend .panel-body;
+  @extend .list-group;
+  font-size: ($font-size-base * 0.888888889);
+}
 
-  *:last-child {
-    margin-bottom: 0;
+.past-job-details,
+.past-job-description {
+  @extend .list-group-item;
+}
+
+.past-job-details {
+  p {
+    margin: 0;
+  }
+
+  span[class$="-icon"] {
+    @extend .glyphicon;
+    margin-right: 2px;
+    vertical-align: -1px;
+  }
+}
+
+.past-job-years-icon {
+  @extend .glyphicon-calendar;
+}
+
+.past-job-location-icon {
+  @extend .glyphicon-map-marker;
+}
+
+.past-job-start-year,
+.past-job-end-year,
+.past-job-company {
+  font-weight: $font-weight-bold;
+}
+
+.past-job-description-lines {
+  @extend .list-unstyled;
+
+  li {
+    margin: 4px 0;
+
+    &::before {
+      content: "‣ ";
+    }
   }
 }
