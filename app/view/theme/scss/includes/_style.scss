@@ -13,6 +13,7 @@
 
 %list-inline-stars {
   @extend .list-inline;
+  line-height: ($line-height-base * 1.066666667);
   font-size: ($font-size-base * 0.944444444);
 
   li::before {
@@ -31,6 +32,11 @@
   padding: 36px 24px 48px;
   margin: 48px 0;
   background-color: rgba($gray-base, 0.5);
+  border: solid 1px $gray-base;
+  border: {
+    left: 0;
+    right: 0;
+  }
 }
 
 %section {

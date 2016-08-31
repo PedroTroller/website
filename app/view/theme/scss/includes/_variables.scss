@@ -13,7 +13,7 @@ $img-url:       "#{$root-url}/assets/img";
 $bootstrap-url: "#{$root-url}/vendor/bootstrap-sass/assets";
 
 // Colors
-$color-base-white: rgb(245, 245, 245);
+$color-base-white: darken(#fff, 4%);
 
 // Typography
 $font-weight-light:  200;
