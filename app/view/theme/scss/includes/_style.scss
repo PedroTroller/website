@@ -28,46 +28,6 @@
   }
 }
 
-%section-wrapper {
-  padding: 36px 24px 48px;
-  margin: 48px 0;
-  background-color: rgba($gray-base, 0.5);
-}
-
-%section {
-  margin: {
-    left: auto;
-    right: auto;
-  }
-  text-align: center;
-
-  h2:not([class]) {
-    @extend %font-special;
-    margin-bottom: $line-height-computed;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    font-size: $font-size-h2 * 1.25;
-  }
-
-  ul:not([class]) {
-    @extend %list-inline-stars;
-  }
-
-  p,
-  li {
-    font-weight: $font-weight-light;
-  }
-
-  a {
-    font-weight: $font-weight-bold;
-  }
-}
-
-%section-narrow {
-  @extend %section;
-  max-width: 480px;
-}
-
 %pseudo-grid {
   @extend .list-unstyled;
   margin: {
@@ -80,11 +40,6 @@
   display: inline-block;
   margin: 8px 6px;
   vertical-align: top;
-}
-
-%custom-panel {
-  @extend .panel, .panel-default;
-  color: $gray-dark;
 }
 
 %horizontally-centered {
@@ -120,7 +75,9 @@ body {
 }
 
 div[class^="section-wrapper-"] {
-  @extend %section-wrapper;
+  padding: 36px 24px 48px;
+  margin: 48px 0;
+  background-color: rgba($gray-base, 0.5);
 
   &.section-wrapper-header {
     padding-top: 64px;
@@ -134,17 +91,42 @@ div[class^="section-wrapper-"] {
     margin-bottom: 0;
   }
 
-  div[class^="section-"]:not(.section-intro) {
-    @extend %section;
-  }
+  div[class^="section-"] {
+    margin: {
+      left: auto;
+      right: auto;
+    }
+    text-align: center;
 
-  .section-intro {
-    @extend %section-narrow;
-  }
+    h2:not([class]) {
+      @extend %font-special;
+      margin-bottom: $line-height-computed;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: $font-size-h2 * 1.25;
+    }
 
-  .section-footer p {
-    margin-bottom: 0;
-    font-size: $font-size-base * 0.777777778;
+    ul:not([class]) {
+      @extend %list-inline-stars;
+    }
+
+    p,
+    li {
+      font-weight: $font-weight-light;
+    }
+
+    a {
+      font-weight: $font-weight-bold;
+    }
+
+    &.section-intro  {
+      max-width: 480px;
+    }
+
+    &.section-footer p {
+      margin-bottom: 0;
+      font-size: $font-size-base * 0.777777778;
+    }
   }
 }
 
@@ -307,13 +289,14 @@ $timeline-item-offset:       8px;
 }
 
 .past-job {
-  @extend %custom-panel;
+  @extend .panel, .panel-default;
   position: relative;
   width: $timeline-item-width;
   margin: {
     bottom: 0;
     left: calc(50% + #{$timeline-icon-width / 2 + $timeline-arrow-offset + $timeline-item-offset});
   }
+  color: $gray-dark;
 
   &::before {
     @extend %vertically-centered;
