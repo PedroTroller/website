@@ -1,37 +1,32 @@
-<ul class="past-job-list">
-    {% for job in site.data.experience[page.lang].list %}
-        <li class="past-job-list-item">
-            <div class="past-job-wrapper">
+<div class="past-job-list-wrapper">
+    <ul class="past-job-list">
+        {% for job in site.data.experience[page.lang].list %}
+            <li class="past-job-list-item">
+                <div class="past-job-icon-wrapper">
+                    <img class="past-job-icon" src="{{ site.baseurl }}/assets/img/icon-location.svg" alt="" />
+                </div>
                 <div class="past-job">
                     <div class="past-job-title-wrapper">
                         <h3 class="past-job-title">{{ job.title }}</h3>
                     </div>
-                    <ul class="past-job-body">
-                        <li class="past-job-details">
-                            <p>
-                                <span class="past-job-years-icon"></span>
-                                <span class="past-job-start-year">{{ job.start_year }}</span>
-                                {% if job.end_year %}
-                                    ➞ <span class="past-job-end-year">{{ job.end_year }}</span>
-                                {% endif %}
-                                <span class="job-duration">({{ job.duration }})</span>
-                            </p>
-                            <p>
-                                <span class="past-job-location-icon"></span>
-                                <span class="past-job-company">{{ job.company }}</span> –
-                                <span class="past-job-city">{{ job.location }}</span>
-                            </p>
-                        </li>
-                        <li class="past-job-description">
-                            <ul class="past-job-description-lines">
-                                {% for desc_line in job.description %}
-                                    <li class="past-job-description-line">{{ desc_line }}</li>
-                                {% endfor %}
-                            </ul>
-                        </li>
-                    </ul>
+                    <div class="past-job-body">
+                        <p>
+                            <span class="past-job-years-icon"></span>
+                            <span class="past-job-start-year">{{ job.start_year }}</span>
+                            {% if job.end_year %}
+                                ➞ <span class="past-job-end-year">{{ job.end_year }}</span>
+                            {% endif %}
+                            <span class="past-job-duration">({{ job.duration }})</span>
+                        </p>
+                        <p>
+                            <span class="past-job-location-icon"></span>
+                            <span class="past-job-company">{{ job.company }}</span>
+                            <span class="past-job-separator">–</span>
+                            <span class="past-job-city">{{ job.location }}</span>
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </li>
-    {% endfor %}
-</ul>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
