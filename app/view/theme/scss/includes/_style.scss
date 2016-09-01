@@ -75,7 +75,6 @@
 %pseudo-grid-cell {
   display: inline-block;
   margin: 8px 6px;
-  width: 292px;
   vertical-align: top;
 }
 
@@ -195,6 +194,7 @@ div[class^="section-wrapper-"] {
 
 .skill-group {
   @extend %pseudo-grid-cell;
+  width: 292px;
 }
 
 .skill-sublist {
@@ -290,7 +290,7 @@ $timeline-item-offset:       8px;
   width: $timeline-icon-width;
   height: $timeline-icon-width;
   background-color: rgb(240, 202, 69);
-  border: solid ($timeline-line-width - 2px) $panel-bg;
+  border: ($timeline-line-width - 2px) solid $panel-bg;
   border-radius: 50%;
 
   @media (max-width: $screen-xs-max) {
@@ -318,8 +318,8 @@ $timeline-item-offset:       8px;
     width: 0;
     height: 0;
     border: {
-      style: solid;
       width: 12px 16px 12px 0;
+      style: solid;
       color: transparent $panel-bg transparent transparent;
     }
   }
@@ -332,8 +332,8 @@ $timeline-item-offset:       8px;
         left: auto;
         right: -$timeline-arrow-offset;
         border: {
-          style: solid;
           width: 12px 0 12px 16px;
+          style: solid;
           color: transparent transparent transparent $panel-bg;
         }
       }
