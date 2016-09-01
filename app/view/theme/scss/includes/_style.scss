@@ -41,11 +41,6 @@
   }
   text-align: center;
 
-  p,
-  li {
-    font-weight: $font-weight-light;
-  }
-
   h2:not([class]) {
     @extend %font-special;
     margin-bottom: $line-height-computed;
@@ -56,6 +51,15 @@
 
   ul:not([class]) {
     @extend %list-inline-stars;
+  }
+
+  p,
+  li {
+    font-weight: $font-weight-light;
+  }
+
+  a {
+    font-weight: $font-weight-bold;
   }
 }
 
