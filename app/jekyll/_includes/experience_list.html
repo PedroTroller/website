@@ -20,7 +20,13 @@
                         </p>
                         <p>
                             <span class="past-job-location-icon"></span>
-                            <span class="past-job-company">{{ job.company }}</span>
+                            <span class="past-job-company">
+                                {% if job.company_url %}
+                                    <a href="{{ job.company_url }}" target="_blank">{{ job.company }}</a>
+                                {% else %}
+                                    {{ job.company }}
+                                {% endif %}
+                            </span>
                             <span class="past-job-separator">–</span>
                             <span class="past-job-city">{{ job.location }}</span>
                         </p>

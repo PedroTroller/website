@@ -4,7 +4,9 @@
             <img class="work-example-img" src="{{ site.baseurl }}/assets/img/work/{{ work_example[1].img }}" alt="" width="258" />
             <div class="work-example-details-wrapper">
                 <div class="work-example-details">
-                    <h3 class="work-example-title">{{ work_example[0] }}</h3>
+                    <h3 class="work-example-title">
+                        <a class="work-example-link" href="{{ work_example[1].url }}" target="_blank" title="{{ i18n.click_to_open }}">{{ work_example[0] }}</a>
+                    </h3>
                     <div class="work-example-description">
                         {{ work_example[1].desc|markdownify }}
                     </div>
