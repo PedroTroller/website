@@ -199,23 +199,24 @@ div[class^="section-wrapper-"] {
 }
 
 .menu-items {
-  @extend .nav, .nav-pills, .nav-stacked;
+  @extend .nav-pills, .nav-stacked; // The `.nav` class is set in HTML directly, in order for `scrollspy.js` to work
+}
 
-  .menu-item-link {
-    color: $color-base-white;
-    font: {
-      weight: $font-weight-light;
-      size: $font-size-base * 0.888888889;
-    }
+.menu-item-link {
+  color: $color-base-white;
+  font: {
+    weight: $font-weight-light;
+    size: $font-size-base * 0.888888889;
+  }
 
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-      background-color: darken($gray-darker, 2%);
-      box-shadow: inset 0 0 6px 1px rgba($gray-base, 0.5);
-      color: darken($color-base-white, 15%);
-    }
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .active & {
+    background-color: darken($gray-darker, 2%) !important;
+    box-shadow: inset 0 0 6px 1px rgba($gray-base, 0.5);
+    color: darken($color-base-white, 15%);
   }
 }
 
