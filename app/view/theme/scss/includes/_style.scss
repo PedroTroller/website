@@ -94,7 +94,7 @@ body {
   position: relative;
   left: 0;
   overflow: hidden;
-  transition: left 0.2s;
+  transition: left $menu-open-duration;
 
   body.menu-in & {
     left: $menu-width;
@@ -191,7 +191,7 @@ div[class^="section-wrapper-"] {
   padding: 16px;
   background-color: $gray-darker;
   box-shadow: inset -1px 0 10px 0 rgba($gray-base, 0.5);
-  transition: left 0.2s;
+  transition: left $menu-open-duration;
 
   body.menu-in & {
     left: 0;
