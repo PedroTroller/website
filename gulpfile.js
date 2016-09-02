@@ -36,6 +36,7 @@ var paths = {
     js: {
       modules: {
         main: [
+          basePaths.vendor + '/jquery/dist/jquery.js',
           basePaths.vendor + '/masonry/dist/masonry.pkgd.js',
           basePaths.src    + '/view/theme/js/modules/**/*.js',
         ],

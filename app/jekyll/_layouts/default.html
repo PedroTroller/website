@@ -18,14 +18,17 @@
     </head>
     <body>
         <!-- Content -->
-        <div class="video-background-wrapper">
-            <div class="video-background" id="video-background"></div>
-        </div>
-        <div class="page">
+        {% include menu.html %}
+        <div class="page" id="page">
+            <div class="video-background-wrapper">
+                <div class="video-background" id="video-background"></div>
+            </div>
             {% for section in site.sections %}
                 <div class="section-wrapper-{{ section }}">
                     <div class="section-{{ section }}">
-                        {% include_content {{ page.lang }}/{{ section }} %}
+                        <section id="section-{{ section }}">
+                            {% include_content {{ page.lang }}/{{ section }} %}
+                        </section>
                     </div>
                 </div>
             {% endfor %}

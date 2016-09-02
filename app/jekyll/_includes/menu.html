@@ -1,0 +1,14 @@
+<button class="menu-btn" id="menu-btn" title="{{ i18n.click_to_open_menu }}">
+    <span class="menu-btn-icon"></span>
+</button>
+<div class="menu" id="menu">
+    <nav>
+        <ul class="menu-items">
+            {% for menu_item in site.data.nav[page.lang].menu %}
+                <li class="menu-item">
+                    <a href="{{ menu_item[1] }}" class="menu-item-link">{{ menu_item[0] }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</div>
