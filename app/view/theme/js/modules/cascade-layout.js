@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-window.addEventListener('load', function () {
-  new Masonry(document.querySelector('.skill-list'), {
+$(window).on('load', function () {
+  $('.skill-list').masonry({
     itemSelector: '.skill-group',
     columnWidth:  304,
     fitWidth:     true,
