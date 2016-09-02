@@ -39,6 +39,7 @@ var paths = {
           basePaths.vendor + '/jquery/dist/jquery.js',
           basePaths.vendor + '/masonry/dist/masonry.pkgd.js',
           basePaths.vendor + '/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js',
+          basePaths.vendor + '/smooth-scroll/dist/js/smooth-scroll.js',
           basePaths.src    + '/view/theme/js/modules/**/*.js',
         ],
       },
