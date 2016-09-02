@@ -103,8 +103,8 @@ body {
 
 div[class^="section-wrapper-"] {
   padding: 36px 24px 48px;
-  margin: 48px 0;
-  background-color: rgba($gray-base, 0.5);
+  margin: 56px 0;
+  background-color: rgba($gray-base, 0.6);
 
   &.section-wrapper-header {
     padding-top: 64px;
@@ -289,12 +289,11 @@ $work-example-item-height: 161px;
 }
 
 .work-example {
-  @extend %pseudo-grid-cell;
+  @extend %pseudo-grid-cell, %lightly-shadowed;
   position: relative;
   width: $work-example-item-width;
   height: $work-example-item-height;
   margin: 8px 6px;
-  box-shadow: 0 0 10px 0 rgba(#000, 0.5);
 
   &,
   > * {
@@ -307,7 +306,7 @@ $work-example-item-height: 161px;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(#000, 0.8);
+  background-color: rgba($gray-base, 0.8);
   opacity: 0;
   transition: opacity 0.3s;
 
@@ -317,11 +316,10 @@ $work-example-item-height: 161px;
 }
 
 .work-example-details {
-  @extend %fully-centered;
+  @extend %fully-centered, %vertically-scrollable;
   width: 100%;
   max-height: $work-example-item-height;
   padding: 8px;
-  overflow: scroll;
 }
 
 .work-example-title {
