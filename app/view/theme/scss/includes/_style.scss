@@ -48,7 +48,6 @@
 
 %pseudo-grid-cell {
   display: inline-block;
-  margin: 8px 6px;
   vertical-align: top;
 }
 
@@ -134,7 +133,7 @@ div[class^="section-wrapper-"] {
     }
 
     &.section-skills h2 {
-      margin-bottom: 8px;
+      margin-bottom: 0;
     }
 
     &.section-footer p {
@@ -195,6 +194,7 @@ div[class^="section-wrapper-"] {
 .skill-group {
   @extend %pseudo-grid-cell;
   width: 292px;
+  margin: 0 6px;
 }
 
 .skill-sublist {
@@ -217,6 +217,7 @@ $work-example-item-height: 161px;
   position: relative;
   width: $work-example-item-width;
   height: $work-example-item-height;
+  margin: 8px 6px;
   box-shadow: 0 0 10px 0 rgba(#000, 0.5);
 
   &,
