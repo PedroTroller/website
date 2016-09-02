@@ -13,11 +13,21 @@
 
 %list-inline-stars {
   @extend .list-inline;
-  line-height: $line-height-base * 1.066666667;
   font-size: $font-size-base * 0.944444444;
+  line-height: 1.6;
 
-  li::before {
-    content: "✩ ";
+  > li {
+    padding: {
+      left: 3px;
+      right: 3px;
+    }
+
+    &::before {
+      content: "✩";
+      margin-right: 3px;
+      vertical-align: 1px;
+      font-size: 0.9em;
+    }
   }
 }
 
@@ -115,7 +125,7 @@ div[class^="section-wrapper-"] {
       font-weight: $font-weight-light;
     }
 
-    a {
+    a:not([class]) {
       font-weight: $font-weight-bold;
     }
 
