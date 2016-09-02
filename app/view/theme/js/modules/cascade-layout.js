@@ -10,7 +10,7 @@
 $(window).on('load', function () {
   $('.skill-list').masonry({
     itemSelector: '.skill-group',
-    columnWidth:  304,
+    columnWidth:  292,
     fitWidth:     true,
   });
 });
