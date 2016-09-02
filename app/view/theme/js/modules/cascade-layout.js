@@ -8,15 +8,9 @@
  */
 
 window.addEventListener('load', function () {
-  var columnWidth = 304;
-  new Masonry(document.querySelector('.work-example-list'), {
-    itemSelector: '.work-example',
-    columnWidth:  columnWidth,
-    fitWidth:     true,
-  });
   new Masonry(document.querySelector('.skill-list'), {
     itemSelector: '.skill-group',
-    columnWidth:  columnWidth,
+    columnWidth:  304,
     fitWidth:     true,
   });
 });

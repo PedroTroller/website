@@ -13,8 +13,8 @@
 
 %list-inline-stars {
   @extend .list-inline;
+  line-height: $line-height-base * 1.066666667;
   font-size: $font-size-base * 0.944444444;
-  line-height: 1.6;
 
   > li {
     padding: {
@@ -201,47 +201,62 @@ div[class^="section-wrapper-"] {
  * Work example list
  */
 
+$work-example-item-width:  258px;
+$work-example-item-height: 161px;
+
 .work-example-list {
   @extend %pseudo-grid;
 }
 
 .work-example {
-  @extend %pseudo-grid-cell, %custom-panel;
+  @extend %pseudo-grid-cell;
+  position: relative;
+  width: $work-example-item-width;
+  height: $work-example-item-height;
+  box-shadow: 0 0 10px 0 rgba(#000, 0.5);
+
+  &,
+  > * {
+    border-radius: $border-radius-large;
+  }
 }
 
-.work-example-title-wrapper {
-  @extend .panel-heading;
-}
+.work-example-details-wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#000, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s;
 
-.work-example-title {
-  @extend .panel-title;
-}
-
-.work-example-body {
-  @extend .panel-body;
-  font-size: $font-size-base * 0.888888889;
-
-  *:last-child {
-    margin-bottom: 0;
+  .work-example:hover & {
+    opacity: 1;
   }
 }
 
 .work-example-details {
-  @extend .list-group;
+  @extend %fully-centered;
+  width: 100%;
+  max-height: $work-example-item-height;
+  padding: 8px;
+  overflow: scroll;
 }
 
-.work-example-img,
-.work-example-tech {
-  @extend .list-group-item;
+.work-example-title {
+  margin-top: 0;
+  font-size: $font-size-base;
+}
+
+.work-example-description p {
+  margin-bottom: 8px;
+  font-weight: $font-weight-normal !important;
+  font-size: $font-size-base * 0.777777778;
 }
 
 .work-example-tech-list {
-  @extend .list-inline;
-}
-
-.work-example-tech-list-item {
-  @extend .label, .label-success;
-  font-size: $font-size-base * 0.777777778;
+  @extend %list-inline-stars;
+  font-size: $font-size-base * 0.722222222;
 }
 
 /*
