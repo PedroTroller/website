@@ -33,16 +33,11 @@ $(function () {
   });
 
   // Initialize smooth scroll
-  var smoothScrollOptions = {
+  smoothScroll.init({
     selector: '.menu-item-link',
     speed:    1500,
     offset:   10,
-  };
-  var hash   = smoothScroll.escapeCharacters(window.location.hash);
-  var toggle = document.querySelector('.menu-item-link[href="' + hash + '"]');
-  window.location.hash = '';
-  smoothScroll.animateScroll(hash, toggle, smoothScrollOptions);
-  smoothScroll.init(smoothScrollOptions);
+  });
 
   // Register scrollspy
   body.scrollspy({target: '#menu'});
