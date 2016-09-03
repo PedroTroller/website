@@ -1,9 +1,12 @@
 <ul class="skill-list">
     {% for skill_group in site.data.skills[page.lang] %}
         <li class="skill-group">
-            <h3 class="skill-group-title">{{ skill_group[0] }}</h3>
+            <h3 class="skill-group-title">
+                <span class="glyphicon glyphicon-{{ skill_group[1].icon }}"></span>
+                {{ skill_group[0] }}
+            </h3>
             <ul class="skill-sublist">
-                {% for skill in skill_group[1] %}
+                {% for skill in skill_group[1].skills %}
                     <li class="skill-sublist-item">{{ skill }}</li>
                 {% endfor %}
             </ul>

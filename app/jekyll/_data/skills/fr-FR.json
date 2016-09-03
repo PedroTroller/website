@@ -1,115 +1,148 @@
 {
-  "Langages": [
-    "PHP",
-    "Ruby",
-    "Java",
-    "ActionScript 3",
-    "SQL",
-    "HTML5",
-    "CSS 3",
-    "JavaScript (ES5)",
-    "Bash",
-    "PCRE"
-  ],
-  "Backend": [
-    "Symfony",
-    "Silex",
-    "Zend",
-    "MySQL",
-    "SQLite",
-    "Doctrine",
-    "Redis"
-  ],
-  "Frontend": [
-    "Twig",
-    "Smarty",
-    "Sass",
-    "Bootstrap",
-    "Bourbon & Co.",
-    "Materialize",
-    "OOCSS",
-    "Photoshop",
-    "jQuery",
-    "SEO naturelle",
-    "Accessibilité"
-  ],
-  "Applications": [
-    "Android SDK",
-    "Flash/Flex"
-  ],
-  "CMS": [
-    "WordPress",
-    "Bolt",
-    "ProcessWire",
-    "Joomla",
-    "Drupal",
-    "Magento",
-    "PrestaShop"
-  ],
-  "Testing": [
-    "PHPUnit",
-    "Peridot",
-    "phpspec",
-    "Codeception",
-    "Behat",
-    "RSpec"
-  ],
-  "DevOps": [
-    "Composer",
-    "npm",
-    "Bower",
-    "Bundler",
-    "Robo",
-    "Gulp",
-    "Rake",
-    "Git",
-    "GitHub Flow",
-    "Capistrano",
-    "Docker",
-    "VirtualBox",
-    "Vagrant",
-    "Ansible",
-    "Heroku",
-    "Docker Cloud",
-    "AWS",
-    "Travis",
-    "Coveralls",
-    "Codacy"
-  ],
-  "Documentation": [
-    "PHPDoc",
-    "JSDoc",
-    "YARD",
-    "Markdown",
-    "reStructuredText",
-    "ApiGen",
-    "Sphinx",
-    "MkDocs"
-  ],
-  "Systèmes et réseaux": [
-    "Modèle OSI",
-    "Protocoles web",
-    "Architectures réseaux/matérielles",
-    "Administration Linux/Windows",
-    "Active Directory",
-    "Apache",
-    "Nginx",
-    "Bind",
-    "OpenSSH",
-    "GPG",
-    "Samba"
-  ],
-  "Bonnes pratiques": [
-    "Design patterns (GoF, PoEAA)",
-    "SOLID",
-    "DRY",
-    "12 Factor",
-    "Microservices",
-    "TDD/BDD"
-  ],
-  "Bureautique": [
-    "Suite Office",
-    "Outlook",
-    "Tunderbird"
-  ]
+  "Langages": {
+    "icon": "globe",
+    "skills": [
+      "PHP",
+      "Ruby",
+      "Java",
+      "ActionScript 3",
+      "SQL",
+      "HTML5",
+      "CSS 3",
+      "JavaScript (ES5)",
+      "Bash",
+      "PCRE"
+    ]
+  },
+  "Backend": {
+    "icon": "hdd",
+    "skills": [
+      "Symfony",
+      "Silex",
+      "Zend",
+      "MySQL",
+      "SQLite",
+      "Doctrine",
+      "Redis"
+    ]
+  },
+  "Frontend": {
+    "icon": "eye-open",
+    "skills": [
+      "Twig",
+      "Smarty",
+      "Sass",
+      "Bootstrap",
+      "Bourbon & Co.",
+      "Materialize",
+      "OOCSS",
+      "Photoshop",
+      "jQuery",
+      "SEO naturelle",
+      "Accessibilité"
+    ]
+  },
+  "Applications": {
+    "icon": "phone",
+    "skills": [
+      "Android SDK",
+      "Flash/Flex"
+    ]
+  },
+  "CMS": {
+    "icon": "dashboard",
+    "skills": [
+      "WordPress",
+      "Bolt",
+      "ProcessWire",
+      "Joomla",
+      "Drupal",
+      "Magento",
+      "PrestaShop"
+    ]
+  },
+  "Testing": {
+    "icon": "check",
+    "skills": [
+      "PHPUnit",
+      "Peridot",
+      "phpspec",
+      "Codeception",
+      "Behat",
+      "RSpec"
+    ]
+  },
+  "DevOps": {
+    "icon": "cog",
+    "skills": [
+      "Composer",
+      "npm",
+      "Bower",
+      "Bundler",
+      "Robo",
+      "Gulp",
+      "Rake",
+      "Git",
+      "GitHub Flow",
+      "Capistrano",
+      "Docker",
+      "VirtualBox",
+      "Vagrant",
+      "Ansible",
+      "Heroku",
+      "Docker Cloud",
+      "AWS",
+      "Travis",
+      "Coveralls",
+      "Codacy"
+    ]
+  },
+  "Documentation": {
+    "icon": "pencil",
+    "skills": [
+      "PHPDoc",
+      "JSDoc",
+      "YARD",
+      "Markdown",
+      "reStructuredText",
+      "ApiGen",
+      "Sphinx",
+      "MkDocs"
+    ]
+  },
+  "Systèmes et réseaux": {
+    "icon": "cloud",
+    "skills": [
+      "Modèle OSI",
+      "Protocoles web",
+      "Architectures réseaux/matérielles",
+      "Administration Linux/Windows",
+      "Active Directory",
+      "Apache",
+      "Nginx",
+      "Bind",
+      "OpenSSH",
+      "GPG",
+      "Samba"
+    ]
+  },
+  "Bonnes pratiques": {
+    "icon": "thumbs-up",
+    "skills": [
+      "Design patterns (GoF, PoEAA)",
+      "SOLID",
+      "DRY",
+      "12 Factor",
+      "Microservices",
+      "TDD/BDD"
+    ]
+  },
+  "Bureautique": {
+    "icon": "floppy-disk",
+    "skills": [
+      "Suite Office",
+      "Outlook",
+      "Tunderbird"
+    ]
+  }
 }
