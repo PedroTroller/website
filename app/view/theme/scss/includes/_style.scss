@@ -11,6 +11,11 @@
  * Library
  */
 
+@mixin letter-spacing($spacing) {
+  letter-spacing: $spacing;
+  text-indent: $spacing;
+}
+
 %list-inline-stars {
   @extend .list-inline;
   line-height: $line-height-base * 1.066666667;
@@ -130,7 +135,7 @@ div[class^="section-wrapper-"] {
       @extend %font-special;
       margin-bottom: $line-height-computed;
       text-transform: uppercase;
-      letter-spacing: 0.25em;
+      @include letter-spacing(0.25em);
       font-size: $font-size-h2 * 1.25;
     }
 
@@ -245,7 +250,7 @@ div[class^="section-wrapper-"] {
 .header-title {
   @extend %font-special;
   line-height: $headings-line-height / 1.25;
-  letter-spacing: 0.5em;
+  @include letter-spacing(0.5em);
   font: {
     variant: small-caps;
     size: $font-size-base * 4;
@@ -254,7 +259,7 @@ div[class^="section-wrapper-"] {
 
 .header-subtitle {
   color: darken($color-base-white, 25%);
-  letter-spacing: 0.1em;
+  @include letter-spacing(0.1em);
   font-size: $font-size-base * 2;
 }
 
