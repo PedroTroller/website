@@ -41,6 +41,7 @@ var paths = {
           basePaths.vendor + '/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js',
           basePaths.vendor + '/smooth-scroll/dist/js/smooth-scroll.js',
           basePaths.vendor + '/wow/dist/wow.js',
+          basePaths.vendor + '/jquery-fittext/jquery.fittext.js',
           basePaths.src    + '/view/theme/js/modules/**/*.js',
         ],
       },
