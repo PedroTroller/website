@@ -291,9 +291,6 @@ div[class^="section-wrapper-"] {
  * Work example list
  */
 
-$work-example-item-width:  258px;
-$work-example-item-height: 161px;
-
 .work-example-list {
   @extend %pseudo-grid;
 }
@@ -351,13 +348,6 @@ $work-example-item-height: 161px;
 /*
  * Past job list
  */
-
-$timeline-line-width:        6px;
-$timeline-icon-width:        56px;
-$timeline-item-width:        400px;
-$timeline-item-width-mobile: 300px;
-$timeline-arrow-offset:      15px;
-$timeline-item-offset:       8px;
 
 .past-job-list-wrapper {
   position: relative;
