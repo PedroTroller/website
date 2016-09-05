@@ -20,7 +20,7 @@ $screen-xxs-max: $screen-xs-min - 1;
 
 %list-inline-stars {
   @extend .list-inline;
-  line-height: round($line-height-base * 1.066666667);
+  line-height: $line-height-base * 1.066666667;
   font-size: round($font-size-base * 0.944444444);
 
   > li {
@@ -110,8 +110,8 @@ body {
 }
 
 div[class^="section-wrapper-"] {
-  padding: 36px 24px 48px;
-  margin: 56px 0;
+  padding: 24px 16px 36px;
+  margin: 240px 0;
   background-color: rgba($gray-base, 0.6);
 
   &.section-wrapper-header {
@@ -138,7 +138,6 @@ div[class^="section-wrapper-"] {
       margin-bottom: $line-height-computed;
       text-transform: uppercase;
       @include letter-spacing(0.25em);
-      font-size: round($font-size-h2 * 1.25);
     }
 
     ul:not([class]) {
@@ -156,6 +155,10 @@ div[class^="section-wrapper-"] {
 
     &.section-intro  {
       max-width: 480px;
+    }
+
+    &.section-skills h2:not([class]) {
+      margin-bottom: round($line-height-computed / 2);
     }
 
     &.section-footer p {
@@ -253,10 +256,7 @@ div[class^="section-wrapper-"] {
   @extend %font-special;
   line-height: round($headings-line-height / 1.25);
   @include letter-spacing(0.5em);
-  font: {
-    variant: small-caps;
-    size: $font-size-base * 4;
-  }
+  font-variant: small-caps;
 }
 
 .header-subtitle {
@@ -284,12 +284,14 @@ div[class^="section-wrapper-"] {
 }
 
 .skill-group-title {
+  margin-bottom: round($line-height-computed / 2.5);
+
   .glyphicon {
     font-size: 0.7em;
   }
 
   @media (max-width: $screen-xxs-max) {
-    font-size: round($font-size-h3 * 0.838709677);
+    font-size: round($font-size-h3 * 0.923076923);
   }
 }
 
