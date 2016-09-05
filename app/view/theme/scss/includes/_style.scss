@@ -20,8 +20,8 @@ $screen-xxs-max: $screen-xs-min - 1px;
 
 %list-inline-stars {
   @extend .list-inline;
-  line-height: $line-height-base * 1.066666667;
-  font-size: $font-size-base * 0.944444444;
+  line-height: round($line-height-base * 1.066666667);
+  font-size: round($font-size-base * 0.944444444);
 
   > li {
     padding: {
@@ -138,7 +138,7 @@ div[class^="section-wrapper-"] {
       margin-bottom: $line-height-computed;
       text-transform: uppercase;
       @include letter-spacing(0.25em);
-      font-size: $font-size-h2 * 1.25;
+      font-size: round($font-size-h2 * 1.25);
     }
 
     ul:not([class]) {
@@ -160,7 +160,7 @@ div[class^="section-wrapper-"] {
 
     &.section-footer p {
       margin-bottom: 0;
-      font-size: $font-size-base * 0.777777778;
+      font-size: round($font-size-base * 0.777777778);
     }
   }
 }
@@ -210,7 +210,7 @@ div[class^="section-wrapper-"] {
   color: $color-base-white;
   font: {
     weight: $font-weight-light;
-    size: $font-size-base * 0.888888889;
+    size: round($font-size-base * 0.888888889);
   }
 
   &:hover,
@@ -251,7 +251,7 @@ div[class^="section-wrapper-"] {
 
 .header-title {
   @extend %font-special;
-  line-height: $headings-line-height / 1.25;
+  line-height: round($headings-line-height / 1.25);
   @include letter-spacing(0.5em);
   font: {
     variant: small-caps;
@@ -263,6 +263,10 @@ div[class^="section-wrapper-"] {
   color: darken($color-base-white, 25%);
   @include letter-spacing(0.1em);
   font-size: $font-size-base * 2;
+
+  @media (max-width: $screen-xxs-max) {
+    font-size: round($font-size-base * 1.6);
+  }
 }
 
 /*
@@ -279,8 +283,14 @@ div[class^="section-wrapper-"] {
   margin: 0 6px;
 }
 
-.skill-group-title .glyphicon {
-  font-size: 0.7em;
+.skill-group-title {
+  .glyphicon {
+    font-size: 0.7em;
+  }
+
+  @media (max-width: $screen-xxs-max) {
+    font-size: round($font-size-h3 * 0.838709677);
+  }
 }
 
 .skill-sublist {
@@ -337,12 +347,12 @@ div[class^="section-wrapper-"] {
 .work-example-description p {
   margin-bottom: 8px;
   font-weight: $font-weight-normal !important;
-  font-size: $font-size-base * 0.777777778;
+  font-size: round($font-size-base * 0.777777778);
 }
 
 .work-example-tech-list {
   @extend %list-inline-stars;
-  font-size: $font-size-base * 0.722222222;
+  font-size: round($font-size-base * 0.722222222);
 }
 
 /*
@@ -365,7 +375,7 @@ div[class^="section-wrapper-"] {
     background-color: rgba($panel-bg, 0.5);
 
     @media (max-width: $screen-xs-max) {
-      left: $timeline-icon-width / 2;
+      left: round($timeline-icon-width / 2);
     }
   }
 }
@@ -384,7 +394,7 @@ div[class^="section-wrapper-"] {
   border-radius: 50%;
 
   @media (max-width: $screen-xs-max) {
-    left: $timeline-icon-width / 2;
+    left: round($timeline-icon-width / 2);
   }
 }
 
@@ -398,7 +408,7 @@ div[class^="section-wrapper-"] {
   width: $timeline-item-width;
   margin: {
     bottom: 0;
-    left: calc(50% + #{$timeline-icon-width / 2 + $timeline-arrow-offset + $timeline-item-offset});
+    left: calc(50% + #{round($timeline-icon-width / 2) + $timeline-arrow-offset + $timeline-item-offset});
   }
   color: $gray-dark;
 
@@ -417,7 +427,7 @@ div[class^="section-wrapper-"] {
 
   @media (min-width: $screen-sm-min) {
     .past-job-list-item:nth-child(even) & {
-      margin-left: calc(50% - #{$timeline-icon-width / 2 + $timeline-arrow-offset + $timeline-item-offset + $timeline-item-width});
+      margin-left: calc(50% - #{round($timeline-icon-width / 2) + $timeline-arrow-offset + $timeline-item-offset + $timeline-item-width});
 
       &::before {
         left: auto;
@@ -430,7 +440,7 @@ div[class^="section-wrapper-"] {
       }
 
       @media (max-width: $screen-sm-max) {
-        margin-left: calc(50% - #{$timeline-icon-width / 2 + $timeline-arrow-offset + $timeline-item-offset + $timeline-item-width-mobile});
+        margin-left: calc(50% - #{round($timeline-icon-width / 2) + $timeline-arrow-offset + $timeline-item-offset + $timeline-item-width-mobile});
       }
     }
   }
@@ -451,11 +461,15 @@ div[class^="section-wrapper-"] {
 
 .past-job-title {
   @extend .panel-title;
+
+  @media (max-width: $screen-xxs-max) {
+    font-size: round($font-size-base * 1.055555556);
+  }
 }
 
 .past-job-body {
   @extend .panel-body;
-  font-size: $font-size-base * 0.888888889;
+  font-size: round($font-size-base * 0.888888889);
 
   p {
     margin-bottom: 10px;
@@ -474,7 +488,7 @@ div[class^="section-wrapper-"] {
       display: block;
       margin: {
         right: 0;
-        bottom: 6px;
+        bottom: 8px;
       }
       font-size: $font-size-base;
     }
