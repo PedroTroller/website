@@ -132,6 +132,7 @@
       "Design patterns (GoF, PoEAA)",
       "SOLID",
       "DRY",
+      "PSR",
       "12 Factor",
       "Microservices",
       "TDD/BDD"
