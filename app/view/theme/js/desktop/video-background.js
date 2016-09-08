@@ -11,7 +11,8 @@
  * Executes once the YouTube embed API is loaded.
  */
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player('video-background', {
+  var videoSelector = 'video-background';
+  player = new YT.Player(videoSelector, {
     videoId: 'NZlfxWMr7nc',
     playerVars: {
       controls:        0,
@@ -26,8 +27,13 @@ function onYouTubeIframeAPIReady() {
       start:           55,
     },
     events: {
-      onReady: function(e) {
+      onReady: function (e) {
         e.target.mute();
+      },
+      onStateChange: function (e) {
+        if (e.data === YT.PlayerState.PLAYING) {
+          document.getElementById(videoSelector).style.opacity = 1;
+        }
       },
     },
   });

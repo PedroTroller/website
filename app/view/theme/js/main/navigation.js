@@ -8,34 +8,40 @@
  */
 
 $(function () {
-  // Fetch and enrich menu element
+  // Fetch menu reference
   var menu = $('#menu');
+
+  /**
+   * Toggles the `visible` class on the menu.
+   */
   menu.toggle = function () {
     this.toggleClass('visible');
   };
-  menu.isVisible = function () {
-    return this.hasClass('visible');
-  };
+
+  /**
+   * Removes the `visible` class from the menu if it has it.
+   */
+  menu.hide = function () {
+    if (this.hasClass('visible')) {
+      this.removeClass('visible');
+    }
+  }
 
   // Register menu togglers
   $('#menu-btn').on('click', function (e) {
     menu.toggle();
   });
   $('#page').on('click', function (e) {
-    if (menu.isVisible()) {
-      menu.toggle();
-    }
+    menu.hide();
   });
   $('a[href^="#"]').on('click', function (e) {
     e.preventDefault();
     smoothScroll.animateScroll($($(this).attr('href'))[0], this, {speed: 1500});
-    if (menu.isVisible()) {
-      menu.toggle();
-    }
+    menu.hide();
   });
   $(document).on('keyup', function (e) {
     if (e.which === 27) {
-      menu.toggle();
+      menu.hide();
     }
   });
 

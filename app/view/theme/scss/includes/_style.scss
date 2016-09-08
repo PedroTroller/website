@@ -172,6 +172,8 @@ body {
   min-width: 100%;
   min-height: 56.25vw;
   border: 0;
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 .header-wrapper {

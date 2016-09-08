@@ -35,6 +35,10 @@ var paths = {
     scss: basePaths.src + '/view/theme/scss/**/*.scss',
     js: {
       modules: {
+        loader: [
+          basePaths.vendor + '/mobile-detect/mobile-detect.js',
+          basePaths.src    + '/view/theme/js/loader/*.js',
+        ],
         main: [
           basePaths.vendor + '/jquery/dist/jquery.js',
           basePaths.vendor + '/jquery-fittext/jquery.fittext.js',
@@ -42,8 +46,11 @@ var paths = {
           basePaths.vendor + '/wow/dist/wow.js',
           basePaths.vendor + '/smooth-scroll/dist/js/smooth-scroll.js',
           basePaths.vendor + '/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js',
-          basePaths.src    + '/view/theme/js/modules/**/*.js',
+          basePaths.src    + '/view/theme/js/main/*.js',
         ],
+        desktop: [
+          basePaths.src + '/view/theme/js/desktop/*.js',
+        ]
       },
       glob: basePaths.src + '/view/theme/js/**/*.js',
     },
