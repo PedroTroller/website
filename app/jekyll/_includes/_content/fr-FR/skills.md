@@ -1,2 +1,3 @@
-<h2>Compétences</h2>
+## Compétences
+
 {% include skill_list.html %}

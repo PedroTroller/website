@@ -4,6 +4,7 @@ keep_files:
   - vendor
 kramdown:
   auto_ids: false
+  input: kramdown
 collections:
   pages:
     output: true

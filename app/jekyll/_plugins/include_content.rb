@@ -25,10 +25,13 @@ module Jekyll
         @@CONTENT_FORMATS.each do |file_ext|
           full_path = "#{include_path}/#{partial_path}.#{file_ext}"
           if File.exist?(full_path)
-            content = File.read(full_path, site.file_read_opts)
+            content = site.liquid_renderer
+              .file(full_path)
+              .parse(File.read(full_path, site.file_read_opts))
+              .render!(context)
             case file_ext
             when 'html'
-              return site.liquid_renderer.file(full_path).parse(content).render!(context)
+              return content
             when 'md'
               return site.find_converter_instance(Jekyll::Converters::Markdown).convert(content)
             end

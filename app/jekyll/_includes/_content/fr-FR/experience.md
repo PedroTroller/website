@@ -1,2 +1,3 @@
-<h2>Expérience</h2>
+## Expérience
+
 {% include experience_list.html %}
