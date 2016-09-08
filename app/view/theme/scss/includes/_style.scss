@@ -250,6 +250,11 @@ body {
   background-color: $gray-darker;
   transition: left $menu-open-duration;
 
+  hr {
+    margin: 22px 0 16px;
+    opacity: 0.5;
+  }
+
   &.visible {
     @extend %lightly-shadowed;
     left: 0;
@@ -278,6 +283,11 @@ body {
     color: $link-color !important;
     text-shadow: 0 1px 3px rgba($gray-base, 0.5);
   }
+}
+
+.github-icon {
+  margin-right: 6px;
+  vertical-align: -3px;
 }
 
 /*

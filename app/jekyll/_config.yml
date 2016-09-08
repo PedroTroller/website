@@ -13,6 +13,7 @@ sections:
   - skills
   - work
   - experience
+github_url: https://github.com/fabschurt
 defaults:
   -
     scope:

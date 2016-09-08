@@ -3,5 +3,6 @@
   "description": "CV en ligne de Fabien Schurter, développeur web.",
   "header_title": "Fabien Schurter",
   "header_subtitle": "Développeur web",
-  "click_to_open_project": "Cliquez pour ouvrir le projet dans un nouvel onglet"
+  "click_to_open_project": "Cliquez pour ouvrir le projet dans un nouvel onglet",
+  "github_profile": "GitHub"
 }
