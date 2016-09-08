@@ -172,16 +172,20 @@ body {
   margin: 0;
 }
 
+.header-title > * {
+  display: block;
+}
+
+.header-subtitle {
+  margin-top: 16px;
+}
+
 .section-wrapper-intro,
 .section-wrapper-skills,
 .section-wrapper-work,
 .section-wrapper-experience {
   @extend %transparent-container;
   margin: 50vh 0;
-}
-
-.section-wrapper-intro {
-  margin-top: 0;
 }
 
 .section-intro,
