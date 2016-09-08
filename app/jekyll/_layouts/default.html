@@ -18,10 +18,33 @@
     </head>
     <body>
         <!-- Content -->
-        {% include menu.html %}
+        <div class="video-background-wrapper">
+            <div class="video-background" id="video-background"></div>
+        </div>
+        <button class="menu-btn" id="menu-btn" title="{{ i18n.click_to_open_menu }}">
+            <span class="menu-btn-icon"></span>
+        </button>
+        <div class="menu" id="menu">
+            <nav>
+                <ul class="menu-items nav">
+                    {% for menu_item in site.data.nav[page.lang].menu %}
+                        <li class="menu-item">
+                            <a href="{{ menu_item[1] }}" class="menu-item-link">{{ menu_item[0] }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
         <div class="page" id="page">
-            <div class="video-background-wrapper">
-                <div class="video-background" id="video-background"></div>
+            <div class="header-wrapper">
+                <div class="header">
+                    <header>
+                        <h1 class="header-title">
+                            {{ i18n.header_title }}<br />
+                            <small class="header-subtitle">{{ i18n.header_subtitle }}</small>
+                        </h1>
+                    </header>
+                </div>
             </div>
             {% for section in site.sections %}
                 <div class="section-wrapper-{{ section }}">
@@ -32,6 +55,11 @@
                     </div>
                 </div>
             {% endfor %}
+            <div class="footer">
+                <footer>
+                    <p>© 2016 {{ i18n.header_title }}</p>
+                </footer>
+            </div>
         </div>
 
         <!-- Assets -->

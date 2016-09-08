@@ -9,12 +9,10 @@ collections:
     output: true
     permalink: /:path
 sections:
-  - header
   - intro
   - skills
   - work
   - experience
-  - footer
 defaults:
   -
     scope:

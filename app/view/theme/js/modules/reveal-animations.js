@@ -8,7 +8,7 @@
  */
 
 $(function () {
-  $('section').addClass('wow fadeIn');
+  $('.header-title, section, footer').addClass('wow fadeIn');
   new WOW().init({
     offset: 10,
     live:   false,

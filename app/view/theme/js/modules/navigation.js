@@ -8,27 +8,27 @@
  */
 
 $(function () {
-  // Fetch and enrich the body
-  var body = $('body').eq(0);
-  body.toggleMenu = function () {
-    this.toggleClass('menu-in');
+  // Fetch and enrich menu element
+  var menu = $('#menu');
+  menu.toggle = function () {
+    this.toggleClass('visible');
   };
-  body.hasMenu = function () {
-    return body.hasClass('menu-in');
+  menu.isVisible = function () {
+    return this.hasClass('visible');
   };
 
   // Register menu togglers
   $('#menu-btn').on('click', function (e) {
-    body.toggleMenu();
+    menu.toggle();
   });
   $('#page').on('click', function (e) {
-    if (body.hasMenu()) {
-      body.toggleMenu();
+    if (menu.isVisible()) {
+      menu.toggle();
     }
   });
   $(document).on('keyup', function (e) {
     if (e.which === 27) {
-      body.toggleMenu();
+      menu.toggle();
     }
   });
 
@@ -40,5 +40,5 @@ $(function () {
   });
 
   // Register scrollspy
-  body.scrollspy({target: '#menu'});
+  $('body').scrollspy({target: '#menu'});
 });

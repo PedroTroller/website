@@ -8,10 +8,10 @@
  */
 
 $(function () {
-  $('section > h1').each(function () {
+  $('h1').each(function () {
     $(this).fitText(0.75, {maxFontSize: $(this).css('font-size')});
   });
-  $('section > h2').each(function () {
+  $('h2').each(function () {
     $(this).fitText(1.0, {maxFontSize: $(this).css('font-size')});
   });
 });

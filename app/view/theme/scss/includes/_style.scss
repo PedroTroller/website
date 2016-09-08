@@ -20,14 +20,11 @@ $screen-xxs-max: $screen-xs-min - 1;
 
 %list-inline-stars {
   @extend .list-inline;
-  line-height: $line-height-base * 1.066666667;
-  font-size: round($font-size-base * 0.944444444);
+  line-height: 1.6;
+  font-size: 17px;
 
   > li {
-    padding: {
-      left: 3px;
-      right: 3px;
-    }
+    padding: 0 4px;
 
     &::before {
       content: "✩";
@@ -35,13 +32,6 @@ $screen-xxs-max: $screen-xs-min - 1;
       vertical-align: 1px;
       font-size: 0.9em;
     }
-  }
-}
-
-%font-special {
-  font: {
-    weight: $font-weight-normal;
-    family: "Scope One", serif;
   }
 }
 
@@ -56,6 +46,11 @@ $screen-xxs-max: $screen-xs-min - 1;
 %pseudo-grid-cell {
   display: inline-block;
   vertical-align: top;
+}
+
+%transparent-container {
+  padding: 36px 16px;
+  background-color: rgba($gray-base, 0.6);
 }
 
 %horizontally-centered {
@@ -77,10 +72,6 @@ $screen-xxs-max: $screen-xs-min - 1;
   transform: translate(-50%, -50%);
 }
 
-%lightly-shadowed {
-  box-shadow: 0 0 10px 0 rgba($gray-base, 0.5);
-}
-
 %vertically-scrollable {
   overflow: {
     x: hidden;
@@ -88,83 +79,132 @@ $screen-xxs-max: $screen-xs-min - 1;
   }
 }
 
+%lightly-shadowed {
+  box-shadow: 0 0 10px 0 rgba($gray-base, 0.5);
+}
+
+%font-special {
+  font: {
+    weight: $font-weight-normal;
+    family: "Scope One", serif;
+  }
+}
+
+/*
+ * Base styles
+ */
+
+h1 {
+  @extend %font-special;
+  line-height: 0.9;
+  @include letter-spacing(0.5em);
+  font-variant: small-caps;
+
+  small {
+    color: darken($color-base-white, 25%);
+    @include letter-spacing(0.1em);
+    font-size: 36px;
+
+    @media (max-width: $screen-xxs-max) {
+      font-size: 28px;
+    }
+  }
+}
+
+h2 {
+  @extend %font-special;
+  margin-bottom: $line-height-computed;
+  text-transform: uppercase;
+  @include letter-spacing(0.25em);
+}
+
+ul:not([class]) {
+  @extend %list-inline-stars;
+}
+
+p,
+li {
+  font-weight: $font-weight-light;
+}
+
+a {
+  font-weight: $font-weight-bold;
+}
+
 /*
  * Base containers
  */
 
 body {
-  position: relative;
+  height: 100%;
   background-color: $gray-base;
-  overflow-x: hidden;
+  text-align: center;
 }
 
 .page {
-  position: relative;
-  left: 0;
   overflow: hidden;
-  transition: left $menu-open-duration;
+}
 
-  body.menu-in & {
-    left: $menu-width;
+.video-background-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+}
+
+.video-background {
+  @extend %fully-centered;
+  width: 177.77777778vh;
+  height: 100%;
+  min-width: 100%;
+  min-height: 56.25vw;
+  border: 0;
+}
+
+.header-wrapper {
+  position: relative;
+  height: 100vh;
+}
+
+.header {
+  @extend %transparent-container, %vertically-centered;
+  width: 100%;
+  margin: 0;
+}
+
+.section-wrapper-intro,
+.section-wrapper-skills,
+.section-wrapper-work,
+.section-wrapper-experience {
+  @extend %transparent-container;
+  margin: 240px 0;
+}
+
+.section-intro,
+.section-skills,
+.section-work,
+.section-experience {
+  margin: {
+    left: auto;
+    right: auto;
   }
 }
 
-div[class^="section-wrapper-"] {
-  padding: 24px 16px 36px;
-  margin: 240px 0;
-  background-color: rgba($gray-base, 0.6);
+.section-intro  {
+  max-width: 480px;
+}
 
-  &.section-wrapper-header {
-    padding-top: 64px;
-  }
+.section-skills h2:not([class]) {
+  margin-bottom: 10px;
+}
 
-  &.section-wrapper-footer {
-    padding: 24px;
-  }
+.footer {
+  @extend %transparent-container;
+  padding: 24px;
 
-  &:last-child {
+  p {
     margin-bottom: 0;
-  }
-
-  div[class^="section-"] {
-    margin: {
-      left: auto;
-      right: auto;
-    }
-    text-align: center;
-
-    h2:not([class]) {
-      @extend %font-special;
-      margin-bottom: $line-height-computed;
-      text-transform: uppercase;
-      @include letter-spacing(0.25em);
-    }
-
-    ul:not([class]) {
-      @extend %list-inline-stars;
-    }
-
-    p,
-    li {
-      font-weight: $font-weight-light;
-    }
-
-    a {
-      font-weight: $font-weight-bold;
-    }
-
-    &.section-intro  {
-      max-width: 480px;
-    }
-
-    &.section-skills h2:not([class]) {
-      margin-bottom: round($line-height-computed / 2);
-    }
-
-    &.section-footer p {
-      margin-bottom: 0;
-      font-size: round($font-size-base * 0.777777778);
-    }
+    font-size: 14px;
   }
 }
 
@@ -194,26 +234,28 @@ div[class^="section-wrapper-"] {
   left: -$menu-width;
   z-index: 100;
   width: $menu-width;
-  height: 100%;
+  height: 100vh;
   padding: 16px;
+  overflow: hidden;
   background-color: $gray-darker;
-  box-shadow: inset -1px 0 10px 0 rgba($gray-base, 0.5);
   transition: left $menu-open-duration;
 
-  body.menu-in & {
+  &.visible {
+    @extend %lightly-shadowed;
     left: 0;
   }
 }
 
 .menu-items {
   @extend .nav-pills, .nav-stacked; // The `.nav` class is set in HTML directly, in order for `scrollspy.js` to work
+  text-align: left;
 }
 
 .menu-item-link {
   color: $color-base-white;
   font: {
     weight: $font-weight-light;
-    size: round($font-size-base * 0.888888889);
+    size: 16px;
   }
 
   &:hover,
@@ -229,47 +271,6 @@ div[class^="section-wrapper-"] {
 }
 
 /*
- * Full-screen video background
- */
-
-.video-background-wrapper {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -100;
-}
-
-.video-background {
-  @extend %fully-centered;
-  width: 177.77777778vh;
-  height: 100%;
-  min-width: 100%;
-  min-height: 56.25vw;
-  border: 0;
-}
-
-/*
- * Header
- */
-
-.header-title {
-  @extend %font-special;
-  line-height: round($headings-line-height / 1.25);
-  @include letter-spacing(0.5em);
-  font-variant: small-caps;
-}
-
-.header-subtitle {
-  color: darken($color-base-white, 25%);
-  @include letter-spacing(0.1em);
-  font-size: $font-size-base * 2;
-
-  @media (max-width: $screen-xxs-max) {
-    font-size: round($font-size-base * 1.6);
-  }
-}
-
-/*
  * Skill list
  */
 
@@ -279,19 +280,19 @@ div[class^="section-wrapper-"] {
 
 .skill-group {
   @extend %pseudo-grid-cell;
-  width: 280px;
-  margin: 0 6px;
+  width: 292px;
+  padding: 0 8px;
 }
 
 .skill-group-title {
-  margin-bottom: round($line-height-computed / 2.5);
+  margin-bottom: 11px;
 
   .glyphicon {
     font-size: 0.7em;
   }
 
   @media (max-width: $screen-xxs-max) {
-    font-size: round($font-size-h3 * 0.923076923);
+    font-size: 24px;
   }
 }
 
@@ -342,19 +343,19 @@ div[class^="section-wrapper-"] {
 }
 
 .work-example-title {
-  margin-top: 0;
+  margin: 0 0 11px;
   font-size: $font-size-base;
 }
 
 .work-example-description p {
   margin-bottom: 8px;
-  font-weight: $font-weight-normal !important;
-  font-size: round($font-size-base * 0.777777778);
+  font-weight: $font-weight-normal;
+  font-size: 14px;
 }
 
 .work-example-tech-list {
   @extend %list-inline-stars;
-  font-size: round($font-size-base * 0.722222222);
+  font-size: 13px;
 }
 
 /*
@@ -465,13 +466,13 @@ div[class^="section-wrapper-"] {
   @extend .panel-title;
 
   @media (max-width: $screen-xxs-max) {
-    font-size: round($font-size-base * 1.055555556);
+    font-size: 19px;
   }
 }
 
 .past-job-body {
   @extend .panel-body;
-  font-size: round($font-size-base * 0.888888889);
+  font-size: 16px;
 
   p {
     margin-bottom: 10px;
