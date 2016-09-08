@@ -1,7 +1,7 @@
 {
   "name": "fabschurt-cv",
   "description": "Fabien Schurter’s online CV.",
-  "license": "",
+  "license": "MIT",
   "authors": [
     {
       "name": "Fabien Schurter",
