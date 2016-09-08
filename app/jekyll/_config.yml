@@ -15,6 +15,7 @@ sections:
   - work
   - experience
 github_url: https://github.com/fabschurt
+copyright_year: '2016'
 defaults:
   -
     scope:
