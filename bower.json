@@ -15,9 +15,9 @@
   },
   "dependencies": {
     "bootstrap-sass": "^3.3",
-    "mobile-detect": "^1.3",
     "jquery": "^3.1",
     "jquery-fittext": "davatron5000/FitText.js#master",
+    "mobile-detect": "^1.3",
     "masonry": "^4.1",
     "animate.css": "^3.5",
     "wow": "matthieua/WOW#master",

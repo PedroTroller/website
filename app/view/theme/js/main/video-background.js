@@ -38,3 +38,19 @@ function onYouTubeIframeAPIReady() {
     },
   });
 }
+
+/**
+ * Adds a `<script>` tag at the end of the current document.
+ *
+ * @param {string} scriptUrl The URL of the JS file to be added
+ */
+document.appendScript = function (scriptUrl) {
+  var script = this.createElement('script');
+  script.src = scriptUrl;
+  this.body.appendChild(script);
+};
+
+// Conditionnally load YouTube API
+if (!(new MobileDetect(navigator.userAgent)).mobile()) {
+  document.appendScript('https://www.youtube.com/iframe_api');
+}
