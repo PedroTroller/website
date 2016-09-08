@@ -25,29 +25,7 @@
         <div class="video-background-wrapper">
             <div class="video-background" id="video-background"></div>
         </div>
-        <button class="menu-btn" id="menu-btn" title="{{ i18n.click_to_open_menu }}">
-            <span class="menu-btn-icon"></span>
-        </button>
-        <div class="menu" id="menu">
-            <nav>
-                <ul class="menu-items nav">
-                    {% for menu_item in site.data.nav[page.lang].menu %}
-                        <li class="menu-item">
-                            <a href="{{ menu_item[1] }}" class="menu-item-link">{{ menu_item[0] }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-                <hr />
-                <ul class="menu-items nav">
-                    <li class="menu-item">
-                        <a href="{{ site.github_url }}" class="menu-item-link" target="_blank">
-                            <img class="github-icon" src="{{ assets_url }}/img/icon-github.png" alt="" width="16" height="16" />
-                            {{ i18n.github_profile }}
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        {% include nav.html %}
         <div class="page" id="page">
             <div class="header-wrapper">
                 <div class="header">
