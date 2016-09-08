@@ -11,6 +11,8 @@ module Jekyll
   # The tag will search for partials in the `_content` subdirectory of the
   # include directory and render one of them, trying to load either an HTML or
   # Markdown file in order (and raising an exception if nothing is found).
+  #
+  # Target Markdown file(s) can contain Liquid tags, they’ll be parsed.
   class IncludeContentTag < Liquid::Tag
     @@CONTENT_SUBFOLDER = '_content'
     @@CONTENT_FORMATS   = ['html', 'md']

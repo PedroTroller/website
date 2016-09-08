@@ -1,6 +1,7 @@
 /.bundle/
 /vendor/
 /node_modules/
-/web/
+/web/*
 /app/jekyll/.jekyll-metadata
 /Gemfile.lock
+!.gitkeep
