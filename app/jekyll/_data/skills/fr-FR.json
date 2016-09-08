@@ -7,8 +7,6 @@
       "Java",
       "ActionScript 3",
       "SQL",
-      "HTML5",
-      "CSS 3",
       "JavaScript (ES5)",
       "Bash",
       "PCRE"
@@ -23,12 +21,15 @@
       "MySQL",
       "SQLite",
       "Doctrine",
-      "Redis"
+      "Redis",
+      "REST"
     ]
   },
   "Frontend": {
     "icon": "eye-open",
     "skills": [
+      "CSS 3",
+      "HTML5",
       "Twig",
       "Smarty",
       "Sass",
@@ -36,6 +37,7 @@
       "Bourbon & Co.",
       "Materialize",
       "OOCSS",
+      "Responsive design",
       "Photoshop",
       "jQuery",
       "SEO naturelle",
@@ -55,8 +57,7 @@
       "WordPress",
       "Bolt",
       "ProcessWire",
-      "Joomla",
-      "Drupal",
+      "Jekyll",
       "Magento",
       "PrestaShop"
     ]
@@ -69,7 +70,8 @@
       "phpspec",
       "Codeception",
       "Behat",
-      "RSpec"
+      "RSpec",
+      "Cucumber"
     ]
   },
   "DevOps": {
@@ -82,8 +84,8 @@
       "Robo",
       "Gulp",
       "Rake",
-      "Git",
-      "GitHub Flow",
+      "Git, GitHub Flow",
+      "Travis",
       "Capistrano",
       "Docker",
       "VirtualBox",
@@ -91,10 +93,7 @@
       "Ansible",
       "Heroku",
       "Docker Cloud",
-      "AWS",
-      "Travis",
-      "Coveralls",
-      "Codacy"
+      "AWS"
     ]
   },
   "Documentation": {
@@ -116,14 +115,7 @@
       "Modèle OSI",
       "Protocoles web",
       "Architectures réseaux/matérielles",
-      "Administration Linux/Windows",
-      "Active Directory",
-      "Apache",
-      "Nginx",
-      "Bind",
-      "OpenSSH",
-      "GPG",
-      "Samba"
+      "Administration Linux"
     ]
   },
   "Bonnes pratiques": {
@@ -132,18 +124,11 @@
       "Design patterns (GoF, PoEAA)",
       "SOLID",
       "DRY",
-      "PSR",
+      "Design by contract",
       "12 Factor",
-      "Microservices",
-      "TDD/BDD"
-    ]
-  },
-  "Bureautique": {
-    "icon": "floppy-disk",
-    "skills": [
-      "Suite Office",
-      "Outlook",
-      "Tunderbird"
+      "SOA/Microservices",
+      "TDD/BDD",
+      "PSR"
     ]
   }
 }
