@@ -78,6 +78,7 @@ gulp.task('jekyll', function (cb) {
       paths.src.jekyll.path,
       '--destination',
       paths.build.jekyll,
+      '--incremental',
     ],
     {
       stdio: 'inherit',
