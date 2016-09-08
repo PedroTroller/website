@@ -177,7 +177,11 @@ body {
 .section-wrapper-work,
 .section-wrapper-experience {
   @extend %transparent-container;
-  margin: 240px 0;
+  margin: 50vh 0;
+}
+
+.section-wrapper-intro {
+  margin-top: 0;
 }
 
 .section-intro,
