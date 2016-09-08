@@ -41,7 +41,7 @@ $(function () {
   });
   $(document).on('keyup', function (e) {
     if (e.which === 27) {
-      menu.hide();
+      menu.toggle();
     }
   });
 
