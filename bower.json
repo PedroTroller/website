@@ -16,10 +16,10 @@
   "dependencies": {
     "bootstrap-sass": "^3.3",
     "jquery": "^3.1",
+    "jquery-fittext": "davatron5000/FitText.js#master",
     "masonry": "^4.1",
-    "smooth-scroll": "cferdinandi/smooth-scroll#master",
     "animate.css": "^3.5",
     "wow": "matthieua/WOW#master",
-    "jquery-fittext": "davatron5000/FitText.js#master"
+    "smooth-scroll": "cferdinandi/smooth-scroll#master"
   }
 }
