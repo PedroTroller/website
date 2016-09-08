@@ -8,6 +8,6 @@
  */
 
 $(function () {
-  $('.header-title, .section-wrapper, footer').addClass('wow fadeIn');
+  $('.header-wrapper, [class^="section-wrapper-"], .footer').addClass('wow fadeIn');
   new WOW().init({live: false});
 });
