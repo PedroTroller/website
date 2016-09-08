@@ -143,9 +143,14 @@ a {
  * Base containers
  */
 
+html,
 body {
   height: 100%;
-  background-color: $gray-base;
+}
+
+body {
+  background: $gray-base url("#{$img-url}/bg.jpg") center center no-repeat fixed;
+  background-size: cover;
   text-align: center;
 }
 
@@ -268,7 +273,7 @@ body {
   .active & {
     background-color: darken($gray-darker, 2%) !important;
     box-shadow: inset 0 1px 3px rgba($gray-base, 0.5), 0 1px 0 rgba(#fff, 0.1);
-    color: darken($color-base-white, 5%);
+    color: $link-color !important;
     text-shadow: 0 1px 3px rgba($gray-base, 0.5);
   }
 }
