@@ -53,6 +53,14 @@ $screen-xxs-max: $screen-xs-min - 1;
   background-color: rgba($gray-base, 0.6);
 }
 
+%narrow-section {
+  max-width: 480px;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
 %horizontally-centered {
   position: absolute;
   left: 50%;
@@ -180,26 +188,13 @@ body {
   margin-top: 16px;
 }
 
-.section-wrapper-intro,
-.section-wrapper-skills,
-.section-wrapper-work,
-.section-wrapper-experience {
+[class^="section-wrapper-"] {
   @extend %transparent-container;
   margin: 50vh 0;
 }
 
-.section-intro,
-.section-skills,
-.section-work,
-.section-experience {
-  margin: {
-    left: auto;
-    right: auto;
-  }
-}
-
-.section-intro  {
-  max-width: 480px;
+.section-intro {
+  @extend %narrow-section;
 }
 
 .section-skills h2:not([class]) {
