@@ -26,17 +26,17 @@ $(function () {
       menu.toggle();
     }
   });
+  $('a[href^="#"]').on('click', function (e) {
+    e.preventDefault();
+    smoothScroll.animateScroll($($(this).attr('href'))[0], this, {speed: 1500});
+    if (menu.isVisible()) {
+      menu.toggle();
+    }
+  });
   $(document).on('keyup', function (e) {
     if (e.which === 27) {
       menu.toggle();
     }
-  });
-
-  // Initialize smooth scroll
-  smoothScroll.init({
-    selector: '.menu-item-link',
-    speed:    1500,
-    offset:   10,
   });
 
   // Register scrollspy

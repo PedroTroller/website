@@ -8,9 +8,6 @@
  */
 
 $(function () {
-  $('.header-title, section, footer').addClass('wow fadeIn');
-  new WOW().init({
-    offset: 10,
-    live:   false,
-  });
+  $('.header-title, .section-wrapper, footer').addClass('wow fadeIn');
+  new WOW().init({live: false});
 });
