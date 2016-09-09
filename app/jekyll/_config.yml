@@ -2,6 +2,7 @@ timezone: Europe/Paris
 keep_files:
   - assets
   - vendor
+  - .gitkeep
 kramdown:
   auto_ids: false
   input: kramdown
