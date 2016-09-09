@@ -87,6 +87,12 @@ $screen-xxs-max: $screen-xs-min - 1;
   }
 }
 
+%full-fixed {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 %lightly-shadowed {
   box-shadow: 0 0 10px 0 rgba($gray-base, 0.5);
 }
@@ -153,25 +159,20 @@ footer p {
  * Base containers
  */
 
-html,
 body {
-  height: 100%;
-}
+  background-color: $gray-base;
 
-body {
-  background: $gray-base url("#{$img-url}/bg.jpg") center center no-repeat fixed;
-  background-size: cover;
-  text-align: center;
-}
-
-.page {
-  overflow: hidden;
+  &::before {
+    @extend %full-fixed;
+    content: "";
+    z-index: -200;
+    background: url("#{$img-url}/bg.jpg") center center no-repeat;
+    background-size: cover;
+  }
 }
 
 .video-background-wrapper {
-  position: fixed;
-  width: 100%;
-  height: 100%;
+  @extend %full-fixed;
   z-index: -100;
 }
 
@@ -184,6 +185,10 @@ body {
   border: 0;
   opacity: 0;
   transition: opacity 1s;
+}
+
+.page {
+  text-align: center;
 }
 
 .header-wrapper {
@@ -207,7 +212,7 @@ body {
 
 [class^="section-wrapper-"] {
   @extend %transparent-container;
-  margin: 50vh 0;
+  margin: 200px 0;
 }
 
 .section-intro {
@@ -220,7 +225,7 @@ body {
 
 .footer {
   @extend %transparent-container;
-  padding: 24px;
+  padding: 24px 0 22px;
 
   p {
     margin-bottom: 0;
@@ -254,26 +259,24 @@ body {
   left: -$menu-width;
   z-index: 100;
   width: $menu-width;
-  height: 100vh;
+  height: 100%;
   padding: 16px;
-  overflow: hidden;
   background-color: $gray-darker;
   transition: left $menu-open-duration;
-
-  hr {
-    margin: 22px 0 16px;
-    opacity: 0.5;
-  }
 
   &.visible {
     @extend %lightly-shadowed;
     left: 0;
   }
+
+  hr {
+    margin: 22px 0 16px;
+    opacity: 0.5;
+  }
 }
 
 .menu-items {
   @extend .nav-pills, .nav-stacked; // The `.nav` class is set in HTML directly, in order for `scrollspy.js` to work
-  text-align: left;
 }
 
 .menu-item-link {
@@ -506,7 +509,7 @@ body {
   font-size: 16px;
 
   p {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 
     &:last-child {
       margin-bottom: 0;
@@ -522,7 +525,7 @@ body {
       display: block;
       margin: {
         right: 0;
-        bottom: 8px;
+        bottom: 6px;
       }
       font-size: $font-size-base;
     }
