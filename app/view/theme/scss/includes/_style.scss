@@ -140,6 +140,16 @@ a {
 }
 
 /*
+ * Hide elements that will be revealed by WOW
+ */
+
+.header-title,
+[class^="section-wrapper-"] > *,
+footer p {
+  visibility: hidden;
+}
+
+/*
  * Base containers
  */
 
