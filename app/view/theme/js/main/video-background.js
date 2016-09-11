@@ -10,8 +10,7 @@
 /**
  * Executes once the YouTube embed API is loaded.
  */
-function onYouTubeIframeAPIReady()
-{
+function onYouTubeIframeAPIReady() {
   var videoSelector = 'video-background';
   player = new YT.Player(videoSelector, {
     videoId: 'NZlfxWMr7nc',
