@@ -160,6 +160,7 @@ footer p {
  */
 
 body {
+  @extend %vertically-scrollable;
   background-color: $gray-base;
 
   &::before {
