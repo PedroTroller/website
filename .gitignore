@@ -3,5 +3,4 @@
 /node_modules/
 /web/*
 /app/jekyll/.jekyll-metadata
-/Gemfile.lock
 !.gitkeep
