@@ -83,7 +83,7 @@ $screen-xxs-max: $screen-xs-min - 1;
 %vertically-scrollable {
   overflow: {
     x: hidden;
-    y: scroll;
+    y: auto;
   }
 }
 
@@ -117,7 +117,7 @@ h1 {
   small {
     @include letter-spacing(0.1em);
     color: darken($color-base-white, 25%);
-    font-size: 36px;
+    font-size: 38px;
 
     @media (max-width: $screen-xxs-max) {
       font-size: 28px;
@@ -240,12 +240,13 @@ body {
 .menu-btn {
   @extend .btn, .btn-default, %lightly-shadowed;
   position: fixed;
-  top: 8px;
-  right: 8px;
+  top: 12px;
+  right: 12px;
   z-index: 100;
   border: 0;
   line-height: 1;
-  font-size: $font-size-base;
+  font-size: 24px;
+  opacity: 0.9;
 }
 
 .menu-btn-icon {
@@ -420,6 +421,10 @@ body {
 .past-job-list-item {
   position: relative;
   padding: 16px 0;
+
+  @media (max-width: $screen-xs-max) {
+    padding: 24px 0;
+  }
 }
 
 .past-job-icon-wrapper {
