@@ -4,7 +4,7 @@
 <div class="menu" id="menu">
     <div class="menu-inner">
         <nav>
-            <ul class="menu-items nav">
+            <ul class="menu-items" id="main-nav">
                 {% for menu_item in site.data.nav[page.lang].menu %}
                     <li class="menu-item">
                         <a href="{{ menu_item[1] }}" class="menu-item-link">{{ menu_item[0] }}</a>
@@ -12,7 +12,7 @@
                 {% endfor %}
             </ul>
             <hr />
-            <ul class="menu-items nav">
+            <ul class="menu-items">
                 <li class="menu-item">
                     <a href="{{ site.github_url }}" class="menu-item-link" target="_blank">
                         <img class="github-icon" src="{{ assets_url }}/img/icon-github.png" alt="" width="16" height="16" />

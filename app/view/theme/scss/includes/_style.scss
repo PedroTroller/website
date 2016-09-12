@@ -282,7 +282,7 @@ body {
 }
 
 .menu-items {
-  @extend .nav-pills, .nav-stacked; // The `.nav` class is set in HTML directly, in order for `scrollspy.js` to work
+  @extend .nav, .nav-pills, .nav-stacked;
 }
 
 .menu-item-link {

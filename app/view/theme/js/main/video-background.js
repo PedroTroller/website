@@ -7,41 +7,45 @@
  * file that was distributed with this source code.
  */
 
-/**
- * Executes once the YouTube embed API is loaded.
- */
-function onYouTubeIframeAPIReady() {
+(function () {
   'use strict';
 
-  var videoSelector = 'video-background';
-  var player = new YT.Player(videoSelector, {
-    videoId: 'NZlfxWMr7nc',
-    playerVars: {
-      controls:        0,
-      disablekb:       1,
-      showinfo:        0,
-      cc_load_policty: 0,
-      iv_load_policy:  3,
-      modestbranding:  1,
-      rel:             0,
-      autoplay:        1,
-      loop:            1,
-      start:           55,
-    },
-    events: {
-      onReady: function (e) {
-        e.target.mute();
+  /**
+   * Executes once the YouTube embed API is loaded.
+   */
+  window.onYouTubeIframeAPIReady = function () {
+    var videoSelector = 'video-background';
+    var player = new YT.Player(videoSelector, {
+      videoId: 'NZlfxWMr7nc',
+      playerVars: {
+        controls:        0,
+        disablekb:       1,
+        showinfo:        0,
+        cc_load_policty: 0,
+        iv_load_policy:  3,
+        modestbranding:  1,
+        rel:             0,
+        autoplay:        1,
+        loop:            1,
+        start:           55,
       },
-      onStateChange: function (e) {
-        if (e.data === YT.PlayerState.PLAYING) {
-          document.getElementById(videoSelector).style.opacity = 1;
-        }
+      events: {
+        onReady: function (e) {
+          e.target.mute();
+        },
+        onStateChange: function (e) {
+          if (e.data === YT.PlayerState.PLAYING) {
+            document.getElementById(videoSelector).style.opacity = 1;
+          }
+        },
       },
-    },
-  });
-}
+    });
+  }
 
-// Conditionnally load YouTube API
-if (!(new MobileDetect(navigator.userAgent)).mobile()) {
-  document.appendScript('https://www.youtube.com/iframe_api');
-}
+  document.addEventListener('DOMContentLoaded', function () {
+    // Conditionnally load YouTube API
+    if (!(new MobileDetect(navigator.userAgent)).mobile()) {
+      document.appendScript('https://www.youtube.com/iframe_api');
+    }
+  });
+})();

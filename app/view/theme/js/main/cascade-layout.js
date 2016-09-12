@@ -7,12 +7,13 @@
  * file that was distributed with this source code.
  */
 
-$(window).on('load', function () {
+(function () {
   'use strict';
 
-  $('.skill-list').masonry({
-    itemSelector: '.skill-group',
-    columnWidth:  292,
-    fitWidth:     true,
-  });
-});
+  window.addEventListener('load', function () {
+    new Masonry(document.querySelector('.skill-list'), {
+      columnWidth: 292,
+      fitWidth:    true,
+    });
+  })
+})();

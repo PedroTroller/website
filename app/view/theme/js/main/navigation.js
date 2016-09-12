@@ -7,46 +7,64 @@
  * file that was distributed with this source code.
  */
 
-$(function () {
+(function () {
   'use strict';
 
-  // Fetch menu reference
-  var menu = $('#menu');
+  document.addEventListener('DOMContentLoaded', function () {
+    // Fetch menu reference
+    var menu = document.getElementById('menu');
 
-  /**
-   * Toggles the `visible` class on the menu.
-   */
-  menu.toggle = function () {
-    this.toggleClass('visible');
-  };
+    /**
+     * Toggles the `visible` class on the menu.
+     */
+    menu.toggle = function () {
+      this.classList.toggle('visible');
+    };
 
-  /**
-   * Removes the `visible` class from the menu if it has it.
-   */
-  menu.hide = function () {
-    if (this.hasClass('visible')) {
-      this.removeClass('visible');
+    /**
+     * Removes the `visible` class from the menu if it has it.
+     */
+    menu.hide = function () {
+      if (this.classList.contains('visible')) {
+        this.classList.remove('visible');
+      }
     }
-  }
 
-  // Register menu togglers
-  $('#menu-btn').on('click', function (e) {
-    menu.toggle();
-  });
-  $('#page').on('click', function (e) {
-    menu.hide();
-  });
-  $('a[href^="#"]').on('click', function (e) {
-    e.preventDefault();
-    smoothScroll.animateScroll($($(this).attr('href'))[0], this, {speed: 1500});
-    menu.hide();
-  });
-  $(document).on('keyup', function (e) {
-    if (e.which === 27) {
+    // Toggle menu on menu button click
+    document.getElementById('menu-btn').addEventListener('click', function () {
       menu.toggle();
-    }
+    });
+
+    // Hide menu when the user clicks anywhere else
+    document.getElementById('page').addEventListener('click', function () {
+      menu.hide();
+    });
+
+    // Smoothly scroll to anchor on menu item click
+    menu.addEventListener('click', function (e) {
+      if (e.target.nodeName.toLowerCase() !== 'a' || e.target.getAttribute('href').charAt(0) !== '#') {
+        return;
+      }
+      e.preventDefault();
+      smoothScroll.animateScroll(document.querySelector(e.target.getAttribute('href')), e.target, {
+        speed: 1500,
+        callback: function (anchor, toggle) {
+          location.hash = anchor.getAttribute('id');
+        },
+      });
+      menu.hide();
+    });
+
+    // Hide menu when `ESC` key is pressed
+    document.addEventListener('keyup', function (e) {
+      if (e.keyCode === 27) {
+        menu.toggle();
+      }
+    });
   });
 
-  // Register scrollspy
-  $('body').scrollspy({target: '#menu'});
-});
+  window.addEventListener('load', function () {
+    // Register scrollspy
+    gumshoe.init({selector: '#main-nav a'});
+  });
+})();

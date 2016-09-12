@@ -20,7 +20,8 @@
     "mobile-detect": "^1.3",
     "masonry": "^4.1",
     "animate.css": "^3.5",
-    "wow": "matthieua/WOW#master",
-    "smooth-scroll": "cferdinandi/smooth-scroll#master"
+    "wow": "^1.1",
+    "smooth-scroll": "cferdinandi/smooth-scroll#^10.0",
+    "gumshoe": "cferdinandi/gumshoe#^3.1"
   }
 }

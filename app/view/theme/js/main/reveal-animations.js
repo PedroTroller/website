@@ -7,9 +7,14 @@
  * file that was distributed with this source code.
  */
 
-$(function () {
+(function () {
   'use strict';
 
-  $('.header-title, [class^="section-wrapper-"] > *, footer p').addClass('wow fadeIn');
-  new WOW().init({live: false});
-});
+  document.addEventListener('DOMContentLoaded', function () {
+    this.selectAndProcess('.header-title, [class^="section-wrapper-"] > *, footer p', function (element) {
+        element.classList.add('wow');
+        element.classList.add('fadeIn');
+    });
+    (new WOW()).init({live: false});
+  });
+})();
