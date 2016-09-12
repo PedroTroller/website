@@ -7,7 +7,6 @@
  * file that was distributed with this source code.
  */
 
-
 $(function () {
   'use strict';
 
