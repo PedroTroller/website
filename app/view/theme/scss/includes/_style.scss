@@ -54,7 +54,7 @@ $screen-xxs-max: $screen-xs-min - 1;
 }
 
 %narrow-section {
-  max-width: 520px;
+  max-width: 640px;
   margin: {
     left: auto;
     right: auto;
@@ -139,6 +139,10 @@ ul:not([class]) {
 p,
 li {
   font-weight: $font-weight-light;
+}
+
+p {
+  margin-bottom: 1em;
 }
 
 a {
