@@ -8,6 +8,8 @@
  */
 
 $(function () {
+  'use strict';
+
   $('h1').each(function () {
     $(this).fitText(0.75, {maxFontSize: $(this).css('font-size')});
   });

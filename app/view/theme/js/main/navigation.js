@@ -8,6 +8,8 @@
  */
 
 $(function () {
+  'use strict';
+
   // Fetch menu reference
   var menu = $('#menu');
 

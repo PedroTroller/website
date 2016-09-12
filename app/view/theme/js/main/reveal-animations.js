@@ -7,7 +7,10 @@
  * file that was distributed with this source code.
  */
 
+
 $(function () {
+  'use strict';
+
   $('.header-title, [class^="section-wrapper-"] > *, footer p').addClass('wow fadeIn');
   new WOW().init({live: false});
 });

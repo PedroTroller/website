@@ -13,6 +13,8 @@
  * @param {string} scriptUrl The URL of the JS file to be added
  */
 document.appendScript = function (scriptUrl) {
+  'use strict';
+
   var script = this.createElement('script');
   script.src = scriptUrl;
   this.body.appendChild(script);

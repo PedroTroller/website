@@ -8,6 +8,8 @@
  */
 
 $(window).on('load', function () {
+  'use strict';
+
   $('.skill-list').masonry({
     itemSelector: '.skill-group',
     columnWidth:  292,

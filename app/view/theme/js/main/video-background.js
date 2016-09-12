@@ -11,8 +11,10 @@
  * Executes once the YouTube embed API is loaded.
  */
 function onYouTubeIframeAPIReady() {
+  'use strict';
+
   var videoSelector = 'video-background';
-  player = new YT.Player(videoSelector, {
+  var player = new YT.Player(videoSelector, {
     videoId: 'NZlfxWMr7nc',
     playerVars: {
       controls:        0,
