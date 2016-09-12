@@ -993,7 +993,7 @@
     },
     "gulp-concat": {
       "version": "2.6.0",
-      "from": "gulp-concat@>=2.6.0 <3.0.0",
+      "from": "gulp-concat@2.6.0",
       "resolved": "https://registry.npmjs.org/gulp-concat/-/gulp-concat-2.6.0.tgz",
       "dependencies": {
         "concat-with-sourcemaps": {
@@ -1027,15 +1027,15 @@
                   "resolved": "https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz"
                 },
                 "inherits": {
-                  "version": "2.0.1",
+                  "version": "2.0.3",
                   "from": "inherits@>=2.0.1 <2.1.0",
-                  "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz"
+                  "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz"
                 }
               }
             },
             "xtend": {
               "version": "4.0.1",
-              "from": "xtend@>=4.0.0 <4.1.0",
+              "from": "xtend@>=4.0.0 <4.1.0-0",
               "resolved": "https://registry.npmjs.org/xtend/-/xtend-4.0.1.tgz"
             }
           }
