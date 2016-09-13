@@ -67,7 +67,7 @@
     // Register scrollspy
     gumshoe.init({
       selector: '#main-nav a',
-      offset:   36,
+      offset:   100,
     });
   });
 })();
