@@ -42,6 +42,7 @@ var paths = {
           basePaths.vendor + '/smooth-scroll/dist/js/smooth-scroll.js',
           basePaths.vendor + '/gumshoe/dist/js/gumshoe.js',
           basePaths.vendor + '/mobile-detect/mobile-detect.js',
+          basePaths.src    + '/view/theme/js/main/library.js',
           basePaths.src    + '/view/theme/js/main/*.js',
         ],
       },
