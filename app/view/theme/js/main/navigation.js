@@ -12,7 +12,7 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     // Fetch menu reference
-    var menu = document.getElementById('menu');
+    var menu = this.getElementById('menu');
 
     /**
      * Toggles the `visible` class on the menu.
@@ -31,12 +31,12 @@
     }
 
     // Toggle menu on menu button click
-    document.getElementById('menu-btn').addEventListener('click', function () {
+    this.getElementById('menu-btn').addEventListener('click', function () {
       menu.toggle();
     });
 
     // Hide menu when the user clicks anywhere else
-    document.getElementById('page').addEventListener('click', function () {
+    this.getElementById('page').addEventListener('click', function () {
       menu.hide();
     });
 
@@ -56,7 +56,7 @@
     });
 
     // Hide menu when `ESC` key is pressed
-    document.addEventListener('keyup', function (e) {
+    this.addEventListener('keyup', function (e) {
       if (e.keyCode === 27) {
         menu.toggle();
       }

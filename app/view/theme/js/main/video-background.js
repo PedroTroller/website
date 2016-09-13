@@ -45,7 +45,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     // Conditionnally load YouTube API
     if (!(new MobileDetect(navigator.userAgent)).mobile()) {
-      document.appendScript('https://www.youtube.com/iframe_api');
+      this.appendScript('https://www.youtube.com/iframe_api');
     }
   });
 })();
