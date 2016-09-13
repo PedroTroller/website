@@ -4,10 +4,10 @@
     "skills": [
       "PHP",
       "Ruby",
+      "JavaScript (ES5)",
+      "SQL",
       "Java",
       "ActionScript 3",
-      "SQL",
-      "JavaScript (ES5)",
       "Bash",
       "PCRE"
     ]
@@ -18,9 +18,9 @@
       "Symfony",
       "Silex",
       "Zend",
+      "Doctrine",
       "MySQL",
       "SQLite",
-      "Doctrine",
       "Redis",
       "REST"
     ]
@@ -34,27 +34,27 @@
       "Smarty",
       "Sass",
       "Bootstrap",
-      "Bourbon & Co.",
-      "Materialize",
+      "Material Design Lite",
       "OOCSS",
       "Responsive design",
-      "Photoshop",
+      "DOM",
       "jQuery",
-      "SEO naturelle",
-      "Accessibilité"
+      "Accessibilité",
+      "Photoshop"
     ]
   },
   "Applications": {
     "icon": "phone",
     "skills": [
-      "Android SDK",
-      "Flash/Flex"
+      "SDK Android",
+      "API Flash"
     ]
   },
   "CMS": {
     "icon": "dashboard",
     "skills": [
       "WordPress",
+      "Drupal",
       "Bolt",
       "ProcessWire",
       "Jekyll",
@@ -77,6 +77,7 @@
   "DevOps": {
     "icon": "cog",
     "skills": [
+      "Git, GitHub Flow",
       "Composer",
       "npm",
       "Bower",
@@ -84,13 +85,12 @@
       "Robo",
       "Gulp",
       "Rake",
-      "Git, GitHub Flow",
+      "Ansible",
       "Travis",
       "Capistrano",
       "Docker",
       "VirtualBox",
       "Vagrant",
-      "Ansible",
       "Heroku",
       "Docker Cloud",
       "AWS"
@@ -106,7 +106,8 @@
       "reStructuredText",
       "ApiGen",
       "Sphinx",
-      "MkDocs"
+      "MkDocs",
+      "UML (bases)"
     ]
   },
   "Systèmes et réseaux": {
@@ -115,7 +116,10 @@
       "Modèle OSI",
       "Protocoles web",
       "Architectures réseaux/matérielles",
-      "Administration Linux"
+      "Administration Linux",
+      "Apache",
+      "Nginx",
+      "PHP-FPM"
     ]
   },
   "Bonnes pratiques": {
@@ -124,8 +128,7 @@
       "Design patterns (GoF, PoEAA)",
       "SOLID",
       "DRY",
-      "Design by contract",
-      "12 Factor",
+      "12-Factor",
       "SOA/Microservices",
       "TDD/BDD",
       "PSR"
