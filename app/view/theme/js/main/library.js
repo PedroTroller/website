@@ -17,7 +17,7 @@
   /**
    * Adds a `<script>` tag at the end of the current document.
    *
-   * @param {string} scriptUrl The URL of the JS file to be added
+   * @param {String} scriptUrl The URL of the JS file to be added
    */
   document.appendScript = function (scriptUrl) {
     var script = this.createElement('script');
@@ -28,8 +28,8 @@
   /**
    * Selects a node list and pass each node through the passed closure.
    *
-   * @param {string}   selector       The CSS selector targeting the desired elements
-   * @param {function} appliedClosure The closure by which each node will be processed
+   * @param {String}   selector       The CSS selector targeting the desired elements
+   * @param {Function} appliedClosure The closure by which each node will be processed
    *
    * @return {NodeList} The selected node list
    */
