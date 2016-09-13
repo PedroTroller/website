@@ -70,4 +70,11 @@
       offset:   100,
     });
   });
+
+  window.addEventListener('orientationchange', function () {
+    // Leave the whole mess the time to resize before recalculating distances
+    setTimeout(function () {
+      gumshoe.setDistances();
+    }, 500);
+  });
 })();
