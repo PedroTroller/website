@@ -7,13 +7,18 @@
  * file that was distributed with this source code.
  */
 
-$(function () {
+(function () {
   'use strict';
 
-  $('h1').each(function () {
-    $(this).fitText(0.75, {maxFontSize: $(this).css('font-size')});
+  var driveMapping = {
+    h1: 0.75,
+    h2: 1.0,
+  };
+  document.addEventListener('DOMContentLoaded', function () {
+    this.selectAndProcess('h1, h2', function (element) {
+      fitText(element, driveMapping[element.nodeName.toLowerCase()], {
+        maxFontSize: getComputedStyle(element).getPropertyValue('font-size'),
+      });
+    });
   });
-  $('h2').each(function () {
-    $(this).fitText(1.0, {maxFontSize: $(this).css('font-size')});
-  });
-});
+})();

@@ -36,13 +36,12 @@ var paths = {
     js: {
       modules: {
         main: [
-          basePaths.vendor + '/jquery/dist/jquery.js',
-          basePaths.vendor + '/jquery-fittext/jquery.fittext.js',
-          basePaths.vendor + '/mobile-detect/mobile-detect.js',
+          basePaths.vendor + '/fittext/fittext.js',
           basePaths.vendor + '/masonry/dist/masonry.pkgd.js',
           basePaths.vendor + '/wow/dist/wow.js',
           basePaths.vendor + '/smooth-scroll/dist/js/smooth-scroll.js',
           basePaths.vendor + '/gumshoe/dist/js/gumshoe.js',
+          basePaths.vendor + '/mobile-detect/mobile-detect.js',
           basePaths.src    + '/view/theme/js/main/*.js',
         ],
       },
