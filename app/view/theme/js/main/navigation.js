@@ -65,6 +65,9 @@
 
   window.addEventListener('load', function () {
     // Register scrollspy
-    gumshoe.init({selector: '#main-nav a'});
+    gumshoe.init({
+      selector: '#main-nav a',
+      offset:   36,
+    });
   });
 })();
