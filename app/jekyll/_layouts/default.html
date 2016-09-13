@@ -39,7 +39,7 @@
             </div>
             <main>
                 {% for section in site.sections %}
-                    <div class="section-wrapper-{{ section }}" id="section-{{ section }}">
+                    <div class="section-wrapper-{{ section }}" id="{{ section }}">
                         <div class="section-{{ section }}">
                             <section>
                                 {% include_content {{ page.lang }}/{{ section }} %}
