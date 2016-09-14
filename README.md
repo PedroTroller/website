@@ -9,9 +9,10 @@ Wikipedia, you’re welcome).
 
 ## License
 
-Not that anyone would care about that, but everything that *is not* content-related
-(everything *not in* `app/jekyll/_data/` or `app/jekyll/_content/`) is licensed
-under the terms of the [MIT license](https://opensource.org/licenses/MIT), and
-everything that *is* content-related (everything *in* `app/jekyll/_data/` or
-`app/jekyll/_content/`) is licensed under the terms of the [WTFPL license](http://www.wtfpl.net/).
-Yeah, I’m *that* picky about stuff.
+This project is licensed under the terms of the [MIT License](https://opensource.org/licenses/MIT),
+except for the content in the following subdirectories, which are licensed under
+the terms of the [WTFPL license](http://www.wtfpl.net/):
+
+* `app/jekyll/_data/`
+* `app/jekyll/_content/`
+* `app/jekyll/_pages/`
