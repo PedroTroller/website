@@ -1,0 +1,8 @@
+{
+  "menu": {
+    "Introduction": "#intro",
+    "Compétences": "#skills",
+    "Réalisations": "#work",
+    "Expérience": "#experience"
+  }
+}
