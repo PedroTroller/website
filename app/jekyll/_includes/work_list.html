@@ -1,7 +1,7 @@
 <ul class="work-example-list">
     {% for work_example in site.data.work[page.lang] %}
         <li class="work-example">
-            <img class="work-example-img" src="{{ assets_url }}/img/work/{{ work_example[1].img }}" alt="" width="258" />
+            <img class="work-example-img" src="{{ site.baseurl }}/img/{{ work_example[1].img }}" alt="" width="292" height="183" />
             <div class="work-example-details-wrapper">
                 <div class="work-example-details">
                     <h3 class="work-example-title">
