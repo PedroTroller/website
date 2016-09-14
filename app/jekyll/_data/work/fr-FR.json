@@ -1,0 +1,139 @@
+{
+  "Mairie de Rezé – Vœux 2016": {
+    "desc": "Application d’envoi de cartes de vœux",
+    "img": "reze.jpg",
+    "url": "http://www.reze.fr/",
+    "tech": [
+      "PHP/MySQL",
+      "Silex",
+      "Composants Symfony",
+      "Twig",
+      "Sass",
+      "Bootstrap",
+      "jQuery",
+      "Responsive"
+    ]
+  },
+  "Couleur Cantal": {
+    "desc": "Plate-forme de partage de vidéos",
+    "img": "cctv.jpg",
+    "url": "http://www.couleurcantal.tv/",
+    "tech": [
+      "PHP/MySQL",
+      "Symfony",
+      "Doctrine",
+      "HTML",
+      "CSS",
+      "jQuery"
+    ]
+  },
+  "Charcuterie Laborie – ERP": {
+    "desc": "Mini ERP (gestion de fichier client, envoi de newsletters)",
+    "img": "laborie.jpg",
+    "url": "http://www.maison-laborie.com/",
+    "tech": [
+      "PHP/MySQL",
+      "Symfony",
+      "Doctrine",
+      "HTML",
+      "CSS",
+      "jQuery"
+    ]
+  },
+  "Aventure Images": {
+    "desc": "Site de partage de photos",
+    "img": "avimg.jpg",
+    "url": "http://www.aventure-images.fr/",
+    "tech": [
+      "PHP/MySQL",
+      "Symfony",
+      "Doctrine",
+      "HTML",
+      "CSS",
+      "jQuery"
+    ]
+  },
+  "Chalet des Galinottes": {
+    "desc": "Site institutionnel",
+    "img": "galinottes.jpg",
+    "url": "http://www.galinottes.net/",
+    "tech": [
+      "PHP/MySQL",
+      "Bolt",
+      "Silex",
+      "Twig",
+      "Sass",
+      "Bootstrap",
+      "jQuery",
+      "Responsive"
+    ]
+  },
+  "FAL du Cantal": {
+    "desc": "Site institutionnel",
+    "img": "fal15.jpg",
+    "url": "http://www.fal15.org/",
+    "tech": [
+      "PHP/MySQL",
+      "ProcessWire",
+      "Twig",
+      "Sass",
+      "Bootstrap",
+      "jQuery",
+      "Responsive"
+    ]
+  },
+  "Iconodia/Fototek": {
+    "desc": "Plug-in WordPress de gestion de librairie photo",
+    "img": "fototek.jpg",
+    "url": "http://www.iconodia.com/",
+    "tech": [
+      "PHP/MySQL",
+      "WordPress multisite",
+      "WooCommerce",
+      "AWS S3",
+      "IPTC",
+      "HTML"
+    ]
+  },
+  "Cinémage": {
+    "desc": "Site de gestion de programmes de cinéma",
+    "img": "cinemage.jpg",
+    "url": "http://www.cinemage.eu/",
+    "tech": [
+      "PHP/MySQL",
+      "WordPress",
+      "HTML",
+      "CSS",
+      "jQuery",
+      "MailChimp"
+    ]
+  },
+  "Motorcraft": {
+    "desc": "Site institutionnel",
+    "img": "motorcraft.jpg",
+    "url": "https://www.motorcraft.fr/",
+    "tech": [
+      "PHP/MySQL",
+      "WordPress",
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "jQuery",
+      "Responsive"
+    ]
+  },
+  "BNP Paribas / WE LOVE CINEMA": {
+    "desc": "Thème WordPress responsive",
+    "img": "bnp.jpg",
+    "url": "https://www.welovecinema.fr/",
+    "tech": [
+      "PHP/MySQL",
+      "WordPress",
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "jQuery",
+      "Responsive"
+    ]
+  }
+}
