@@ -11,7 +11,7 @@ Wikipedia, you’re welcome).
 
 This project is licensed under the terms of the [MIT License](https://opensource.org/licenses/MIT),
 except for the content in the following subdirectories, which are licensed under
-the terms of the [WTFPL license](http://www.wtfpl.net/):
+the terms of the [WTFPL license](http://www.wtfpl.net/)&nbsp;:
 
 * `app/jekyll/_data/`
 * `app/jekyll/_content/`
