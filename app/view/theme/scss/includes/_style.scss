@@ -20,8 +20,7 @@ $screen-xxs-max: $screen-xs-min - 1;
 
 %list-inline-stars {
   @extend .list-inline;
-  line-height: 1.6;
-  font-size: 17px;
+  font-size: $font-size-base - 1;
 
   > li {
     padding: 0 3px;
@@ -384,7 +383,7 @@ body {
 
 .work-example-title {
   margin-top: 0;
-  font-size: $font-size-base;
+  font-size: 18px;
 }
 
 .work-example-description p {
@@ -537,7 +536,7 @@ body {
         right: 0;
         bottom: 6px;
       }
-      font-size: $font-size-base;
+      font-size: 18px;
     }
   }
 }
