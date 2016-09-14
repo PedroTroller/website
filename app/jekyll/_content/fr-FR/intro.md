@@ -2,18 +2,16 @@
 
 …de prendre le temps de consulter mon CV en ligne.
 
-Quelques mots pour me présenter&nbsp;:
+Développeur web depuis 6 ans, mes compétences backend s’articulent principalement
+autour du stack LEMP en général et du duo Symfony/Doctrine en particulier, et
+au niveau frontend j’affectionne un workflow basé sur Gulp, Twig, Sass, OOCSS
+et ES5. Très attaché à l’industrialisation des process, je ne jure que par le
+DevOps et l’automatisation (Docker, Ansible).
 
-* 29 ans
-* Développeur web depuis 6 ans
-* Passionné
-* Curieux
-* Ouvert d’esprit
+Passionné et curieux, je cherche en permanence à améliorer mes compétences
+théoriques et techniques et à maîtriser de nouvelles technologies.
 
-J’aime me voir comme un artisan travaillant avec des méthodes d’industriel, dans
-un souci toujours renouvelé de maîtrise et de qualité.
-
-Ce que j’essaie de m’imposer en permanence dans mon travail&nbsp;:
+Une petite liste non exhaustive des principes auxquels je suis attaché&nbsp;:
 
 * Respect des standards établis par l’industrie
 * Qualité du codebase
@@ -23,4 +21,9 @@ Ce que j’essaie de m’imposer en permanence dans mon travail&nbsp;:
 * Scalabilité
 * Déployabilité
 * Testabilité
-* Automatisation
+* Généricité
+* Ergonomie/UX
+
+*[LEMP]: Linux, Nginx, MySQL, PHP
+*[OOCSS]: Object-oriented CSS
+*[ES5]: ECMAScript5
