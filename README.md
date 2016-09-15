@@ -9,9 +9,9 @@ Wikipedia, you’re welcome).
 
 ## License
 
-This project is licensed under the terms of the [MIT License](https://opensource.org/licenses/MIT),
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT),
 except for the content in the following subdirectories, which are licensed under
-the terms of the [WTFPL license](http://www.wtfpl.net/)&nbsp;:
+the [WTFPL license](http://www.wtfpl.net/)&nbsp;:
 
 * `app/jekyll/img/`
 * `app/jekyll/_data/`
