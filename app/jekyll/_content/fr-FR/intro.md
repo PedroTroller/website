@@ -6,7 +6,7 @@ Développeur web depuis 6 ans, mes compétences backend s’articulent principal
 autour du stack LEMP en général et du duo Symfony/Doctrine en particulier, et
 au niveau frontend j’affectionne un workflow basé sur Gulp, Twig, Sass, OOCSS
 et ES5. Très attaché à l’industrialisation des process, je ne jure que par le
-DevOps et l’automatisation (Docker, Ansible).
+DevOps et l’automatisation (Capistrano, Docker, Ansible).
 
 Passionné et curieux, je cherche en permanence à améliorer mes compétences
 théoriques et techniques et à maîtriser de nouvelles technologies.
