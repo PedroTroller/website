@@ -7,31 +7,37 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 
-is_dev() {
+is_dev()
+{
   [[ $ENVIRONMENT == 'dev' ]] && return $(true) || return $(false)
 }
 
-install_node_dependencies() {
+install_node_dependencies()
+{
   printf '\n*** Installing Node.js dependencies ***\n\n'
   npm install $(is_dev || echo '--production --no-spin')
 }
 
-install_bower_dependencies() {
+install_bower_dependencies()
+{
   printf '\n*** Installing Bower dependencies ***\n\n'
   ./node_modules/.bin/bower install $(is_dev || echo '--production --config.interactive=false')
 }
 
-install_ruby_dependencies() {
+install_ruby_dependencies()
+{
   printf '\n*** Installing Ruby dependencies ***\n\n'
   bundle install --path=vendor --binstubs=vendor/bin
 }
 
-build_frontend_assets() {
+build_frontend_assets()
+{
   printf '\n*** Building frontend assets ***\n\n'
   ./node_modules/.bin/gulp
 }
 
-build() {
+build()
+{
   install_node_dependencies
   install_bower_dependencies
   install_ruby_dependencies
