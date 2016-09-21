@@ -147,7 +147,7 @@ gulp.task('img', function (cb) {
   cb();
 });
 
-// Watch
+// Watch and livereload
 gulp.task('watch', function (cb) {
   if (isDev) {
     livereload.listen({host: '127.0.0.1', port: 44100});
