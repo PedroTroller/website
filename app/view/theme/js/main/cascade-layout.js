@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-(function () {
+(function cascadeLayout() {
   'use strict';
 
   window.addEventListener('load', function () {

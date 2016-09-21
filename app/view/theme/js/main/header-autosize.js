@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-(function () {
+(function headerAutosize() {
   'use strict';
 
   var driveMapping = {

@@ -11,7 +11,7 @@
  * Caution: monkey patching ahead. Yeah, I know it’s bad, you know it’s bad, we
  * know it’s bad, but hey, it’s not *that* bad when you avoid prototype poisoning.
  */
-(function () {
+(function library() {
   'use strict';
 
   /**
