@@ -23,6 +23,7 @@ if (isDev) {
 // Paths
 var basePaths = {
   src:    'app',
+  theme:  'app/view/theme',
   build:  'web',
   vendor: 'web/vendor',
 };
@@ -32,7 +33,7 @@ var paths = {
       path: basePaths.src + '/jekyll',
       glob: basePaths.src + '/jekyll/**/*',
     },
-    scss: basePaths.src + '/view/theme/scss/**/*.scss',
+    scss: basePaths.theme + '/scss/**/*.scss',
     js: {
       modules: {
         main: [
@@ -42,13 +43,13 @@ var paths = {
           basePaths.vendor + '/smooth-scroll/dist/js/smooth-scroll.js',
           basePaths.vendor + '/gumshoe/dist/js/gumshoe.js',
           basePaths.vendor + '/mobile-detect/mobile-detect.js',
-          basePaths.src    + '/view/theme/js/main/library.js',
-          basePaths.src    + '/view/theme/js/main/*.js',
+          basePaths.theme  + '/js/main/library.js',
+          basePaths.theme  + '/js/main/*.js',
         ],
       },
-      glob: basePaths.src + '/view/theme/js/**/*.js',
+      glob: basePaths.theme + '/js/**/*.js',
     },
-    img: basePaths.src + '/view/theme/img/**/*.{jpg,png,gif,ico,svg,json,xml}',
+    img: basePaths.theme + '/img/**/*.{jpg,png,gif,ico,svg,json,xml}',
   },
   build: {
     jekyll: basePaths.build,
