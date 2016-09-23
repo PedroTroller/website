@@ -1,0 +1,13 @@
+.git/
+.bundle/
+vendor/
+node_modules/
+web/*
+app/jekyll/.jekyll-metadata
+Dockerfile
+.editorconfig
+.gitattributes
+.gitignore
+.dockerignore
+**/.DS_Store
+!**/.gitkeep
