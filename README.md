@@ -1,5 +1,8 @@
 # Online CV
 
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/fabschurt/cv/latest.svg?maxAge=2592000)](https://hub.docker.com/r/fabschurt/cv/)
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/fabschurt/cv/latest.svg?maxAge=2592000)](https://hub.docker.com/r/fabschurt/cv/)
+
 This is the code for my online CV. I must admit, I don’t really know the
 difference between a bloody CV, a friggin’ resume and a freakin’ portfolio, so I
 just sticked with the word that was the shorter of the three, which, incidentally,
