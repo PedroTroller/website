@@ -21,7 +21,7 @@ install_node_dependencies()
 install_bower_dependencies()
 {
   printf '\n*** Installing Bower dependencies ***\n\n'
-  ./node_modules/.bin/bower install $(is_dev || echo '--production --config.interactive=false')
+  ./node_modules/.bin/bower install --allow-root $(is_dev || echo '--production --config.interactive=false')
 }
 
 install_ruby_dependencies()
