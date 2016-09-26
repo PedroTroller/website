@@ -1,7 +1,7 @@
 FROM fabschurt/nginx
 MAINTAINER Fabien Schurter <fabien@fabschurt.com>
 
-ENV PKGS="bash            \
+ARG PKGS="bash            \
           g++             \
           gcc             \
           make            \
