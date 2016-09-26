@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-group :production do
+group :prod do
   gem 'jekyll', '~>3.2'
 end
