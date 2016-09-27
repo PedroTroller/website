@@ -152,6 +152,13 @@
         document.appendScript('https://www.youtube.com/iframe_api');
       }
     })();
+
+    // Load livereload script for `dev` environment
+    (function initLiveReload() {
+      if (config.environment === 'dev') {
+        document.appendScript('//' + location.host.split(':')[0] + ':35729/livereload.js');
+      }
+    })();
   });
 
   // When everything is loaded

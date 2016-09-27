@@ -65,9 +65,16 @@ file that was distributed with this source code.
         </div>
 
         <!-- Assets -->
+        <script>
+          /**
+           * Contains application-specific config values, passed from the backend.
+           *
+           * @namespace
+           */
+          var config = {
+            environment: '{{ jekyll.environment }}',
+          };
+        </script>
         <script src="{{ assets_url }}/js/main.js"></script>
-        {% if jekyll.environment == 'dev' %}
-            <script src="//127.0.0.1:44100/livereload.js"></script>
-        {% endif %}
     </body>
 </html>
