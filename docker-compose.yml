@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  app:
+  builder:
     build:
       context: .
       args:
@@ -15,11 +15,11 @@ services:
       - '35729:35729'
     command: "sh -c 'ENVIRONMENT=dev ./node_modules/.bin/gulp watch'"
 
-  builder:
+  web:
     image: fabschurt/nginx
     depends_on:
-      - app
+      - builder
     volumes_from:
-      - app
+      - builder
     ports:
       - '80:80'
