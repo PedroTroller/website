@@ -182,7 +182,7 @@
 
   // When screen orientation changes
   window.addEventListener('orientationchange', function () {
-    // Give the whole mess the time to resize before recalculating distances
+    // Give the whole mess the time to reorganize before recalculating scrollspy offsets
     (function initGumshoeTimeoutProxy() {
       setTimeout(function () {
         gumshoe.setDistances();
