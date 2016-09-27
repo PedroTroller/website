@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        ENVIRONMENT: dev
+        NO_WATCH: 1
+    volumes:
+      - '/Users/fabien/Sites/cv/app:/opt/project/app'
+      - '/opt/project/web'
+      - '/etc/nginx'
+    ports:
+      - '35729:35729'
+    command: "sh -c 'ENVIRONMENT=dev ./node_modules/.bin/gulp watch'"
+
+  builder:
+    image: fabschurt/nginx
+    depends_on:
+      - app
+    volumes_from:
+      - app
+    ports:
+      - '80:80'
