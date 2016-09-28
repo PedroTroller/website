@@ -6,7 +6,6 @@ services:
       context: .
       args:
         ENVIRONMENT: dev
-        NO_WATCH: 1
     volumes:
       - '/Users/fabien/Sites/cv/app:/opt/project/app'
       - '/opt/project/web'

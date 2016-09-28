@@ -2,7 +2,7 @@ FROM fabschurt/nginx
 MAINTAINER Fabien Schurter <fabien@fabschurt.com>
 
 ARG ENVIRONMENT=prod
-ARG NO_WATCH=0
+ARG NO_WATCH=1
 
 COPY . /opt/project
 WORKDIR /opt/project
