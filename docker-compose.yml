@@ -14,7 +14,7 @@ services:
       - '35729:35729'
     command: "sh -c 'ENVIRONMENT=dev ./node_modules/.bin/gulp watch'"
 
-  web:
+  app:
     image: fabschurt/nginx
     depends_on:
       - builder
