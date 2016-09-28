@@ -7,7 +7,9 @@ services:
       args:
         ENVIRONMENT: dev
     volumes:
+      - '/Users/fabien/Sites/cv/gulpfile.js:/opt/project/gulpfile.js'
       - '/Users/fabien/Sites/cv/app:/opt/project/app'
+      - '/Users/fabien/Sites/cv/web/vendor:/opt/project/web/vendor'
       - '/opt/project/web'
       - '/etc/nginx'
     ports:
