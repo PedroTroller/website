@@ -37,5 +37,3 @@ RUN apk update --no-cache && \
            /root/.npm            \
            /root/.node-gyp       \
            /root/.cache/*
-
-HEALTHCHECK --interval=15s --timeout=15s --retries=2 CMD wget -sq http://localhost/
