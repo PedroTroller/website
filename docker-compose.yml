@@ -14,7 +14,7 @@ services:
       - '/etc/nginx'
     ports:
       - '35729:35729'
-    command: "sh -c 'ENVIRONMENT=dev ./node_modules/.bin/gulp watch'"
+    command: "sh -c 'ENVIRONMENT=dev ./node_modules/.bin/gulp'"
 
   app:
     image: fabschurt/nginx
