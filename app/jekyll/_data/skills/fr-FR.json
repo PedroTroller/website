@@ -5,11 +5,11 @@
       "PHP",
       "Ruby",
       "JavaScript (ES5)",
+      "HTML5",
+      "CSS 3",
       "SQL",
       "Java",
-      "ActionScript 3",
-      "Bash",
-      "PCRE"
+      "Bash"
     ]
   },
   "Backend": {
@@ -21,33 +21,20 @@
       "Doctrine",
       "MySQL",
       "SQLite",
-      "Redis",
-      "REST"
+      "Redis"
     ]
   },
   "Frontend": {
     "icon": "eye-open",
     "skills": [
-      "CSS 3",
-      "HTML5",
       "Twig",
       "Smarty",
       "Sass",
+      "OOCSS",
       "Bootstrap",
       "Material Design Lite",
-      "OOCSS",
-      "Responsive design",
-      "DOM",
       "jQuery",
-      "Accessibilité",
       "Photoshop"
-    ]
-  },
-  "Applications": {
-    "icon": "phone",
-    "skills": [
-      "SDK Android",
-      "API Flash"
     ]
   },
   "CMS": {
@@ -62,7 +49,7 @@
       "PrestaShop"
     ]
   },
-  "Testing": {
+  "Testing, CI": {
     "icon": "check",
     "skills": [
       "PHPUnit",
@@ -71,43 +58,21 @@
       "Codeception",
       "Behat",
       "RSpec",
-      "Cucumber"
+      "Cucumber",
+      "Travis"
     ]
   },
   "DevOps": {
     "icon": "cog",
     "skills": [
-      "Git, GitHub Flow",
-      "Composer",
-      "npm",
-      "Bower",
-      "Bundler",
-      "Robo",
-      "Gulp",
-      "Rake",
+      "Git",
+      "GitHub Flow",
       "Ansible",
-      "Travis",
       "Capistrano",
       "Docker",
       "VirtualBox",
       "Vagrant",
-      "Heroku",
-      "Docker Cloud",
       "AWS"
-    ]
-  },
-  "Documentation": {
-    "icon": "pencil",
-    "skills": [
-      "PHPDoc",
-      "JSDoc",
-      "YARD",
-      "Markdown",
-      "reStructuredText",
-      "ApiGen",
-      "Sphinx",
-      "MkDocs",
-      "UML (bases)"
     ]
   },
   "Systèmes et réseaux": {
@@ -131,6 +96,7 @@
       "DRY",
       "12-Factor",
       "SOA/Microservices",
+      "REST",
       "TDD/BDD",
       "PSR"
     ]
