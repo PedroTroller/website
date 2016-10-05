@@ -16,7 +16,6 @@
   "dependencies": {
     "bootstrap-sass": "^3.3",
     "fittext": "adactio/FitText.js",
-    "masonry": "^4.1",
     "animate.css": "^3.5",
     "wow": "^1.1",
     "smooth-scroll": "cferdinandi/smooth-scroll#^10.0",

@@ -320,6 +320,11 @@ body {
   @extend %pseudo-grid-cell;
   width: 292px;
   padding: 0 8px;
+
+  @media (max-width: $screen-xxs-max) {
+    display: block;
+    width: 100%;
+  }
 }
 
 .skill-group-title {

@@ -163,14 +163,6 @@
 
   // When everything is loaded
   window.addEventListener('load', function () {
-    // Initialize cascade (Masonry) layout
-    (function initCascadeLayout() {
-      new Masonry(document.querySelector('.skill-list'), {
-        columnWidth: 292,
-        fitWidth:    true,
-      });
-    })();
-
     // Initialize scrollspy for main menu
     (function initScrollspy() {
       gumshoe.init({
