@@ -13,7 +13,9 @@ sections:
   - skills
   - work
   - experience
-github_url: https://github.com/fabschurt
+url:
+  assets: /assets
+  github: https://github.com/fabschurt
 copyright_year: 2016
 collections:
   pages:

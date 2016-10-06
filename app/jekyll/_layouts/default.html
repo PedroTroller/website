@@ -11,7 +11,6 @@ file that was distributed with this source code.
 <html lang="{{ page.lang }}">
     {% assign i18n = site.data.i18n[page.lang] %}
     {% assign nav  = site.data.nav[page.lang]  %}
-    {% capture assets_url %}{{ site.baseurl }}/assets{% endcapture %}
     <head>
         <!-- Technical -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -27,7 +26,7 @@ file that was distributed with this source code.
 
         <!-- Assets -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,700|Scope+One:400" />
-        <link rel="stylesheet" href="{{ assets_url }}/css/main.css" />
+        <link rel="stylesheet" href="{% asset_url /css/main.css %}" />
     </head>
     <body>
         <!-- Content -->
@@ -75,6 +74,6 @@ file that was distributed with this source code.
             environment: '{{ jekyll.environment }}',
           };
         </script>
-        <script src="{{ assets_url }}/js/main.js"></script>
+        <script src="{% asset_url /js/main.js %}"></script>
     </body>
 </html>

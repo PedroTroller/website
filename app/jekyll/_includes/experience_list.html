@@ -14,7 +14,7 @@ file that was distributed with this source code.
         {% for job in site.data.experience[page.lang].list %}
             <li class="past-job-list-item">
                 <div class="past-job-icon-wrapper">
-                    <img class="past-job-icon" src="{{ assets_url }}/img/icon-location.svg" alt="" />
+                    <img class="past-job-icon" src="{% asset_url /img/icon-location.svg %}" alt="" />
                 </div>
                 <div class="past-job">
                     <div class="past-job-title-wrapper">
