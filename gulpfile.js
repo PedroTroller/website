@@ -67,6 +67,7 @@ gulp.task('jekyll', function (cb) {
       'exec',
       'jekyll',
       'build',
+      '--trace',
       '--source',
       paths.src.jekyll.path,
       '--destination',
