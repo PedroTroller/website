@@ -8,7 +8,7 @@ services:
         ENVIRONMENT: dev
     environment:
       ENVIRONMENT: dev
-      WATCH: 1
+      DISABLE_WATCH: 0
       CANONICAL_ROOT: http://docker.vm
     volumes:
       - '/Users/fabien/Sites/cv/gulpfile.js:/opt/project/gulpfile.js'
