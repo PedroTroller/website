@@ -9,7 +9,7 @@ services:
     environment:
       ENVIRONMENT: dev
       WATCH: 1
-      CANONICAL_ROOT: 'http://docker.vm'
+      CANONICAL_ROOT: http://docker.vm
     volumes:
       - '/Users/fabien/Sites/cv/gulpfile.js:/opt/project/gulpfile.js'
       - '/Users/fabien/Sites/cv/app:/opt/project/app'
