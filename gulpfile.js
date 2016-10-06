@@ -31,7 +31,7 @@ var paths = {
   src: {
     jekyll: {
       path: basePaths.src + '/jekyll',
-      glob: basePaths.src + '/jekyll/**/*',
+      glob: basePaths.src + '/jekyll/**/*.*',
     },
     scss: basePaths.theme + '/scss/**/*.scss',
     js: {
