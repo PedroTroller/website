@@ -2,7 +2,7 @@ FROM fabschurt/nginx
 MAINTAINER Fabien Schurter <fabien@fabschurt.com>
 
 ARG ENVIRONMENT=prod
-ARG NO_WATCH=1
+ARG WATCH=0
 
 COPY . /opt/project
 WORKDIR /opt/project
@@ -22,7 +22,7 @@ RUN apk update --no-cache && \
       libffi-dev      \
     && \
     cp app/config/nginx/app.conf /etc/nginx/servers.d/app.conf && \
-    ENVIRONMENT=$ENVIRONMENT NO_WATCH=$NO_WATCH ./bin/build    && \
+    ENVIRONMENT=$ENVIRONMENT WATCH=$WATCH ./bin/build          && \
     apk del --purge \
       git        \
       g++        \

@@ -147,7 +147,7 @@ gulp.task('img', function (cb) {
 
 // Watch and livereload
 gulp.task('watch', function (cb) {
-  if (isDev && !Number(process.env.NO_WATCH)) {
+  if (isDev && Number(process.env.WATCH) === 1) {
     livereload.listen({host: '0.0.0.0', port: 35729});
     gulp.watch(paths.src.jekyll.glob, ['jekyll'], cb);
     gulp.watch(paths.src.scss,        ['sass'],   cb);

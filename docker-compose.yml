@@ -6,6 +6,10 @@ services:
       context: .
       args:
         ENVIRONMENT: dev
+    environment:
+      ENVIRONMENT: dev
+      WATCH: 1
+      CANONICAL_ROOT: 'http://docker.vm'
     volumes:
       - '/Users/fabien/Sites/cv/gulpfile.js:/opt/project/gulpfile.js'
       - '/Users/fabien/Sites/cv/app:/opt/project/app'
@@ -14,7 +18,7 @@ services:
       - '/etc/nginx'
     ports:
       - '35729:35729'
-    command: "sh -c 'ENVIRONMENT=dev ./node_modules/.bin/gulp'"
+    command: "sh -c './node_modules/.bin/gulp'"
 
   app:
     image: fabschurt/nginx
