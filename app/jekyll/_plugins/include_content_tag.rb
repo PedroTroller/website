@@ -14,7 +14,7 @@ module Jekyll
   # The target Markdown file(s) can contain Liquid tags, they’ll be parsed.
   class IncludeContentTag < Liquid::Tag
     @@CONTENT_SUBFOLDER = '_content'
-    @@CONTENT_FORMATS   = ['html', 'md']
+    @@CONTENT_FORMATS   = [:html, :md]
 
     # @see Liquid::Tag#render
     # @raise [IOError] If no resolvable partial file can be found
@@ -32,9 +32,9 @@ module Jekyll
                                         .parse(File.read(full_path, site.file_read_opts))
                                         .render!(context)
           case file_ext
-          when 'html'
+          when :html
             return content
-          when 'md'
+          when :md
             return site.find_converter_instance(Jekyll::Converters::Markdown).convert(content)
           end
         end
