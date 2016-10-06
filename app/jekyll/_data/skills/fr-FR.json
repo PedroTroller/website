@@ -27,6 +27,8 @@
   "Frontend": {
     "icon": "eye-open",
     "skills": [
+      "Bower",
+      "Gulp",
       "Twig",
       "Smarty",
       "Sass",
@@ -67,6 +69,11 @@
     "skills": [
       "Git",
       "GitHub Flow",
+      "Composer",
+      "Bundler",
+      "npm",
+      "Robo",
+      "Rake",
       "Ansible",
       "Capistrano",
       "Docker",

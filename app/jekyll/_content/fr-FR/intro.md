@@ -8,8 +8,8 @@ au niveau frontend j’affectionne un workflow basé sur Gulp, Twig, Sass, OOCSS
 et ES5. Très attaché à l’industrialisation des process, je ne jure que par le
 DevOps et l’automatisation (Capistrano, Docker, Ansible).
 
-Passionné et curieux, je cherche en permanence à améliorer mes compétences
-théoriques et techniques et à maîtriser de nouvelles technologies.
+Passionné et très curieux, je cherche en permanence à améliorer et à renouveler
+mes compétences théoriques et techniques et à maîtriser de nouvelles technologies.
 
 Une petite liste non exhaustive des principes auxquels je suis attaché&nbsp;:
 
@@ -23,6 +23,7 @@ Une petite liste non exhaustive des principes auxquels je suis attaché&nbsp;:
 * Testabilité
 * Généricité
 * Ergonomie/UX
+* Accessibilité
 
 *[LEMP]: Linux, Nginx, MySQL, PHP
 *[OOCSS]: Object-oriented CSS
