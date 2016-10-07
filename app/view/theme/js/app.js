@@ -89,7 +89,7 @@
         element.classList.add('wow');
         element.classList.add('fadeIn');
       });
-      (new WOW()).init({live: false});
+      (new WOW()).init();
     })();
 
     // Initialize interactive menu and smooth scroll
