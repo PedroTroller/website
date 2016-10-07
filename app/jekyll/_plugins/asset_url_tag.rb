@@ -13,10 +13,10 @@ module Jekyll
     def render(context)
       site = context.registers[:site]
 
-      site.baseurl + site.config['url']['assets'] + site.liquid_renderer.file('*')
-                                                                        .parse(@markup)
-                                                                        .render!(context)
-                                                                        .strip
+      site.baseurl + site.config['url'].to_h['assets'].to_s + site.liquid_renderer.file('*')
+                                                                                  .parse(@markup)
+                                                                                  .render!(context)
+                                                                                  .strip
     end
   end
 end
