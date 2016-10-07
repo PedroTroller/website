@@ -62,7 +62,7 @@ var paths = {
 gulp.task('jekyll', function (cb) {
   var jekyllEnv = Object.assign({}, process.env);
   jekyllEnv.JEKYLL_ENV = jekyllEnv.ENVIRONMENT;
-  require('child_process').spawnSync(
+  var jekyllBuild = require('child_process').spawnSync(
     'bundle',
     [
       'exec',
@@ -79,6 +79,7 @@ gulp.task('jekyll', function (cb) {
       env:   jekyllEnv,
     }
   );
+  !isDev && jekyllBuild.status !== 0 && process.exit(jekyllBuild.status);
   gulp
     .src(paths.src.jekyll.glob)
     .pipe(isDev ? livereload() : util.noop())
@@ -92,14 +93,19 @@ gulp.task('sass', function (cb) {
   gulp
     .src(paths.src.scss)
     .pipe(isDev ? sourcemaps.init() : util.noop())
-    .pipe(sass({
-      precision: 9,
-      outputStyle: isDev ? null : 'compressed',
-      includePaths: [
-        basePaths.vendor,
-        basePaths.vendor + '/bootstrap-sass/assets/stylesheets',
-      ],
-    }).on('error', sass.logError))
+    .pipe(
+      sass({
+        precision: 9,
+        outputStyle: isDev ? null : 'compressed',
+        includePaths: [
+          basePaths.vendor,
+          basePaths.vendor + '/bootstrap-sass/assets/stylesheets',
+        ],
+      }).on('error', function (e) {
+        sass.logError.call(this, e);
+        !isDev && process.exit(e.status);
+      })
+    )
     .pipe(require('gulp-autoprefixer')({
       browsers: [
         'last 5 versions',
