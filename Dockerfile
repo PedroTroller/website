@@ -3,6 +3,7 @@ MAINTAINER Fabien Schurter <fabien@fabschurt.com>
 
 ARG ENVIRONMENT=prod
 ARG DISABLE_WATCH=1
+ARG CANONICAL_ROOT=http://cv.fabschurt.com
 
 COPY . /opt/project
 WORKDIR /opt/project
@@ -21,8 +22,8 @@ RUN apk update --no-cache && \
       ruby-bundler    \
       libffi-dev      \
     && \
-    cp app/config/nginx/app.conf /etc/nginx/servers.d/app.conf        && \
-    ENVIRONMENT=$ENVIRONMENT DISABLE_WATCH=$DISABLE_WATCH ./bin/build && \
+    cp app/config/nginx/app.conf /etc/nginx/servers.d/app.conf                                       && \
+    ENVIRONMENT=$ENVIRONMENT DISABLE_WATCH=$DISABLE_WATCH CANONICAL_ROOT=$CANONICAL_ROOT ./bin/build && \
     apk del --purge \
       git        \
       g++        \
