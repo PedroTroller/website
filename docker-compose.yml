@@ -1,30 +1,32 @@
 version: '2'
 
 services:
-  builder:
+  app:
+    image: cv_app
     build:
       context: .
       args:
         ENVIRONMENT: dev
+        CANONICAL_ROOT: http://docker.vm
+    volumes:
+      - /opt/project/web
+    ports:
+      - '80:80'
+
+  builder:
+    image: cv_app
+    depends_on:
+      - app
+    volumes_from:
+      - app
+    volumes:
+      - /Users/fabien/Sites/cv/gulpfile.js:/opt/project/gulpfile.js
+      - /Users/fabien/Sites/cv/app:/opt/project/app
+      - /Users/fabien/Sites/cv/web/vendor:/opt/project/web/vendor
+    ports:
+      - '35729:35729'
     environment:
       ENVIRONMENT: dev
       DISABLE_WATCH: 0
       CANONICAL_ROOT: http://docker.vm
-    volumes:
-      - '/Users/fabien/Sites/cv/gulpfile.js:/opt/project/gulpfile.js'
-      - '/Users/fabien/Sites/cv/app:/opt/project/app'
-      - '/Users/fabien/Sites/cv/web/vendor:/opt/project/web/vendor'
-      - '/opt/project/web'
-      - '/etc/nginx'
-    ports:
-      - '35729:35729'
     command: "sh -c './node_modules/.bin/gulp'"
-
-  app:
-    image: fabschurt/nginx
-    depends_on:
-      - builder
-    volumes_from:
-      - builder
-    ports:
-      - '80:80'
