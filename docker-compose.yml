@@ -2,7 +2,7 @@ version: '2'
 
 services:
   app:
-    image: cv_app
+    image: website_app
     build:
       context: .
       args:
@@ -14,15 +14,15 @@ services:
       - '80:80'
 
   builder:
-    image: cv_app
+    image: website_app
     depends_on:
       - app
     volumes_from:
       - app
     volumes:
-      - /Users/fabien/Sites/cv/gulpfile.js:/opt/project/gulpfile.js
-      - /Users/fabien/Sites/cv/app:/opt/project/app
-      - /Users/fabien/Sites/cv/web/vendor:/opt/project/web/vendor
+      - ./gulpfile.js:/opt/project/gulpfile.js
+      - ./app:/opt/project/app
+      - ./vendor:/opt/project/web/vendor
     ports:
       - '35729:35729'
     environment:

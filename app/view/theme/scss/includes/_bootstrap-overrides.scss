@@ -1,5 +1,5 @@
 /*
- * This file is part of the fabschurt/cv package.
+ * This file is part of the fabschurt/website package.
  *
  * (c) 2016 Fabien Schurter <fabien@fabschurt.com>
  *
@@ -7,15 +7,12 @@
  * file that was distributed with this source code.
  */
 
-$body-bg:                #000;
-$text-color:             $color-base-white;
-$font-family-sans-serif: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-size-base:         17px;
-$font-size-h1:           72px;
-$font-size-h2:           48px;
-$font-size-h3:           26px;
-$headings-font-weight:   $font-weight-bold;
-$line-height-base:       1.6;
 $link-color:             #4b5;
 $link-hover-decoration:  none;
+$font-family-sans-serif: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:      "Roboto Slab", Georgia, "Times New Roman", Times, serif;
+$font-size-base:         17px;
+$line-height-base:       1.6;
+$headings-font-family:   $font-family-serif;
+$headings-font-weight:   $font-weight-normal;
 $icon-font-path:         "#{$bootstrap-url}/fonts/bootstrap/";

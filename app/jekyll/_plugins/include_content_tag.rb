@@ -1,4 +1,4 @@
-# This file is part of the fabschurt/cv package.
+# This file is part of the fabschurt/website package.
 #
 # (c) 2016 Fabien Schurter <fabien@fabschurt.com>
 #
@@ -19,18 +19,22 @@ module Jekyll
     # @see Liquid::Tag#render
     # @raise [IOError] If no resolvable partial file can be found
     def render(context)
-      site = context.registers[:site]
-      rendered_slug = site.liquid_renderer.file('*')
-                                          .parse(@markup)
-                                          .render!(context)
-                                          .strip
+      site          = context.registers[:site]
+      rendered_slug =
+        site.liquid_renderer
+          .file('*')
+          .parse(@markup)
+          .render!(context)
+          .strip
       partial_path = "#{@@CONTENT_SUBFOLDER}/#{rendered_slug}"
       @@CONTENT_FORMATS.each do |file_ext|
         full_path = site.in_source_dir("#{partial_path}.#{file_ext}")
         if File.exist?(full_path)
-          content = site.liquid_renderer.file(full_path)
-                                        .parse(File.read(full_path, site.file_read_opts))
-                                        .render!(context)
+          content =
+            site.liquid_renderer
+              .file(full_path)
+              .parse(File.read(full_path, site.file_read_opts))
+              .render!(context)
           case file_ext
           when :html
             return content

@@ -10,12 +10,8 @@ kramdown:
   input: kramdown
 sections:
   - intro
-  - skills
   - work
-  - experience
-url:
-  assets: /assets
-  github: https://github.com/fabschurt
+asset_url: /assets
 copyright_year: 2016
 collections:
   pages:

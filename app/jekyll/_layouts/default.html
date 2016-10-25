@@ -1,6 +1,6 @@
 {% comment %}
 
-This file is part of the fabschurt/cv package.
+This file is part of the fabschurt/website package.
 
 (c) 2016 Fabien Schurter <fabien@fabschurt.com>
 
@@ -10,7 +10,6 @@ file that was distributed with this source code.
 {% endcomment %}<!DOCTYPE html>
 <html lang="{{ page.lang }}">
     {% assign i18n = site.data.i18n[page.lang] %}
-    {% assign nav  = site.data.nav[page.lang]  %}
     <head>
         <!-- Technical -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,40 +23,26 @@ file that was distributed with this source code.
         {% include metas.html %}
 
         <!-- Assets -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,700%7CScope+One:400" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700%7CRoboto+Slab:400" />
         <link rel="stylesheet" href="{% asset_url /css/main.css %}" />
     </head>
     <body>
         <!-- Content -->
-        <div class="video-background-wrapper">
-            <div class="video-background" id="video-background"></div>
-        </div>
-        {% include nav.html %}
-        <div class="page" id="page">
-            <div class="header-wrapper">
-                <div class="header">
-                    <header>
-                        <h1 class="header-title">
-                            <span class="header-headline">{{ i18n.header_title }}</span>
-                            <small class="header-subtitle">{{ i18n.header_subtitle }}</small>
-                        </h1>
-                    </header>
-                </div>
-            </div>
-            <main>
-                {% for section in site.sections %}
-                    <div class="section-wrapper-{{ section }}" id="{{ section }}">
-                        <div class="section-{{ section }}">
+        <div class="page">
+            <div class="main">
+                <main>
+                    {% for section in site.sections %}
+                        <div class="section" id="{{ section }}">
                             <section>
                                 {% include_content {{ page.lang }}/{{ section }} %}
                             </section>
                         </div>
-                    </div>
-                {% endfor %}
-            </main>
+                    {% endfor %}
+                </main>
+            </div>
             <div class="footer">
                 <footer>
-                    <p>© {{ site.copyright_year }} {{ i18n.header_title }}</p>
+                    <p>© {{ site.copyright_year }} {{ i18n.site_title }}</p>
                 </footer>
             </div>
         </div>

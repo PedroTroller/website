@@ -1,5 +1,5 @@
 /*
- * This file is part of the fabschurt/cv package.
+ * This file is part of the fabschurt/website package.
  *
  * (c) 2016 Fabien Schurter <fabien@fabschurt.com>
  *
@@ -38,17 +38,13 @@ var paths = {
     js: {
       modules: {
         main: [
-          basePaths.vendor + '/fittext/fittext.js',
           basePaths.vendor + '/wow/dist/wow.js',
-          basePaths.vendor + '/smooth-scroll/dist/js/smooth-scroll.js',
-          basePaths.vendor + '/gumshoe/dist/js/gumshoe.js',
-          basePaths.vendor + '/mobile-detect/mobile-detect.js',
           basePaths.theme  + '/js/app.js',
         ],
       },
       glob: basePaths.theme + '/js/**/*.js',
     },
-    img: basePaths.theme + '/img/**/*.{jpg,png,gif,ico,svg,json,xml}',
+    img: basePaths.theme + '/img/**/*.{jpg,png,gif,ico,svg}',
   },
   build: {
     jekyll: basePaths.build,

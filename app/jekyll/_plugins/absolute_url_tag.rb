@@ -1,4 +1,4 @@
-# This file is part of the fabschurt/cv package.
+# This file is part of the fabschurt/website package.
 #
 # (c) 2016 Fabien Schurter <fabien@fabschurt.com>
 #
@@ -13,10 +13,13 @@ module Jekyll
     def render(context)
       site = context.registers[:site]
 
-      ENV['CANONICAL_ROOT'].to_s + site.baseurl + site.liquid_renderer.file('*')
-                                                                      .parse(@markup)
-                                                                      .render!(context)
-                                                                      .strip
+      ENV['CANONICAL_ROOT'].to_s +
+      site.baseurl               +
+      site.liquid_renderer
+        .file('*')
+        .parse(@markup)
+        .render!(context)
+        .strip
     end
   end
 end

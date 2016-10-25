@@ -3,7 +3,7 @@ MAINTAINER Fabien Schurter <fabien@fabschurt.com>
 
 ARG ENVIRONMENT=prod
 ARG DISABLE_WATCH=1
-ARG CANONICAL_ROOT=http://cv.fabschurt.com
+ARG CANONICAL_ROOT=http://fabschurt.com
 
 COPY . /opt/project
 WORKDIR /opt/project
