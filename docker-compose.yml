@@ -22,7 +22,7 @@ services:
     volumes:
       - ./gulpfile.js:/opt/project/gulpfile.js
       - ./app:/opt/project/app
-      - ./vendor:/opt/project/web/vendor
+      - ./web/vendor:/opt/project/web/vendor
     ports:
       - '35729:35729'
     environment:
