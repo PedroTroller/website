@@ -39,6 +39,7 @@ var paths = {
       modules: {
         main: [
           basePaths.vendor + '/wow/dist/wow.js',
+          basePaths.vendor + '/smooth-scroll/dist/js/smooth-scroll.js',
           basePaths.theme  + '/js/app.js',
         ],
       },

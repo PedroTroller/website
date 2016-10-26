@@ -47,6 +47,14 @@
       (new WOW()).init();
     })();
 
+    // Smoothly scroll to anchors
+    (function initSmoothScroll() {
+      smoothScroll.init({
+        selector: 'a',
+        offset:   20,
+      });
+    })();
+
     // Load livereload script for `dev` environment
     (function initLiveReload() {
       if (config.environment === 'dev') {
