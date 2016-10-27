@@ -1,5 +1,9 @@
 {
   "site_title": "Fabien Schurter",
   "site_description": "Portfolio de Fabien Schurter, développeur web.",
-  "click_to_open_project": "Cliquez pour ouvrir le projet dans un nouvel onglet"
+  "click_to_open_project": "Cliquez pour ouvrir le projet dans un nouvel onglet",
+  "contact_form": {
+    "msg_placeholder": "Votre message…",
+    "send": "Envoyer"
+  }
 }

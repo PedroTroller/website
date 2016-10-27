@@ -194,3 +194,26 @@ a {
   @extend %list-inline-stars;
   font-size: 14px;
 }
+
+/*
+ * Contact form
+ */
+
+#contact {
+  @extend %narrow-section;
+}
+
+.contact-form {
+  p {
+    @extend .form-group;
+  }
+
+  textarea {
+    @extend .form-control;
+    font-family: monospace;
+  }
+
+  button {
+    @extend .btn, .btn-lg, .btn-block, .btn-success;
+  }
+}
