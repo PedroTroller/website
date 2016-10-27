@@ -11,6 +11,7 @@ kramdown:
 sections:
   - intro
   - work
+  - contact
 asset_url: /assets
 copyright_year: 2016
 collections:
