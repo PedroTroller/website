@@ -113,10 +113,6 @@ a {
   margin: 56px auto;
 }
 
-#intro {
-  @extend %narrow-section;
-}
-
 .footer {
   text-align: center;
 
@@ -124,6 +120,14 @@ a {
     margin: 56px 0 36px;
     font-size: 14px;
   }
+}
+
+/*
+ * Intro
+ */
+
+#intro {
+  @extend %narrow-section;
 }
 
 /*
