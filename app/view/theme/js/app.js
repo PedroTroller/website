@@ -51,7 +51,7 @@
     (function initSmoothScroll() {
       smoothScroll.init({
         selector: 'a',
-        offset:   20,
+        offset:   36,
       });
     })();
 
