@@ -2,14 +2,13 @@ version: '2'
 
 services:
   app:
-    image: website_app
     build:
       context: .
       args:
         ENVIRONMENT: dev
         CANONICAL_ROOT: http://docker.vm
     volumes:
-      - /opt/project/web
+      - codebase:/opt/codebase
     ports:
       - '80:80'
 
@@ -17,12 +16,11 @@ services:
     image: website_app
     depends_on:
       - app
-    volumes_from:
-      - app
     volumes:
-      - ./gulpfile.js:/opt/project/gulpfile.js
-      - ./app:/opt/project/app
-      - ./web/vendor:/opt/project/web/vendor
+      - codebase:/opt/codebase
+      - ./gulpfile.js:/opt/codebase/gulpfile.js
+      - ./app:/opt/codebase/app
+      - ./web/vendor:/opt/codebase/web/vendor
     ports:
       - '35729:35729'
     environment:
@@ -30,3 +28,6 @@ services:
       DISABLE_WATCH: 0
       CANONICAL_ROOT: http://docker.vm
     command: "sh -c './node_modules/.bin/gulp'"
+
+volumes:
+  codebase: ~
