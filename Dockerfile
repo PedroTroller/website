@@ -23,7 +23,7 @@ RUN cp config/nginx.conf /etc/nginx/servers.d/app.conf && \
       ruby-bundler    \
       libffi-dev      \
     && \
-    ENVIRONMENT=$ENVIRONMENT DISABLE_WATCH=$DISABLE_WATCH CANONICAL_ROOT=$CANONICAL_ROOT ./bin/build && \
+    ENVIRONMENT=${ENVIRONMENT} DISABLE_WATCH=${DISABLE_WATCH} CANONICAL_ROOT=${CANONICAL_ROOT} ./bin/build && \
     apk del --purge \
       git        \
       g++        \
