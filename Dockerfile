@@ -22,7 +22,7 @@ RUN apk update --no-cache && \
       ruby-bundler    \
       libffi-dev      \
     && \
-    cp app/config/nginx/app.conf /etc/nginx/servers.d/app.conf                                       && \
+    cp config/nginx/app.conf /etc/nginx/servers.d/app.conf                                       && \
     ENVIRONMENT=$ENVIRONMENT DISABLE_WATCH=$DISABLE_WATCH CANONICAL_ROOT=$CANONICAL_ROOT ./bin/build && \
     apk del --purge \
       git        \
