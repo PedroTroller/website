@@ -60,8 +60,7 @@ gulp.task('jekyll', function (cb) {
   var jekyllEnv = Object.assign({}, process.env);
   jekyllEnv.JEKYLL_ENV = jekyllEnv.ENVIRONMENT;
   var jekyllBuild = require('child_process').spawnSync(
-    'bundle',
-    [
+    'bundle', [
       'exec',
       'jekyll',
       'build',
@@ -70,8 +69,7 @@ gulp.task('jekyll', function (cb) {
       paths.src.jekyll.path,
       '--destination',
       paths.build.jekyll,
-    ],
-    {
+    ], {
       stdio: 'inherit',
       env:   jekyllEnv,
     }
