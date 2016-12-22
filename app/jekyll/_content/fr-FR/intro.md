@@ -12,7 +12,17 @@ plancher sur ES6 et Angular & co. (React, Ember).
 Adepte de toutes les **best practices** qui me passent sous la main, je ne jure
 que par l’**industrialisation**, l’**automatisation** et le **DevOps** (**CI**,
 **Capistrano**, **Docker**, **Ansible**). Je suis un évangéliste du TDD/BDD, mais
-sans être forcément obnubilé par le Graal du *100% code coverage*.
+sans être forcément obnubilé par le Graal du *100% code coverage*. J’aime le code
+bien architecturé et bien écrit, et j’essaie en permanence de respecter les
+principes suivants&nbsp;:
+
+* Maintenabilité
+* Généricité
+* Testabilité
+* Scalabilité
+* Déployabilité
+* Sécurité
+* Performance
 
 Passionné, curieux, assoiffé d’auto-formation, je suis accro à cette sensation
 grisante procurée par le fait de s’immerger dans une documentation et d’en
