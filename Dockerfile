@@ -7,34 +7,33 @@ ARG CANONICAL_ROOT=http://fabschurt.com
 
 COPY . /opt/codebase
 WORKDIR /opt/codebase
-RUN cp config/nginx.conf /etc/nginx/servers.d/app.conf && \
+RUN cp config/nginx/app.conf /etc/nginx/servers.d && \
     apk update --no-cache && \
     apk add \
       bash            \
       git             \
-      g++             \
-      gcc             \
-      make            \
-      python          \
       nodejs          \
       ruby-dev        \
       ruby-io-console \
       ruby-json       \
       ruby-bundler    \
       libffi-dev      \
+      make            \
+      g++             \
     && \
     ENVIRONMENT=${ENVIRONMENT} DISABLE_WATCH=${DISABLE_WATCH} CANONICAL_ROOT=${CANONICAL_ROOT} ./bin/build && \
     apk del --purge \
-      git        \
-      g++        \
-      gcc        \
-      make       \
-      python     \
-      libffi-dev \
+      bash            \
+      git             \
+      ruby-io-console \
+      ruby-json       \
+      ruby-bundler    \
+      libffi-dev      \
+      make            \
+      g++             \
     && \
     rm -rf /tmp/*                \
            /var/cache/apk/*      \
            /usr/lib/node_modules \
            /root/.npm            \
-           /root/.node-gyp       \
            /root/.cache/*
