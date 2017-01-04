@@ -5,10 +5,10 @@ ARG ENVIRONMENT=prod
 ARG DISABLE_WATCH=1
 ARG CANONICAL_ROOT=http://fabschurt.com
 
+COPY config/nginx/app.conf /etc/nginx/conf.d
 COPY . /opt/codebase
 WORKDIR /opt/codebase
-RUN cp config/nginx/app.conf /etc/nginx/servers.d && \
-    apk update --no-cache && \
+RUN apk update --no-cache && \
     apk add \
       bash            \
       git             \
