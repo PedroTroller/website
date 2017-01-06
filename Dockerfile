@@ -3,7 +3,7 @@ MAINTAINER Fabien Schurter <fabien@fabschurt.com>
 
 ARG ENVIRONMENT=prod
 ARG DISABLE_WATCH=1
-ARG CANONICAL_ROOT=http://fabschurt.com
+ARG CANONICAL_ROOT
 
 COPY config/nginx/app.conf /etc/nginx/conf.d
 COPY . /opt/codebase
