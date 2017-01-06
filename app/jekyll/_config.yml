@@ -17,8 +17,7 @@ collections:
     output: true
     permalink: /:path:output_ext
 defaults:
-  -
-    scope:
+  - scope:
       path: ''
     values:
       layout: default
