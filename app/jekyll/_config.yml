@@ -1,6 +1,4 @@
 timezone: Europe/Paris
-exclude:
-  - _pages/LICENSE
 keep_files:
   - assets
   - vendor
