@@ -1,23 +1,26 @@
-timezone: Europe/Paris
-keep_files:
-  - assets
-  - vendor
-  - .gitkeep
-kramdown:
-  auto_ids: false
-  input: kramdown
-sections:
-  - intro
-  - work
-  - contact
-asset_url: /assets
-copyright_year: 2016
+# Jekyll config
 collections:
   pages:
     output: true
     permalink: /:path:output_ext
+keep_files:
+  - assets
+  - vendor
+  - .gitkeep
+timezone: Europe/Paris
 defaults:
   - scope:
       path: ''
     values:
       layout: default
+kramdown:
+  auto_ids: false
+  input: kramdown
+
+# Custom config
+asset_url: /assets
+copyright_year: 2016
+sections:
+  - intro
+  - work
+  - contact
