@@ -8,7 +8,7 @@ services:
         ENVIRONMENT: dev
         CANONICAL_ROOT: http://docker.vm
     volumes:
-      - codebase:/opt/codebase
+      - /opt/codebase
     ports:
       - '80:80'
 
@@ -19,8 +19,9 @@ services:
       DISABLE_WATCH: 0
       CANONICAL_ROOT: http://docker.vm
     command: "sh -c './node_modules/.bin/gulp'"
+    volumes_from:
+      - app
     volumes:
-      - codebase:/opt/codebase
       - ./app:/opt/codebase/app
       - ./web/vendor:/opt/codebase/web/vendor
       - ./gulpfile.js:/opt/codebase/gulpfile.js
@@ -28,6 +29,3 @@ services:
       - '35729:35729'
     depends_on:
       - app
-
-volumes:
-  codebase: ~

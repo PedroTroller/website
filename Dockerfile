@@ -21,7 +21,7 @@ RUN apk update --no-cache && \
       make            \
       g++             \
     && \
-    ENVIRONMENT=${ENVIRONMENT} DISABLE_WATCH=${DISABLE_WATCH} CANONICAL_ROOT=${CANONICAL_ROOT} ./bin/build && \
+    ./bin/build && \
     apk del --purge \
       bash            \
       git             \
