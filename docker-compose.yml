@@ -6,24 +6,24 @@ services:
       context: .
       args:
         ENVIRONMENT: dev
-        CANONICAL_ROOT: http://docker.vm
+    environment:
+      CANONICAL_ROOT: http://docker.vm
     volumes:
       - /opt/codebase
+      - ./app/jekyll:/opt/codebase/app/jekyll
     ports:
-      - '80:80'
+      - '80:4000'
 
   builder:
     image: website_app
     environment:
       ENVIRONMENT: dev
       DISABLE_WATCH: 0
-      CANONICAL_ROOT: http://docker.vm
-    command: "sh -c './node_modules/.bin/gulp'"
+    command: ./node_modules/.bin/gulp
     volumes_from:
       - app
     volumes:
-      - ./app:/opt/codebase/app
-      - ./web/vendor:/opt/codebase/web/vendor
+      - ./app/view/theme:/opt/codebase/app/view/theme
       - ./gulpfile.js:/opt/codebase/gulpfile.js
     ports:
       - '35729:35729'

@@ -23,64 +23,31 @@ if (isDev) {
 
 // Paths
 var basePaths = {
-  src:    'app',
-  theme:  'app/view/theme',
+  src:    'app/view/theme',
   build:  'web',
   vendor: 'web/vendor',
 };
 var paths = {
   src: {
-    jekyll: {
-      path: basePaths.src + '/jekyll',
-      glob: basePaths.src + '/jekyll/**/*.*',
-    },
-    scss: basePaths.theme + '/scss/**/*.scss',
+    scss: basePaths.src + '/scss/**/*.scss',
     js: {
       modules: {
         main: [
           basePaths.vendor + '/wow/dist/wow.js',
           basePaths.vendor + '/smooth-scroll/dist/js/smooth-scroll.js',
-          basePaths.theme  + '/js/app.js',
+          basePaths.src    + '/js/app.js',
         ],
       },
-      glob: basePaths.theme + '/js/**/*.js',
+      glob: basePaths.src + '/js/**/*.js',
     },
-    img: basePaths.theme + '/img/**/*.{jpg,png,gif,ico,svg}',
+    img: basePaths.src + '/img/**/*.{jpg,png,gif,ico,svg}',
   },
   build: {
-    jekyll: basePaths.build,
-    scss:   basePaths.build + '/assets/css',
-    js:     basePaths.build + '/assets/js',
-    img:    basePaths.build + '/assets/img',
+    scss: basePaths.build + '/assets/css',
+    js:   basePaths.build + '/assets/js',
+    img:  basePaths.build + '/assets/img',
   },
 };
-
-// Jekyll
-gulp.task('jekyll', function (cb) {
-  var jekyllEnv = Object.assign({}, process.env);
-  jekyllEnv.JEKYLL_ENV = jekyllEnv.ENVIRONMENT;
-  var jekyllBuild = require('child_process').spawnSync(
-    'bundle', [
-      'exec',
-      'jekyll',
-      'build',
-      '--trace',
-      '--source',
-      paths.src.jekyll.path,
-      '--destination',
-      paths.build.jekyll,
-    ], {
-      stdio: 'inherit',
-      env:   jekyllEnv,
-    }
-  );
-  !isDev && jekyllBuild.status !== 0 && process.exit(jekyllBuild.status);
-  gulp
-    .src(paths.src.jekyll.glob)
-    .pipe(isDev ? livereload() : util.noop())
-  ;
-  cb();
-});
 
 // Sass
 gulp.task('sass', function (cb) {
@@ -152,10 +119,9 @@ gulp.task('img', function (cb) {
 gulp.task('watch', function (cb) {
   if (isDev && !isWatchDisabled) {
     livereload.listen({host: '0.0.0.0', port: 35729});
-    gulp.watch(paths.src.jekyll.glob, ['jekyll'], cb);
-    gulp.watch(paths.src.scss,        ['sass'],   cb);
-    gulp.watch(paths.src.js.glob,     ['js'],     cb);
-    gulp.watch(paths.src.img,         ['img'],    cb);
+    gulp.watch(paths.src.scss,    ['sass'], cb);
+    gulp.watch(paths.src.js.glob, ['js'],   cb);
+    gulp.watch(paths.src.img,     ['img'],  cb);
   } else {
     cb();
   }
@@ -173,7 +139,7 @@ gulp.task('clean', function (cb) {
 
 // Build
 gulp.task('build', function (cb) {
-  require('run-sequence')('clean', 'jekyll', ['sass', 'js', 'img'], cb);
+  require('run-sequence')('clean', ['sass', 'js', 'img'], cb);
 });
 
 // Default task (build and watch)
