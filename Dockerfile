@@ -24,7 +24,7 @@ RUN apk update --no-cache && \
     addgroup -S jekyll && \
     adduser -SDH -s /sbin/nologin -G jekyll jekyll && \
     chgrp -R jekyll web && \
-    chmod -R g+w web && \
+    chmod -R g+rw web && \
     apk del --purge \
       bash       \
       git        \
