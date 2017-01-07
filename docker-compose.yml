@@ -11,8 +11,13 @@ services:
     volumes:
       - /opt/codebase
       - ./app/jekyll:/opt/codebase/app/jekyll
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile-frontend
     ports:
-      - '80:4000'
+      - '80:80'
 
   builder:
     image: website_app
