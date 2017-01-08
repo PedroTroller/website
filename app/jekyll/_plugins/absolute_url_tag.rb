@@ -8,6 +8,8 @@
 module Jekyll
   # The `absolute_url` Liquid tag will prepend a full URL prefix to the passed
   # relative path (depends on the `CANONICAL_ROOT` environment variable).
+  #
+  # @author Fabien Schurter <fabien@fabschurt.com>
   class AbsoluteUrlTag < Liquid::Tag
     # @see Liquid::Tag#render
     def render(context)

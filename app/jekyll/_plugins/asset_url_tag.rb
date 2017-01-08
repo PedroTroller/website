@@ -8,6 +8,8 @@
 module Jekyll
   # The `asset_url` Liquid tag will prepend the asset directory path (set under
   # the `asset_url` in `_config.yml`) to the passed relative path.
+  #
+  # @author Fabien Schurter <fabien@fabschurt.com>
   class AssetUrlTag < Liquid::Tag
     # @see Liquid::Tag#render
     def render(context)

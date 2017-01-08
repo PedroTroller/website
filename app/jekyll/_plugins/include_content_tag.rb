@@ -12,6 +12,8 @@ module Jekyll
   # is found).
   #
   # The target Markdown file(s) can contain Liquid tags, they’ll be parsed.
+  #
+  # @author Fabien Schurter <fabien@fabschurt.com>
   class IncludeContentTag < Liquid::Tag
     @@CONTENT_SUBFOLDER = '_content'
     @@CONTENT_FORMATS   = [:html, :md]
