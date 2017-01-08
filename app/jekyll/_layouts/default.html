@@ -9,7 +9,6 @@ file that was distributed with this source code.
 
 {% endcomment %}<!DOCTYPE html>
 <html lang="{{ page.lang }}">
-    {% assign i18n = site.data.i18n[page.lang] %}
     <head>
         <!-- Technical -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -42,7 +41,7 @@ file that was distributed with this source code.
             </div>
             <div class="footer">
                 <footer>
-                    <p>© {{ site.copyright_year }} {{ i18n.site_title }}</p>
+                    <p>© {{ site.copyright_year }} {{ site.i18n.site_title }}</p>
                 </footer>
             </div>
         </div>

@@ -10,14 +10,14 @@ file that was distributed with this source code.
 {% endcomment %}
 
 {% capture fb_img_url %}{% asset_url /img/facebook.jpg %}{% endcapture %}
-<title>{{ i18n.site_title }}</title>
-<meta name="description" content="{{ i18n.site_description }}" />
-<meta property="og:title" content="{{ i18n.site_title }}" />
+<title>{{ site.i18n.site_title }}</title>
+<meta name="description" content="{{ site.i18n.site_description }}" />
+<meta property="og:title" content="{{ site.i18n.site_title }}" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="{% absolute_url {{ fb_img_url }} %}" />
 <meta property="og:image:type" content="image/jpeg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="{% absolute_url {{ page.url }} %}" />
-<meta property="og:description" content="{{ i18n.site_description }}" />
+<meta property="og:description" content="{{ site.i18n.site_description }}" />
 <meta property="og:locale" content="{{ page.lang|replace: '-', '_' }}" />
