@@ -14,7 +14,7 @@ module Jekyll
       site = context.registers[:site]
 
       ENV['CANONICAL_ROOT'].to_s +
-      site.baseurl               +
+      site.baseurl +
       site.liquid_renderer
         .file('*')
         .parse(@markup)

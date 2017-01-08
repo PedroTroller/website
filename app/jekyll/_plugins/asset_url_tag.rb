@@ -13,7 +13,7 @@ module Jekyll
     def render(context)
       site = context.registers[:site]
 
-      site.baseurl                  +
+      site.baseurl +
       site.config['asset_url'].to_s +
       site.liquid_renderer
         .file('*')

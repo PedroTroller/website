@@ -19,7 +19,7 @@ module Jekyll
     # @see Liquid::Tag#render
     # @raise [IOError] If no resolvable partial file can be found
     def render(context)
-      site          = context.registers[:site]
+      site = context.registers[:site]
       rendered_slug =
         site.liquid_renderer
           .file('*')
@@ -27,6 +27,7 @@ module Jekyll
           .render!(context)
           .strip
       partial_path = "#{@@CONTENT_SUBFOLDER}/#{rendered_slug}"
+
       @@CONTENT_FORMATS.each do |file_ext|
         full_path = site.in_source_dir("#{partial_path}.#{file_ext}")
         if File.exist?(full_path)
@@ -43,6 +44,7 @@ module Jekyll
           end
         end
       end
+
       fail IOError, "Could not resolve `#{rendered_slug}` as a valid content partial."
     end
   end
