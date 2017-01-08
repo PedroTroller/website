@@ -18,6 +18,8 @@ services:
       dockerfile: Dockerfile-frontend
     ports:
       - '80:80'
+    depends_on:
+      - app
 
   builder:
     image: website_app
