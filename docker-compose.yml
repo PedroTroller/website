@@ -30,7 +30,7 @@ services:
     volumes_from:
       - app
     volumes:
-      - ./app/view/theme:/opt/codebase/app/view/theme
+      - ./app/assets:/opt/codebase/app/assets
       - ./gulpfile.js:/opt/codebase/gulpfile.js
     ports:
       - '35729:35729'

@@ -23,7 +23,7 @@ if (isDev) {
 
 // Paths
 var basePaths = {
-  src:    'app/view/theme',
+  src:    'app/assets',
   build:  'web',
   vendor: 'web/vendor',
 };
