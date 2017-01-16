@@ -6,8 +6,7 @@ services:
       context: .
       args:
         ENVIRONMENT: dev
-    environment:
-      CANONICAL_ROOT: http://docker.vm
+    env_file: .env
     volumes:
       - /opt/codebase
       - ./app/jekyll:/opt/codebase/app/jekyll

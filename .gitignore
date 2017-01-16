@@ -3,4 +3,5 @@
 /node_modules/
 /web/*
 /app/jekyll/.jekyll-metadata
+/.env
 !.gitkeep
