@@ -19,7 +19,6 @@ kramdown:
 
 # Custom config
 asset_url: /assets
-copyright_year: 2016
 sections:
   - intro
   - work
