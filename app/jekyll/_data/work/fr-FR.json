@@ -2,11 +2,10 @@
   "Mairie de Rezé – Vœux 2016": {
     "desc": "Application d’envoi de cartes de vœux",
     "img": "reze.jpg",
-    "url": "http://www.reze.fr/",
+    "url": "http://voeux-2017.reze.fr/",
     "tech": [
-      "PHP/MySQL",
+      "PHP/SQLite",
       "Silex",
-      "Composants Symfony",
       "Twig",
       "Sass",
       "Bootstrap",
@@ -59,8 +58,7 @@
     "url": "http://www.galinottes.net/",
     "tech": [
       "PHP/MySQL",
-      "Bolt",
-      "Silex",
+      "Bolt/Silex",
       "Twig",
       "Sass",
       "Bootstrap",
