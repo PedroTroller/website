@@ -24,7 +24,7 @@ if (isDev) {
 // Paths
 var basePaths = {
   src:    'app/assets',
-  build:  'web',
+  build:  'web/assets',
   vendor: 'web/vendor',
 };
 var paths = {
@@ -43,9 +43,9 @@ var paths = {
     img: basePaths.src + '/img/**/*.{jpg,png,gif,ico,svg}',
   },
   build: {
-    scss: basePaths.build + '/assets/css',
-    js:   basePaths.build + '/assets/js',
-    img:  basePaths.build + '/assets/img',
+    scss: basePaths.build + '/css',
+    js:   basePaths.build + '/js',
+    img:  basePaths.build + '/img',
   },
 };
 
