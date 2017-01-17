@@ -10,8 +10,12 @@ file that was distributed with this source code.
 {% endcomment %}
 
 {% capture fb_img_url %}{% asset_url /img/facebook.jpg %}{% endcapture %}
+
+<!-- Basic meta -->
 <title>{{ site.i18n.site_title }}</title>
 <meta name="description" content="{{ site.i18n.site_description }}" />
+
+<!-- OpenGraph -->
 <meta property="og:title" content="{{ site.i18n.site_title }}" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="{% absolute_url {{ fb_img_url }} %}" />
