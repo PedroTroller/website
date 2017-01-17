@@ -30,6 +30,7 @@ services:
       - app
     volumes:
       - ./app/assets:/opt/codebase/app/assets
+      - ./web/vendor:/opt/codebase/web/vendor
       - ./gulpfile.js:/opt/codebase/gulpfile.js
     ports:
       - '35729:35729'
