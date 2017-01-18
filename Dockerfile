@@ -28,10 +28,12 @@ RUN apk update --no-cache && \
     apk del --purge \
       bash       \
       git        \
+      ruby-dev   \
       libffi-dev \
       make       \
       g++        \
     && \
+    apk add ruby && \
     rm -rf /tmp/*                \
            /var/cache/apk/*      \
            /usr/lib/node_modules \
