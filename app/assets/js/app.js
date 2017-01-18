@@ -24,19 +24,18 @@
   /**
    * Selects a node list and pass each node through the passed closure.
    *
-   * @param {String}   selector       The CSS selector targeting the desired elements
-   * @param {Function} appliedClosure The closure by which each node will be processed
+   * @param {String}   selector The CSS selector targeting the desired elements
+   * @param {Function} closure  The closure which will process each node in the list
    *
    * @return {NodeList} The selected node list
    */
-  document.selectAndProcess = function (selector, appliedClosure) {
+  document.selectAndProcess = function (selector, closure) {
     var nodeList = this.querySelectorAll(selector);
-    Array.prototype.forEach.call(nodeList, appliedClosure);
+    Array.prototype.forEach.call(nodeList, closure);
 
     return nodeList;
   };
 
-  // When DOM is loaded
   document.addEventListener('DOMContentLoaded', function () {
     // Register and initialize reveal animation
     (function initRevealAnimations() {
