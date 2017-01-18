@@ -8,7 +8,7 @@ services:
         ENVIRONMENT: dev
     env_file: .env
     volumes:
-      - /opt/codebase
+      - /opt/codebase/web
       - ./app/jekyll:/opt/codebase/app/jekyll
 
   frontend:
