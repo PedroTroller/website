@@ -47,16 +47,8 @@ file that was distributed with this source code.
         </div>
 
         <!-- Assets -->
-        <script>
-          /**
-           * Contains application-specific config values, passed from the backend.
-           *
-           * @namespace
-           */
-          var config = {
-            environment: '{{ jekyll.environment }}',
-          };
-        </script>
+        {% include js_config.html %}
+        {% include js_templates.html %}
         <script src="{% asset_url /js/main.js %}"></script>
     </body>
 </html>

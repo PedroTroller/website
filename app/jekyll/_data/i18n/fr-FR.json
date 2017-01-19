@@ -4,6 +4,15 @@
   "click_to_open_project": "Cliquez pour ouvrir le projet dans un nouvel onglet",
   "contact_form": {
     "msg_placeholder": "Votre message…",
-    "send": "Envoyer"
+    "captcha_placeholder": "Merci de recopier le captcha…",
+    "refresh_captcha": "Rafraîchir l’image",
+    "send": "Envoyer",
+    "sending": "Envoi en cours…",
+    "notification": {
+      "close": "Fermer",
+      "success": "Merci, votre message a bien été envoyé (je vous réponds au plus vite).",
+      "fail": "Le formulaire contient des erreurs.",
+      "error": "Une erreur réseau est survenue lors de l’envoi du formulaire, merci de réessayer dans quelques instants."
+    }
   }
 }

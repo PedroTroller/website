@@ -33,9 +33,15 @@ var paths = {
     js: {
       modules: {
         main: [
-          basePaths.vendor + '/wow/dist/wow.js',
-          basePaths.vendor + '/smooth-scroll/dist/js/smooth-scroll.js',
+          basePaths.vendor + '/wow.js/dist/wow.js',
+          basePaths.vendor + '/smooth-scroll.js/dist/js/smooth-scroll.js',
+          basePaths.vendor + '/bootstrap.native/lib/utils.js',
+          basePaths.vendor + '/bootstrap.native/lib/button-native.js',
+          basePaths.vendor + '/bootstrap.native/lib/alert-native.js',
+          basePaths.vendor + '/mustache/mustache.js',
+          basePaths.src    + '/js/lib.js',
           basePaths.src    + '/js/app.js',
+          basePaths.src    + '/js/form.js',
         ],
       },
       glob: basePaths.src + '/js/**/*.js',
@@ -96,12 +102,9 @@ gulp.task('js', function (cb) {
       .pipe(isDev ? util.noop() : require('gulp-uglify')())
       .pipe(isDev ? sourcemaps.write('maps') : util.noop())
       .pipe(gulp.dest(paths.build.js))
+      .pipe(isDev ? livereload() : util.noop())
     ;
   }
-  gulp
-    .src(paths.src.js.glob)
-    .pipe(isDev ? livereload() : util.noop())
-  ;
   cb();
 });
 

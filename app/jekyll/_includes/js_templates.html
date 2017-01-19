@@ -1,0 +1,31 @@
+{% comment %}
+
+This file is part of the fabschurt/website package.
+
+(c) 2016 Fabien Schurter <fabien@fabschurt.com>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+{% endcomment %}
+
+<script id="template-notification" type="text/template">
+    {% raw %}
+    <div class="notification-{{ type }}" role="alert">
+        <button type="button" class="notification-closer" data-dismiss="alert" aria-label="{{ close_label }}">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+    {% endraw %}
+</script>
+
+<script id="template-form-error-list" type="text/template">
+    {% raw %}
+    <ul class="form-error-list">
+        {{ #errors }}
+            <li class="form-error-list-item">{{ . }}</li>
+        {{ /errors }}
+    </ul>
+    {% endraw %}
+</script>

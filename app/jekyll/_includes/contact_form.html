@@ -9,11 +9,32 @@ file that was distributed with this source code.
 
 {% endcomment %}
 
-<form class="contact-form">
-    <p>
+<div class="notification-area" id="contact-form-notification-area"></div>
+<form class="contact-form" id="contact-form" action="{{ site.kontact_url }}/post" method="POST" novalidate>
+    <p class="form-row">
         <textarea name="message" rows="12" required="required" placeholder="{{ site.i18n.contact_form.msg_placeholder }}"></textarea>
     </p>
-    <p>
-        <button type="submit">{{ site.i18n.contact_form.send }}</button>
+    <p class="form-row">
+        <span class="captcha-wrapper">
+            <span class="captcha-refresh-btn-wrapper">
+                <button type="button"
+                        class="captcha-refresh-btn"
+                        title="{{ site.i18n.contact_form.refresh_captcha }}"
+                        onclick="var img = this.closest('.captcha-wrapper').querySelector('.captcha-img'); img.setAttribute('src', img.getAttribute('src').replace(/(\?|&amp;)ts=\d+/, '$1ts=' + Date.now()));">
+                    <span class="captcha-refresh-btn-icon"></span>
+                </button>
+            </span>
+            <span class="captcha-img-wrapper">
+                <img src="{{ site.kontact_url }}/captcha?w=96&amp;h=39&amp;ts={{ 'now'|date: '%s' }}"
+                     alt=""
+                     width="96"
+                     height="39"
+                     class="captcha-img" />
+            </span>
+            <input type="text" name="captcha" required="required" placeholder="{{ site.i18n.contact_form.captcha_placeholder }}" />
+        </span>
+    </p>
+    <p class="form-row">
+        <button type="submit" class="btn" data-loading-text="{{ site.i18n.contact_form.sending }}">{{ site.i18n.contact_form.send }}</button>
     </p>
 </form>

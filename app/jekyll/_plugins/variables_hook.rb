@@ -6,5 +6,6 @@
 # file that was distributed with this source code.
 
 Jekyll::Hooks.register :documents, :pre_render do |document, payload|
-  payload.site['i18n'] = payload.site.data['i18n'][document.data['lang']]
+  payload.site['i18n']        = payload.site.data['i18n'][document.data['lang']]
+  payload.site['kontact_url'] = ENV['KONTACT_URL']
 end

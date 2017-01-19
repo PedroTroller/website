@@ -196,6 +196,24 @@ a {
 }
 
 /*
+ * Notifications
+ */
+
+[role="alert"] {
+  @extend .alert, .alert-dismissible, .fade;
+}
+
+@each $type in (success, info, warning, danger) {
+  .notification-#{$type} {
+    @extend .alert-#{$type};
+  }
+}
+
+.notification-closer {
+  @extend .close;
+}
+
+/*
  * Contact form
  */
 
@@ -204,16 +222,49 @@ a {
 }
 
 .contact-form {
-  p {
+  > p {
     @extend .form-group;
   }
 
-  textarea {
+  textarea,
+  input {
     @extend .form-control;
     font-family: monospace;
   }
 
-  button {
-    @extend .btn, .btn-lg, .btn-block, .btn-success;
+  .captcha-wrapper {
+    @extend .input-group;
+  }
+
+  .captcha-img-wrapper {
+    @extend .input-group-addon;
+    padding: 0;
+    border-right: 0;
+  }
+
+  .captcha-refresh-btn-wrapper {
+    @extend .input-group-btn;
+  }
+
+  .captcha-refresh-btn {
+    @extend .btn, .btn-default;
+  }
+
+  .has-error .captcha-refresh-btn {
+    border-color: $state-danger-text;
+  }
+
+  .captcha-refresh-btn-icon {
+    @extend .glyphicon, .glyphicon-refresh;
+    font-size: 14px;
+  }
+
+  button[type="submit"] {
+    @extend .btn-lg, .btn-block, .btn-success;
+  }
+
+  .form-error-list {
+    @extend .help-block;
+    padding-left: 30px;
   }
 }

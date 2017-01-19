@@ -1,0 +1,22 @@
+{% comment %}
+
+This file is part of the fabschurt/website package.
+
+(c) 2016 Fabien Schurter <fabien@fabschurt.com>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+{% endcomment %}
+
+<script>
+  /**
+   * Contains application-specific config values passed from the backend.
+   *
+   * @namespace
+   */
+  var config = {
+    environment: '{{ jekyll.environment }}',
+    i18n: {{ site.i18n|jsonify }},
+  };
+</script>
