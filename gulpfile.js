@@ -102,9 +102,12 @@ gulp.task('js', function (cb) {
       .pipe(isDev ? util.noop() : require('gulp-uglify')())
       .pipe(isDev ? sourcemaps.write('maps') : util.noop())
       .pipe(gulp.dest(paths.build.js))
-      .pipe(isDev ? livereload() : util.noop())
     ;
   }
+  gulp
+    .src(paths.src.js.glob)
+    .pipe(isDev ? livereload() : util.noop())
+  ;
   cb();
 });
 
