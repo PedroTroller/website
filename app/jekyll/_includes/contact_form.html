@@ -10,7 +10,7 @@ file that was distributed with this source code.
 {% endcomment %}
 
 <div class="notification-area" id="contact-form-notification-area"></div>
-<form class="contact-form" id="contact-form" action="{{ site.kontact_url }}/post" method="POST" novalidate>
+<form class="contact-form" id="contact-form" action="{{ site.kontact_url }}/post" method="POST">
     <p class="form-row">
         <textarea name="message" rows="12" required="required" placeholder="{{ site.i18n.contact_form.msg_placeholder }}"></textarea>
     </p>
