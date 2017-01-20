@@ -99,7 +99,7 @@ gulp.task('js', function (cb) {
       .src(modules[module])
       .pipe(isDev ? sourcemaps.init() : util.noop())
       .pipe(require('gulp-concat')(module + '.js'))
-      .pipe(isDev ? util.noop() : require('gulp-uglify')())
+      .pipe(isDev ? util.noop() : require('gulp-uglify/minifier')({}, require('uglify-js')))
       .pipe(isDev ? sourcemaps.write('maps') : util.noop())
       .pipe(gulp.dest(paths.build.js))
     ;
