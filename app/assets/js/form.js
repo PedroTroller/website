@@ -105,7 +105,7 @@
               form.reset();
               break;
             case 'fail':
-              notificationArea.notify(config.i18n.contact_form.notification.fail);
+              notificationArea.notify(config.i18n.contact_form.notification.fail, 'danger');
               form.showErrors(responseData.data);
               break;
             case 'error':
