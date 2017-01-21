@@ -1,4 +1,4 @@
-/*!
+/*
  * This file is part of the fabschurt/website package.
  *
  * (c) 2016 Fabien Schurter <fabien@fabschurt.com>
