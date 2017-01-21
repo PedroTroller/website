@@ -10,16 +10,32 @@
 'use strict';
 
 // Get environment config
-var isDev           = (process.env.ENVIRONMENT === 'dev');
-var isWatchDisabled = (Number(process.env.DISABLE_WATCH) === 1);
+var debug        = (process.env.ENVIRONMENT === 'dev');
+var watchEnabled = typeof process.env.ENABLE_WATCH === 'undefined' ? debug : (Number(process.env.ENABLE_WATCH) === 1);
 
 // Common imports
-var gulp = require('gulp');
-var util = require('gulp-util');
-if (isDev) {
-  var sourcemaps = require('gulp-sourcemaps');
-  var livereload = require('gulp-livereload');
-}
+var gulp       = require('gulp');
+var util       = require('gulp-util');
+var sequence   = require('run-sequence');
+var sourcemaps = debug ? require('gulp-sourcemaps') : {};
+var livereload = watchEnabled ? require('gulp-livereload') : {};
+
+// Get initial reference before overriding
+var gulpSrc = gulp.src;
+
+/**
+ * @override
+ */
+gulp.src = function () {
+  return gulpSrc.apply(gulp, arguments).pipe(
+    require('gulp-plumber')(function (error) {
+      var message = new util.PluginError(error.plugin, error.messageFormatted || error.message);
+      util.log(message.toString());
+      debug && console.log(error);
+      watchEnabled ? this.emit('end') : process.exit(error.status || 1);
+    })
+  );
+};
 
 // Paths
 var basePaths = {
@@ -31,8 +47,8 @@ var paths = {
   src: {
     scss: basePaths.src + '/scss/**/*.scss',
     js: {
-      modules: {
-        main: [
+      targets: {
+        'main.js': [
           basePaths.vendor + '/wow.js/dist/wow.js',
           basePaths.vendor + '/smooth-scroll.js/dist/js/smooth-scroll.js',
           basePaths.vendor + '/bootstrap.native/lib/utils.js',
@@ -44,7 +60,10 @@ var paths = {
           basePaths.src    + '/js/form.js',
         ],
       },
-      glob: basePaths.src + '/js/**/*.js',
+      glob: [
+        basePaths.vendor + '/**/*.js',
+        basePaths.src    + '/js/**/*.js',
+      ],
     },
     img: basePaths.src + '/img/**/*.{jpg,png,gif,ico,svg}',
   },
@@ -56,24 +75,18 @@ var paths = {
 };
 
 // Sass
-gulp.task('sass', function (cb) {
-  var sass = require('gulp-sass');
-  gulp
+gulp.task('sass', function () {
+  return gulp
     .src(paths.src.scss)
-    .pipe(isDev ? sourcemaps.init() : util.noop())
-    .pipe(
-      sass({
-        precision: 9,
-        outputStyle: isDev ? null : 'compressed',
-        includePaths: [
-          basePaths.vendor,
-          basePaths.vendor + '/bootstrap-sass/assets/stylesheets',
-        ],
-      }).on('error', function (e) {
-        sass.logError.call(this, e);
-        !isDev && process.exit(e.status);
-      })
-    )
+    .pipe(debug ? sourcemaps.init() : util.noop())
+    .pipe(require('gulp-sass')({
+      precision: 9,
+      outputStyle: debug ? null : 'compressed',
+      includePaths: [
+        basePaths.vendor,
+        basePaths.vendor + '/bootstrap-sass/assets/stylesheets',
+      ],
+    }))
     .pipe(require('gulp-autoprefixer')({
       browsers: [
         'last 5 versions',
@@ -84,69 +97,61 @@ gulp.task('sass', function (cb) {
       ],
       remove: false,
     }))
-    .pipe(isDev ? sourcemaps.write('maps') : util.noop())
+    .pipe(debug ? sourcemaps.write('maps') : util.noop())
     .pipe(gulp.dest(paths.build.scss))
-    .pipe(isDev ? livereload() : util.noop())
+    .pipe(watchEnabled ? livereload() : util.noop())
   ;
-  cb();
 });
 
 // JavaScript
-gulp.task('js', function (cb) {
-  var modules = paths.src.js.modules;
-  for (var module in modules) {
-    gulp
-      .src(modules[module])
-      .pipe(isDev ? sourcemaps.init() : util.noop())
-      .pipe(require('gulp-concat')(module + '.js'))
-      .pipe(isDev ? util.noop() : require('gulp-uglify/minifier')({}, require('uglify-js')))
-      .pipe(isDev ? sourcemaps.write('maps') : util.noop())
-      .pipe(gulp.dest(paths.build.js))
-    ;
-  }
-  gulp
+gulp.task('js', function () {
+  return gulp
     .src(paths.src.js.glob)
-    .pipe(isDev ? livereload() : util.noop())
+    .pipe(debug ? sourcemaps.init() : util.noop())
+    .pipe(require('gulp-group-concat')(paths.src.js.targets))
+    .pipe(debug ? util.noop() : require('gulp-uglify/minifier')(null, require('uglify-js')))
+    .pipe(debug ? sourcemaps.write('maps') : util.noop())
+    .pipe(gulp.dest(paths.build.js))
+    .pipe(watchEnabled ? livereload() : util.noop())
   ;
-  cb();
 });
 
 // Images
-gulp.task('img', function (cb) {
-  gulp
+gulp.task('img', function () {
+  return gulp
     .src(paths.src.img)
     .pipe(gulp.dest(paths.build.img))
-    .pipe(isDev ? livereload() : util.noop())
+    .pipe(watchEnabled ? livereload() : util.noop())
   ;
-  cb();
 });
 
-// Watch and livereload
+// Clean
+gulp.task('clean', function () {
+  return require('del')([
+    paths.build.scss,
+    paths.build.js,
+    paths.build.img,
+  ]);
+});
+
+// Watch + LiveReload
 gulp.task('watch', function (cb) {
-  if (isDev && !isWatchDisabled) {
-    livereload.listen({host: '0.0.0.0', port: 35729});
-    gulp.watch(paths.src.scss,    ['sass'], cb);
-    gulp.watch(paths.src.js.glob, ['js'],   cb);
-    gulp.watch(paths.src.img,     ['img'],  cb);
+  if (watchEnabled) {
+    livereload.listen();
+    gulp.watch(paths.src.scss,    ['sass']);
+    gulp.watch(paths.src.js.glob, ['js']);
+    gulp.watch(paths.src.img,     ['img']);
   } else {
     cb();
   }
 });
 
-// Clean
-gulp.task('clean', function (cb) {
-  require('del').sync([
-    paths.build.scss,
-    paths.build.js,
-    paths.build.img,
-  ]);
-  cb();
-});
-
 // Build
 gulp.task('build', function (cb) {
-  require('run-sequence')('clean', ['sass', 'js', 'img'], cb);
+  sequence('clean', ['sass', 'js', 'img'], cb);
 });
 
-// Default task (build and watch)
-gulp.task('default', ['build', 'watch']);
+// Default task
+gulp.task('default', function (cb) {
+  sequence('build', 'watch', cb);
+});

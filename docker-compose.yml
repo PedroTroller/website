@@ -24,7 +24,6 @@ services:
     image: website_app
     environment:
       ENVIRONMENT: dev
-      DISABLE_WATCH: 0
     command: ./node_modules/.bin/gulp
     volumes_from:
       - app

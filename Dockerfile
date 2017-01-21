@@ -2,7 +2,7 @@ FROM alpine:3.3
 MAINTAINER Fabien Schurter <fabien@fabschurt.com>
 
 ARG ENVIRONMENT=prod
-ARG DISABLE_WATCH=1
+ARG ENABLE_WATCH=0
 ENV JEKYLL_ENV=${ENVIRONMENT}
 
 COPY . /opt/codebase
