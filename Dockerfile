@@ -42,4 +42,4 @@ RUN apk update --no-cache && \
 
 EXPOSE 4000
 USER jekyll
-CMD ["./vendor/bin/jekyll", "serve", "--trace", "--force_polling", "--host", "0.0.0.0", "--source", "app/jekyll", "--destination", "web"]
+CMD ./vendor/bin/jekyll serve $([ "${JEKYLL_ENV}" == 'prod' ] && echo '--no-watch' || echo '--trace --force_polling') --host 0.0.0.0 --source app/jekyll --destination web
