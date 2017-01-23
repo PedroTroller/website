@@ -3,7 +3,7 @@
 Moi c’est Fabien, je suis **développeur web** depuis 6 ans. Merci de prendre le
 temps de consulter mon site.
 
-Passionné par mon métier, j’aime profondément le fait qu’il me permette d’exprimer
+Passionné par mon métier, j’apprécie énormément le fait qu’il me permette d’exprimer
 une palette variée de compétences&nbsp;: logique, créativité, minutie, communication…
 tout ça au sein d’un secteur d’activité en perpétuelle (r)évolution.
 
@@ -24,8 +24,7 @@ du *100% code coverage* (99&nbsp;% c’est déjà bien 😂).
 
 N’hésitez pas à consulter mon [profil GitHub](https://github.com/fabschurt){:target="_blank"}.
 Pour avoir plus de détails concernant mes savoir-faire et mon parcours, il y a mon
-[CV au format PDF]({{ site.baseurl }}/data/pdf/CV-Fabien-Schurter.pdf){:target="_blank"}.
-Pour une liste de quelques projets que j’ai réalisés, [scrollez encore un peu](#work).
+[CV au format PDF 📄]({{ site.baseurl }}/data/pdf/CV-Fabien-Schurter.pdf){:target="_blank"}.
 
 Freelance depuis 2 ans, **je suis désormais à la recherche d’un emploi salarié
 au sein d’une agence web à forte culture technique**, au sein de laquelle **qualité**

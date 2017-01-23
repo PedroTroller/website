@@ -9,23 +9,23 @@ file that was distributed with this source code.
 
 {% endcomment %}
 
+{% raw %}
+
 <script id="template-notification" type="text/template">
-    {% raw %}
     <div class="notification-{{ type }}" role="alert">
         <button type="button" class="notification-closer" data-dismiss="alert" aria-label="{{ close_label }}">
             <span aria-hidden="true">&times;</span>
         </button>
         {{ message }}
     </div>
-    {% endraw %}
 </script>
 
 <script id="template-form-error-list" type="text/template">
-    {% raw %}
     <ul class="form-error-list">
         {{ #errors }}
             <li class="form-error-list-item">{{ . }}</li>
         {{ /errors }}
     </ul>
-    {% endraw %}
 </script>
+
+{% endraw %}

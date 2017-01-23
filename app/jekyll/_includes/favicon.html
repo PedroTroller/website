@@ -9,14 +9,11 @@ file that was distributed with this source code.
 
 {% endcomment %}
 
-<!-- iOS 2.0+, Android 2.1+ -->
-<link rel="apple-touch-icon-precomposed" href="{% asset_url /img/favicon/favicon-152.png %}" />
+<link rel="apple-touch-icon-precomposed" href="{{ "/img/favicon/favicon-152.png"|asset_url }}" />
 
-<!-- IE 10 Metro -->
 <meta name="msapplication-TileColor" content="#ffffff" />
-<meta name="msapplication-TileImage" content="{% asset_url /img/favicon/favicon-144.png %}" />
+<meta name="msapplication-TileImage" content="{{ "/img/favicon/favicon-144.png"|asset_url }}" />
 
-<!-- Windows 8.1 Start Screen -->
 <meta name="application-name" content="{{ site.i18n.site_title }}" />
 <meta name="msapplication-tooltip" content="{{ site.i18n.site_description }}" />
 <meta name="msapplication-config" content="/ie-config.xml" />
