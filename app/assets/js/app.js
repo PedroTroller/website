@@ -11,7 +11,9 @@
   'use strict';
 
   document.addEventListener('DOMContentLoaded', function () {
-    // Register and initialize reveal animation
+    /**
+     * Initializes WOW reveal animations.
+     */
     (function initRevealAnimations() {
       document.queryAndApply('.section, .footer', function (element) {
         element.classList.add('wow');
@@ -20,7 +22,9 @@
       (new WOW()).init();
     })();
 
-    // Smoothly scroll to anchors
+    /**
+     * Initializes smooth scroll.
+     */
     (function initSmoothScroll() {
       smoothScroll.init({
         selector: 'a',
@@ -28,7 +32,9 @@
       });
     })();
 
-    // Load livereload script for dev environment
+    /**
+     * Loads LiveReload script (development environment only).
+     */
     (function initLiveReload() {
       if (config.environment === 'dev') {
         document.appendScript('//' + location.host.split(':')[0] + ':35729/livereload.js');

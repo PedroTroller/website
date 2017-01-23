@@ -76,7 +76,9 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    // Initialize the AJAX contact form
+    /**
+     * Initializes the AJAX contact form.
+     */
     (function initForm() {
       var form             = document.getElementById('contact-form');
       var notificationArea = document.getElementById('contact-form-notification-area');

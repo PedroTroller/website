@@ -24,6 +24,9 @@ var livereload = watchEnabled ? require('gulp-livereload') : {};
 var gulpSrc = gulp.src;
 
 /**
+ * Makes `gulp#src` return an enhanced pipe by default (no exit on fail when
+ * watching, and better error reporting).
+ *
  * @override
  */
 gulp.src = function () {
