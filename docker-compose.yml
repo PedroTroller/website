@@ -24,7 +24,7 @@ services:
     image: website_app
     environment:
       ENVIRONMENT: dev
-    command: ./node_modules/.bin/gulp
+    command: ./node_modules/.bin/gulp --harmony
     volumes_from:
       - app
     volumes:

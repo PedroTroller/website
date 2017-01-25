@@ -33,7 +33,7 @@ install_ruby_dependencies()
 build_frontend_assets()
 {
   printf '\n*** Building frontend assets ***\n\n'
-  ./node_modules/.bin/gulp
+  ./node_modules/.bin/gulp --harmony
 }
 
 build()

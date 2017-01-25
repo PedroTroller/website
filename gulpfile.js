@@ -10,43 +10,23 @@
 'use strict';
 
 // Get environment config
-var debug        = (process.env.ENVIRONMENT === 'dev');
-var watchEnabled = typeof process.env.ENABLE_WATCH === 'undefined' ? debug : (Number(process.env.ENABLE_WATCH) === 1);
+const debug        = (process.env.ENVIRONMENT === 'dev');
+const watchEnabled = typeof process.env.ENABLE_WATCH === 'undefined' ? debug : (Number(process.env.ENABLE_WATCH) === 1);
 
 // Common imports
-var gulp       = require('gulp');
-var util       = require('gulp-util');
-var sequence   = require('run-sequence');
-var sourcemaps = debug ? require('gulp-sourcemaps') : {};
-var livereload = watchEnabled ? require('gulp-livereload') : {};
-
-// Get initial reference before overriding
-var gulpSrc = gulp.src;
-
-/**
- * Makes `gulp#src` return an enhanced pipe by default (no exit on fail when
- * watching, and better error reporting).
- *
- * @override
- */
-gulp.src = function () {
-  return gulpSrc.apply(gulp, arguments).pipe(
-    require('gulp-plumber')(function (error) {
-      var message = new util.PluginError(error.plugin, error.messageFormatted || error.message);
-      util.log(message.toString());
-      debug && console.log(error);
-      watchEnabled ? this.emit('end') : process.exit(error.status || 1);
-    })
-  );
-};
+const gulp       = require('gulp');
+const util       = require('gulp-util');
+const sequence   = require('run-sequence');
+const sourcemaps = debug ? require('gulp-sourcemaps') : {};
+const livereload = watchEnabled ? require('gulp-livereload') : {};
 
 // Paths
-var basePaths = {
+const basePaths = {
   src:    'app/assets',
   build:  'web/assets',
   vendor: 'web/vendor',
 };
-var paths = {
+const paths = {
   src: {
     scss: basePaths.src + '/scss/**/*.scss',
     js: {
@@ -77,8 +57,28 @@ var paths = {
   },
 };
 
+// Get initial reference before overriding
+const gulpSrc = gulp.src;
+
+/**
+ * Makes `gulp#src` return an enhanced pipe by default (no exit on fail when
+ * watching, and better error reporting).
+ *
+ * @override
+ */
+gulp.src = function (...args) {
+  return gulpSrc.apply(gulp, args).pipe(
+    require('gulp-plumber')(error => {
+      const message = new util.PluginError(error.plugin, error.messageFormatted || error.message);
+      util.log(message.toString());
+      debug && console.log(error);
+      watchEnabled ? this.emit('end') : process.exit(error.status || 1);
+    })
+  );
+};
+
 // Sass
-gulp.task('sass', function () {
+gulp.task('sass', () => {
   return gulp
     .src(paths.src.scss)
     .pipe(debug ? sourcemaps.init() : util.noop())
@@ -107,7 +107,7 @@ gulp.task('sass', function () {
 });
 
 // JavaScript
-gulp.task('js', function () {
+gulp.task('js', () => {
   return gulp
     .src(paths.src.js.glob)
     .pipe(debug ? sourcemaps.init() : util.noop())
@@ -120,7 +120,7 @@ gulp.task('js', function () {
 });
 
 // Images
-gulp.task('img', function () {
+gulp.task('img', () => {
   return gulp
     .src(paths.src.img)
     .pipe(gulp.dest(paths.build.img))
@@ -129,7 +129,7 @@ gulp.task('img', function () {
 });
 
 // Clean
-gulp.task('clean', function () {
+gulp.task('clean', () => {
   return require('del')([
     paths.build.scss,
     paths.build.js,
@@ -138,7 +138,7 @@ gulp.task('clean', function () {
 });
 
 // Watch + LiveReload
-gulp.task('watch', function (cb) {
+gulp.task('watch', cb => {
   if (watchEnabled) {
     livereload.listen();
     gulp.watch(paths.src.scss,    ['sass']);
@@ -150,11 +150,11 @@ gulp.task('watch', function (cb) {
 });
 
 // Build
-gulp.task('build', function (cb) {
+gulp.task('build', cb => {
   sequence('clean', ['sass', 'js', 'img'], cb);
 });
 
 // Default task
-gulp.task('default', function (cb) {
+gulp.task('default', cb => {
   sequence('build', 'watch', cb);
 });
