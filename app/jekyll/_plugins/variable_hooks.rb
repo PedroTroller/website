@@ -5,7 +5,7 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 
-Jekyll::Hooks.register :site, :pre_render do |site, payload|
+Jekyll::Hooks.register :site, :pre_render do |site|
   site.config['url']         = ENV['CANONICAL_ROOT']
   site.config['kontact_url'] = ENV['KONTACT_URL']
 end

@@ -152,10 +152,10 @@ a {
 
   .captcha-refresh-btn {
     @extend .btn, .btn-default;
-  }
 
-  .has-error .captcha-refresh-btn {
-    border-color: $state-danger-text;
+    .has-error & {
+      border-color: $state-danger-text;
+    }
   }
 
   .captcha-refresh-btn-icon {
