@@ -1,15 +1,14 @@
-FROM alpine:3.3
+FROM alpine:3.5
 MAINTAINER Fabien Schurter <fabien@fabschurt.com>
 
 ARG ENVIRONMENT=prod
 ARG ENABLE_WATCH=0
-ENV JEKYLL_ENV=${ENVIRONMENT}
+ENV JEKYLL_ENV="$ENVIRONMENT"
 
 COPY . /opt/codebase
 WORKDIR /opt/codebase
 RUN apk update --no-cache && \
     apk add \
-      bash            \
       git             \
       nodejs          \
       ruby-dev        \
@@ -27,7 +26,6 @@ RUN apk update --no-cache && \
     chmod -R g+rX app web Gemfile* && \
     chmod -R g+w web && \
     apk del --purge \
-      bash       \
       git        \
       ruby-dev   \
       libffi-dev \
@@ -35,12 +33,12 @@ RUN apk update --no-cache && \
       g++        \
     && \
     apk add ruby && \
-    rm -rf /tmp/*                \
-           /var/cache/apk/*      \
-           /usr/lib/node_modules \
-           /root/.npm            \
+    rm -rf /tmp/*           \
+           /var/cache/apk/* \
+           /root/.bundle/*  \
+           /root/.npm/*     \
            /root/.cache/*
 
 EXPOSE 4000
 USER jekyll
-CMD ./vendor/bin/jekyll serve $([ "${JEKYLL_ENV}" == 'prod' ] && echo '--no-watch' || echo '--trace --force_polling') --host 0.0.0.0 --source app/jekyll --destination web
+CMD bundle exec jekyll serve $([ "$JEKYLL_ENV" == 'prod' ] && echo '--no-watch' || echo '--trace --force_polling') --host 0.0.0.0 --source app/jekyll --destination web
