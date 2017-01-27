@@ -4,4 +4,6 @@
 /web/*
 /app/jekyll/.jekyll-metadata
 /.env
+*.cache
+*.log
 !.gitkeep
