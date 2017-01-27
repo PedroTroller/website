@@ -20,7 +20,7 @@ RUN apk update --no-cache && \
       make            \
       g++             \
     && \
-    ./bin/build && \
+    npm install --unsafe-perm $([ "$ENVIRONMENT" == 'dev' ] || echo '--production --no-spin') && \
     addgroup -S jekyll && \
     adduser -SDH -s /sbin/nologin -G jekyll jekyll && \
     chgrp -R jekyll app web Gemfile* && \
