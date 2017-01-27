@@ -20,7 +20,7 @@ file that was distributed with this source code.
                 <button type="button"
                         class="captcha-refresh-btn"
                         title="{{ site.i18n.contact_form.refresh_captcha }}"
-                        onclick="var img = this.closest('.captcha-wrapper').querySelector('.captcha-img'); img.setAttribute('src', img.getAttribute('src').replace(/(\?|&amp;)ts=\d+/, '$1ts=' + Date.now()));">
+                        onclick="const img = this.closest('.captcha-wrapper').querySelector('.captcha-img'); img.setAttribute('src', img.getAttribute('src').replace(/(\?|&amp;)ts=\d+/, `$1ts=${Date.now()}`));">
                     <span class="captcha-refresh-btn-icon"></span>
                 </button>
             </span>

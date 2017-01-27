@@ -7,38 +7,34 @@
  * file that was distributed with this source code.
  */
 
-(function () {
+(() => {
   'use strict';
 
   document.addEventListener('DOMContentLoaded', function () {
-    /**
-     * Initializes WOW reveal animations.
-     */
-    (function initRevealAnimations() {
-      document.queryAndApply('.section, .footer', function (element) {
-        element.classList.add('wow');
-        element.classList.add('fadeIn');
-      });
-      (new WOW()).init();
-    })();
+    // Initialize WOW reveal animations
+    this.querySelectorAll('.section, .footer').forEach(element => element.classList.add('wow', 'fadeIn'));
+    (new WOW()).init();
 
-    /**
-     * Initializes smooth scroll.
-     */
-    (function initSmoothScroll() {
-      smoothScroll.init({
-        selector: 'a',
-        offset:   36,
-      });
-    })();
+    // Initialize smooth scroll
+    smoothScroll.init({
+      selector: 'a',
+      offset:   36,
+    });
 
-    /**
-     * Loads LiveReload script (development environment only).
-     */
-    (function initLiveReload() {
-      if (config.environment === 'dev') {
-        document.appendScript('//' + location.host.split(':')[0] + ':35729/livereload.js');
-      }
-    })();
+    // Initialize AJAX contact form
+    new ContactForm(
+      document.getElementById('contact-form'),
+      new NotificationArea(
+        document.getElementById('contact-form-notification-area'),
+        document.getElementById('template-notification').innerHTML
+      ),
+      document.getElementById('template-form-error-list').innerHTML
+    );
+
+    // Load LiveReload script (development environment only)
+    if (config.environment === 'dev') {
+      const host = location.host.split(':')[0];
+      this.appendScript(`//${host}:35729/livereload.js`);
+    }
   });
 })();
