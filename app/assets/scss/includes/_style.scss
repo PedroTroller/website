@@ -99,6 +99,14 @@ a {
   margin: 10px;
 }
 
+.work-example-img {
+  transition: transform 0.4s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
 /*
  * Notifications
  */
