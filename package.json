@@ -20,7 +20,7 @@
     "install-bower": "bower install --allow-root $([ \"$ENVIRONMENT\" == 'dev' ] || echo '--production --config.interactive=false')",
     "install-ruby": "bundle install --path=vendor --binstubs=vendor/bin",
     "gulp": "gulp",
-    "lint": "eslint --cache --cache-location .eslint.cache app/assets/js"
+    "lint": "eslint --cache --cache-location .eslint.cache app/assets/js gulpfile.js"
   },
   "dependencies": {
     "bower": "^1.8",
