@@ -22,8 +22,8 @@ RUN apk update --no-cache && \
     npm install --unsafe-perm $([ "$ENVIRONMENT" == 'dev' ] || echo '--production --no-spin') && \
     addgroup -S jekyll && \
     adduser -SDH -s /sbin/nologin -G jekyll jekyll && \
-    chgrp -R jekyll app web Gemfile* && \
-    chmod -R g+rX app web Gemfile* && \
+    chgrp -R jekyll . && \
+    chmod -R g+rX . && \
     chmod -R g+w web && \
     apk del --purge \
       git        \
