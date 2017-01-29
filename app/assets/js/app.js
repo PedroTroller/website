@@ -22,17 +22,18 @@
     });
 
     // Initialize AJAX contact form
-    new ContactForm(
+    const contactForm = ContactForm(
       document.getElementById('contact-form'),
-      new NotificationArea(
+      NotificationArea(
         document.getElementById('contact-form-notification-area'),
         document.getElementById('template-notification').innerHTML
       ),
       document.getElementById('template-form-error-list').innerHTML
     );
+    contactForm.bindListeners();
 
     // Load LiveReload script (development environment only)
-    if (config.environment === 'dev') {
+    if (jekyllConfig.environment === 'dev') {
       const host = location.host.split(':')[0];
       this.appendScript(`//${host}:35729/livereload.js`);
     }

@@ -39,17 +39,4 @@
 
     return container.firstChild;
   };
-
-  /**
-   * Removes all child nodes.
-   *
-   * @returns {Node} A self-reference
-   */
-  Node.prototype.empty = function () {
-    while (this.firstChild) {
-      this.removeChild(this.firstChild);
-    }
-
-    return this;
-  };
 })();

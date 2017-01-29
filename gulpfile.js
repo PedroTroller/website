@@ -73,7 +73,11 @@ gulp.src = function (...args) {
       if (debug) {
         console.log(error);
       }
-      watchEnabled ? this.emit('end') : process.exit(error.status || 1);
+      if (watchEnabled) {
+        this.emit('end');
+      } else {
+        process.exit(error.status || 1);
+      }
     })
   );
 };

@@ -11,39 +11,58 @@
   'use strict';
 
   /**
-   * Decorates a `<div>` element with notification capabilities.
+   * The prototype for `NotificationArea` objects.
    *
-   * @class
+   * A `NotificationArea` object decorates an `HTMLDivElement` node with
+   * notification capabilities.
+   *
    * @author Fabien Schurter <fabien@fabschurt.com>
-   *
-   * @param {HTMLDivElement} target   The decorated `<div>` node
-   * @param {String}         template The Mustache template that represents the notification to display
    */
-  const NotificationArea = function (target, template) {
-    Object.defineProperties(this, {
-      target:   {value: target},
-      template: {value: String(template).trim()},
-    });
+  const prototype = {
+    /**
+     * Displays a Bootstrap alert as only child of the target node.
+     *
+     * @param {String} message The message to display in the notification
+     * @param {String} type    The Bootstrap alert type (one of *success*, *info*, *warning* or *danger*)
+     */
+    notify(message, type) {
+      const notification = document.createElementFromString(
+        Mustache.render(this.template, {
+          type,
+          message,
+          close_label: jekyllConfig.i18n.contact_form.notification.close,
+        })
+      );
+      this.empty();
+      this.innerDiv.appendChild(notification);
+      smoothScroll.animateScroll(this.innerDiv, null, {offset: 12});
+      notification.classList.add('in');
+      new Alert(notification);
+    },
+
+    /**
+     * Removes all child nodes.
+     */
+    empty() {
+      while (this.innerDiv.firstChild) {
+        this.innerDiv.removeChild(this.innerDiv.firstChild);
+      }
+    },
   };
 
   /**
-   * Displays a Bootstrap alert as only child node of the target node.
+   * The factory for `NotificationArea` objects.
    *
-   * @param {String} message The message to display in the notification
-   * @param {String} type    The Bootstrap alert type (one of *success*, *info*, *warning* or *danger*)
+   * @param {HTMLDivElement} innerDiv The decorated element
+   * @param {String}         template The Mustache template that represents the notification to display
+   *
+   * @returns {Object} The constructed `NotificationArea` object
    */
-  NotificationArea.prototype.notify = function (message, type) {
-    const notification = document.createElementFromString(
-      Mustache.render(this.template, {
-        type:        type,
-        message:     message,
-        close_label: config.i18n.contact_form.notification.close,
-      })
-    );
-    this.target.empty().appendChild(notification);
-    smoothScroll.animateScroll(this.target, null, {offset: 12});
-    notification.classList.add('in');
-    new Alert(notification);
+  const NotificationArea = function (innerDiv, template) {
+    return Object.create(prototype, {
+      innerDiv: {value: innerDiv},
+      template: {value: String(template).trim()},
+    });
   };
 
   // Export
