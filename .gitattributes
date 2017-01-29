@@ -1,5 +1,6 @@
-/.eslintrc.json export-ignore
-/.editorconfig  export-ignore
-/.gitattributes export-ignore
-/.gitignore     export-ignore
-.gitkeep        export-ignore
+/docker-compose.yml export-ignore
+/.eslintrc.json     export-ignore
+/.editorconfig      export-ignore
+/.gitattributes     export-ignore
+/.gitignore         export-ignore
+.gitkeep            export-ignore

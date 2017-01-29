@@ -1,21 +1,21 @@
 # Jekyll config
-collections:
-  pages:
-    output: true
-    permalink: /:path:output_ext
 keep_files:
   - assets
   - vendor
   - .gitkeep
 timezone: Europe/Paris
+kramdown:
+  auto_ids: false
+  input: kramdown
+collections:
+  pages:
+    output: true
+    permalink: /:path:output_ext
 defaults:
   - scope:
       path: ''
     values:
       layout: default
-kramdown:
-  auto_ids: false
-  input: kramdown
 
 # Custom config
 asset_url: /assets
