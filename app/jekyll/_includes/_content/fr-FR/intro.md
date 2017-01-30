@@ -19,12 +19,12 @@ Pour le **frontend**, mon workflow de prédilection repose sur **Twig**, **Sass*
 en **responsive UX**.
 
 Je suis très sensible aux questions de **qualité** du codebase et de **maîtrise**
-des process, ce qui à mes yeux est indissociable du respect des **standards** et
-des **best practices** établi-e-s par la communauté, et passe nécessairement par
-la mise en place de workflows **industrialisés** et **automatisés** (**intégration
-continue**, **DevOps**, **Ansible**, **Docker**). Je suis un adepte de **TDD**/**BDD**,
-sans pour autant être forcément obnubilé par le Graal du *100% code coverage*
-(99&nbsp;% c’est déjà bien 😂).
+des process, ce qui à mes yeux est indissociable du respect d’un maximum de
+**standards** et de **best practices**, et passe nécessairement par la mise en
+place de workflows **industrialisés** et **automatisés** (**intégration continue**,
+**DevOps**, **Ansible**, **Docker**), ainsi que par l’adoption d’une approche
+**TDD**/**BDD**, sans pour autant être forcément obnubilé par le Graal du *100%
+code coverage* (99&nbsp;% c’est déjà bien 😂).
 
 Je suis très attaché aux valeurs de l’open-source, édifice auquel j’essaie
 humblement d’apporter ma petite pierre. N’hésitez pas à consulter mon
