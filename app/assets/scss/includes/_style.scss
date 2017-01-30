@@ -130,49 +130,49 @@ a {
  */
 
 .contact-form {
-  > p {
-    @extend .form-group;
-  }
-
   textarea,
   input {
     @extend .form-control;
     font-family: monospace;
   }
 
-  .captcha-wrapper {
-    @extend .input-group;
-  }
-
-  .captcha-img-wrapper {
-    @extend .input-group-addon;
-    padding: 0;
-    border-right: 0;
-  }
-
-  .captcha-refresh-btn-wrapper {
-    @extend .input-group-btn;
-  }
-
-  .captcha-refresh-btn {
-    @extend .btn, .btn-default;
-
-    .has-error & {
-      border-color: $state-danger-text;
-    }
-  }
-
-  .captcha-refresh-btn-icon {
-    @extend .glyphicon, .glyphicon-refresh;
-    font-size: 14px;
-  }
-
   button[type="submit"] {
     @extend .btn-lg, .btn-block, .btn-success;
   }
+}
 
-  .form-error-list {
-    @extend .help-block;
-    padding-left: 30px;
+.form-row {
+  @extend .form-group;
+}
+
+.form-error-list {
+  @extend .help-block;
+  padding-left: 30px;
+}
+
+.captcha-wrapper {
+  @extend .input-group;
+}
+
+.captcha-img-wrapper {
+  @extend .input-group-addon;
+  padding: 0;
+  border-right: 0;
+}
+
+.captcha-refresh-btn-wrapper {
+  @extend .input-group-btn;
+}
+
+.captcha-refresh-btn {
+  @extend .btn, .btn-default;
+
+  .has-error & {
+    border-color: $state-danger-text;
   }
+}
+
+.captcha-refresh-btn-icon {
+  @extend .glyphicon, .glyphicon-refresh;
+  font-size: 14px;
 }
