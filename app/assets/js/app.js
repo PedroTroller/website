@@ -12,7 +12,10 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     // Initialize WOW reveal animations
-    this.querySelectorAll('.section, .footer').forEach(element => element.classList.add('wow', 'fadeIn'));
+    this.querySelectorAll('.section, .footer').forEach(element => {
+      element.classList.add('wow');
+      element.classList.add('fadeIn');
+    });
     (new WOW()).init();
 
     // Initialize smooth scroll

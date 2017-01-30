@@ -23,3 +23,8 @@ sections:
   - intro
   - work
   - contact
+polyfills:
+  - default
+  - fetch
+  - getComputedStyle
+  - NodeList.prototype.@@iterator

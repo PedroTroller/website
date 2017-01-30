@@ -39,4 +39,17 @@
 
     return container.firstChild;
   };
+
+  if (!NodeList.prototype.forEach) {
+    /**
+     * Quick ’n’ dirty polyfill for `NodeList#forEach` method.
+     *
+     * @param {Function} closure The closure that each node in the list will be yielded to
+     */
+    NodeList.prototype.forEach = function (closure) {
+      for (let element of this) {
+        closure.call(this, element);
+      }
+    };
+  }
 })();

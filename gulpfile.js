@@ -55,6 +55,13 @@ const paths = {
     img:  `${basePaths.build}/img`,
   },
 };
+const supportedBrowsers = [
+  'last 5 versions',
+  'last 20 firefox versions',
+  'last 20 chrome versions',
+  'last 20 opera versions',
+  'ie >= 9',
+];
 
 // Get initial reference before overriding
 const gulpSrc = gulp.src;
@@ -99,13 +106,7 @@ gulp.task('sass', () => {
     )
     .pipe(
       require('gulp-autoprefixer')({
-        browsers: [
-          'last 5 versions',
-          'last 20 firefox versions',
-          'last 20 chrome versions',
-          'last 20 opera versions',
-          'ie >= 9',
-        ],
+        browsers: supportedBrowsers,
         remove: false,
       })
     )
@@ -120,6 +121,18 @@ gulp.task('js', () => {
   return gulp
     .src(paths.src.js.glob)
     .pipe(debug ? sourcemaps.init() : util.noop())
+    .pipe(
+      require('gulp-babel')({
+        only: 'app/assets/js',
+        presets: [
+          ['env', {
+            targets: {
+              browsers: supportedBrowsers,
+            },
+          }],
+        ],
+      })
+    )
     .pipe(require('gulp-group-concat')(paths.src.js.targets))
     .pipe(debug ? util.noop() : require('gulp-uglify/minifier')(null, require('uglify-js')))
     .pipe(debug ? sourcemaps.write('maps') : util.noop())
