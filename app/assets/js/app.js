@@ -21,7 +21,7 @@
     // Initialize smooth scroll
     smoothScroll.init({
       selector: 'a',
-      offset:   36,
+      offset:   24,
     });
 
     // Initialize AJAX contact form
