@@ -20,7 +20,7 @@ const sequence   = require('run-sequence');
 const sourcemaps = debug ? require('gulp-sourcemaps') : {};
 const livereload = watchEnabled ? require('gulp-livereload') : {};
 
-// Paths
+// Paths + config
 const basePaths = {
   src:    'app/assets',
   build:  'web/assets',
@@ -90,8 +90,8 @@ gulp.src = function (...args) {
 };
 
 // Sass
-gulp.task('sass', () => {
-  return gulp
+gulp.task('sass', () => (
+  gulp
     .src(paths.src.scss)
     .pipe(debug ? sourcemaps.init() : util.noop())
     .pipe(
@@ -113,12 +113,11 @@ gulp.task('sass', () => {
     .pipe(debug ? sourcemaps.write('maps') : util.noop())
     .pipe(gulp.dest(paths.build.scss))
     .pipe(watchEnabled ? livereload() : util.noop())
-  ;
-});
+));
 
 // JavaScript
-gulp.task('js', () => {
-  return gulp
+gulp.task('js', () => (
+  gulp
     .src(paths.src.js.glob)
     .pipe(debug ? sourcemaps.init() : util.noop())
     .pipe(
@@ -138,26 +137,24 @@ gulp.task('js', () => {
     .pipe(debug ? sourcemaps.write('maps') : util.noop())
     .pipe(gulp.dest(paths.build.js))
     .pipe(watchEnabled ? livereload() : util.noop())
-  ;
-});
+));
 
 // Images
-gulp.task('img', () => {
-  return gulp
+gulp.task('img', () => (
+  gulp
     .src(paths.src.img)
     .pipe(gulp.dest(paths.build.img))
     .pipe(watchEnabled ? livereload() : util.noop())
-  ;
-});
+));
 
 // Clean
-gulp.task('clean', () => {
-  return require('del')([
+gulp.task('clean', () => (
+  require('del')([
     paths.build.scss,
     paths.build.js,
     paths.build.img,
-  ]);
-});
+  ])
+));
 
 // Watch + LiveReload
 gulp.task('watch', cb => {
@@ -172,11 +169,7 @@ gulp.task('watch', cb => {
 });
 
 // Build
-gulp.task('build', cb => {
-  sequence('clean', ['sass', 'js', 'img'], cb);
-});
+gulp.task('build', cb => sequence('clean', ['sass', 'js', 'img'], cb));
 
 // Default task
-gulp.task('default', cb => {
-  sequence('build', 'watch', cb);
-});
+gulp.task('default', cb => sequence('build', 'watch', cb));
