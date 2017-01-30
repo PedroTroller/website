@@ -56,11 +56,18 @@ const paths = {
   },
 };
 const supportedBrowsers = [
-  'last 5 versions',
   'last 20 firefox versions',
+  'last 20 and_ff versions',
   'last 20 chrome versions',
+  'last 20 and_chr versions',
   'last 20 opera versions',
+  'last 20 op_mob versions',
+  'safari >= 5',
+  'ios_saf >= 7',
+  'android >= 4',
+  'edge >= 12',
   'ie >= 9',
+  'ie_mob >= 10',
 ];
 
 // Get initial reference before overriding
