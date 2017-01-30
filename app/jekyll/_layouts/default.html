@@ -22,9 +22,9 @@ file that was distributed with this source code.
         {% include metas.html %}
 
         <!-- Assets -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700%7CRoboto+Slab:400" />
+        <link rel="stylesheet" href="{{ "https://fonts.googleapis.com/css?family=Roboto:300,400,700|Roboto+Slab:400"|uri_escape }}" />
         <link rel="stylesheet" href="{{ "/css/main.css"|asset_url }}" />
-        <script src="https://cdn.polyfill.io/v2/polyfill.min.js&flags=gated"></script>
+        <script src="{{ "https://cdn.polyfill.io/v2/polyfill.js?flags=gated&features=default,fetch,NodeList.prototype.@@iterator"|uri_escape  }}"></script>
     </head>
     <body>
         <!-- Content -->
