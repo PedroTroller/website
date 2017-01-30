@@ -74,6 +74,12 @@ a {
 .section {
   max-width: $section-width;
   margin: 56px auto;
+
+  &:first-of-type {
+    @media screen and (max-width: $screen-xs-max) {
+      margin-top: 36px;
+    }
+  }
 }
 
 .footer {
