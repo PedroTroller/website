@@ -19,7 +19,7 @@
     "animate.css": "^3.5",
     "wow.js": "^1.1",
     "smooth-scroll.js": "^10.2",
-    "bootstrap.native": "^1.0",
+    "bootstrap.native": "^2.0",
     "mustache": "^2.3"
   }
 }

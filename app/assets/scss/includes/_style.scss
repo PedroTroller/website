@@ -118,20 +118,6 @@ a {
 }
 
 /*
- * Notifications
- */
-
-[role="alert"] {
-  @extend .alert, .alert-dismissible, .fade;
-}
-
-@each $type in (success, info, warning, danger) {
-  .notification-#{$type} {
-    @extend .alert-#{$type};
-  }
-}
-
-/*
  * Contact form
  */
 
@@ -181,4 +167,8 @@ a {
 .captcha-refresh-btn-icon {
   @extend .glyphicon, .glyphicon-refresh;
   font-size: 14px;
+}
+
+[role="alert"] {
+  @extend .alert-dismissible, .fade;
 }
