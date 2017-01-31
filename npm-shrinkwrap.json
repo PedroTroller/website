@@ -5068,6 +5068,11 @@
       "from": "mishoo/UglifyJS2#harmony",
       "resolved": "git://github.com/mishoo/UglifyJS2.git#4bd31607f665499543bbc83192225203ae6763d1"
     },
+    "uglify-js-harmony": {
+      "version": "2.6.2",
+      "from": "uglify-js-harmony@2.6.2",
+      "resolved": "https://registry.npmjs.org/uglify-js-harmony/-/uglify-js-harmony-2.6.2.tgz"
+    },
     "uglify-save-license": {
       "version": "0.4.1",
       "from": "uglify-save-license@>=0.4.1 <0.5.0",
