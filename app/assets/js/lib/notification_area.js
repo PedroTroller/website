@@ -35,7 +35,7 @@
       );
       this.empty();
       this.innerDiv.appendChild(notification);
-      smoothScroll.animateScroll(this.innerDiv, null, {offset: 12});
+      smoothScroll.animateScroll(this.innerDiv, null, {offset: 17});
       notification.classList.add('in');
       new Alert(notification);
     },
