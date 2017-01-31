@@ -31,7 +31,7 @@
 body {
   font-weight: $font-weight-light;
   background: {
-    image: url("#{$img-url}/bg.png");
+    image: url("#{$img-url}/bg.jpg");
     size: 205px;
     attachment: fixed;
   }
@@ -48,6 +48,10 @@ h2 {
 
 p {
   margin-bottom: 1em;
+
+  &:not(.form-row) {
+    hyphens: auto;
+  }
 }
 
 a {
@@ -75,9 +79,9 @@ a {
   max-width: $section-width;
   margin: 56px auto;
 
-  &:first-of-type {
-    @media screen and (max-width: $screen-xs-max) {
-      margin-top: 36px;
+  @media screen and (max-width: $screen-xs-max) {
+    & {
+      margin: 36px auto;
     }
   }
 }
