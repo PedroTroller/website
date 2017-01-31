@@ -44,12 +44,22 @@
     /**
      * Quick ’n’ dirty polyfill for `NodeList#forEach` method.
      *
-     * @param {Function} closure The closure that each node in the list will be yielded to
+     * @param {elementProcessor} closure The closure that each node in the list will be yielded to
      */
     NodeList.prototype.forEach = function (closure) {
       for (let element of this) {
         closure.call(this, element);
       }
     };
+
+    /**
+     * Processes each `Element` object from a `NodeList` collection.
+     *
+     * @callback elementProcessor
+     *
+     * @param {Element} element
+     *
+     * @this {NodeList}
+     */
   }
 })();

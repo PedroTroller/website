@@ -67,12 +67,12 @@
     /**
      * Displays validation errors for each of the form’s controls.
      *
-     * @param {Object} errors A hash containing arrays of errors, grouped by control name
+     * @param {Object.<String, String[]>} errors A hash containing arrays of error messages, grouped by control name
      */
     showErrors(errors) {
       this.formControls.forEach(control => {
         if (!control.name || !errors[control.name] || !errors[control.name].length) {
-          return;
+          return; // Don’t do anything if the control has no errors
         }
         const parentRow = control.closest('.form-row');
         parentRow.appendChild(
@@ -88,17 +88,27 @@
      * Removes all the error lists from the form.
      */
     hideErrors() {
-      this.innerForm.querySelectorAll('.form-row.has-error').forEach(row => row.classList.remove('has-error'));
-      this.innerForm.querySelectorAll('.form-error-list').forEach(list => list.parentNode.removeChild(list));
+      this.innerForm
+        .querySelectorAll('.form-row.has-error')
+        .forEach(row => row.classList.remove('has-error'))
+      ;
+      this.innerForm
+        .querySelectorAll('.form-error-list')
+        .forEach(list => list.parentNode.removeChild(list))
+      ;
     },
 
     /**
      * Refreshes the current captcha image.
+     *
+     * @this {ContactForm}
      */
     refreshCaptcha() {
       this.captchaImage.setAttribute(
         'src',
-        this.captchaImage.getAttribute('src').replace(/(\?|&)ts=\d+/, `$1ts=${Date.now()}`)
+        this.captchaImage
+          .getAttribute('src')
+          .replace(/(\?|&)ts=\d+/, `$1ts=${Date.now()}`)
       );
     },
 
@@ -108,6 +118,8 @@
      * @param {Event} event
      *
      * @listens submit
+     *
+     * @this {ContactForm}
      */
     catchSubmit(event) {
       event.preventDefault();
@@ -131,11 +143,11 @@
             case 'success':
               this.refreshCaptcha();
               this.innerForm.reset();
-              this.notifier.notify(jekyllConfig.i18n.contact_form.notification.success, 'success');
+              this.notifier.notify('success', jekyllConfig.i18n.contact_form.notification.success);
               break;
             case 'fail':
               this.showErrors(responseData.data);
-              this.notifier.notify(jekyllConfig.i18n.contact_form.notification.fail, 'danger');
+              this.notifier.notify('danger', jekyllConfig.i18n.contact_form.notification.fail);
               break;
             case 'error':
             default:
@@ -144,7 +156,7 @@
         })
         .catch(() => {
           this.enable();
-          this.notifier.notify(jekyllConfig.i18n.contact_form.notification.error, 'danger');
+          this.notifier.notify('danger', jekyllConfig.i18n.contact_form.notification.error);
         })
       ;
     },
@@ -157,7 +169,7 @@
    * @param {NotificationArea} notifier          A `NotificationArea` instance
    * @param {String}           errorListTemplate The Mustache template that represents a form control error list
    *
-   * @returns {Object} The constructed `ContactForm` object
+   * @returns {ContactForm}
    */
   const ContactForm = function (innerForm, notifier, errorListTemplate) {
     return Object.create(prototype, {

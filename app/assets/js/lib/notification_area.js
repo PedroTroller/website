@@ -22,10 +22,10 @@
     /**
      * Displays a Bootstrap alert as only child of the target node.
      *
-     * @param {String} message The message to display in the notification
      * @param {String} type    The Bootstrap alert type (one of *success*, *info*, *warning* or *danger*)
+     * @param {String} message The message to display in the notification
      */
-    notify(message, type) {
+    notify(type, message) {
       const notification = document.createElementFromString(
         Mustache.render(this.template, {
           type,
@@ -56,7 +56,7 @@
    * @param {HTMLDivElement} innerDiv The decorated element
    * @param {String}         template The Mustache template that represents the notification to display
    *
-   * @returns {Object} The constructed `NotificationArea` object
+   * @returns {NotificationArea}
    */
   const NotificationArea = function (innerDiv, template) {
     return Object.create(prototype, {
