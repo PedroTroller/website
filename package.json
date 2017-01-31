@@ -19,7 +19,7 @@
     "postinstall": "npm run install-bower && npm run install-ruby && npm run gulp",
     "install-bower": "bower install --allow-root $([ \"$ENVIRONMENT\" == 'dev' ] || echo '--production --config.interactive=false')",
     "install-ruby": "bundle install --path=vendor --binstubs=vendor/bin",
-    "gulp": "gulp",
+    "gulp": "gulp --harmony",
     "lint": "eslint --cache --cache-location .eslint.cache app/assets/js gulpfile.js"
   },
   "dependencies": {

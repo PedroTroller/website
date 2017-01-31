@@ -34,18 +34,12 @@ const paths = {
         'main.js': [
           `${basePaths.vendor}/wow.js/dist/wow.js`,
           `${basePaths.vendor}/smooth-scroll.js/dist/js/smooth-scroll.js`,
-          `${basePaths.vendor}/bootstrap.native/lib/utils.js`,
-          `${basePaths.vendor}/bootstrap.native/lib/button-native.js`,
-          `${basePaths.vendor}/bootstrap.native/lib/alert-native.js`,
+          `${basePaths.vendor}/bootstrap.native/dist/bootstrap-native.js`,
           `${basePaths.vendor}/mustache/mustache.js`,
           `${basePaths.src}/js/lib/*.js`,
           `${basePaths.src}/js/app.js`,
         ],
       },
-      glob: [
-        `${basePaths.vendor}/**/*.js`,
-        `${basePaths.src}/js/**/*.js`,
-      ],
     },
     img: `${basePaths.src}/img/**/*.{jpg,png,gif,ico,svg}`,
   },
@@ -55,6 +49,9 @@ const paths = {
     img:  `${basePaths.build}/img`,
   },
 };
+paths.src.js.glob = Array.prototype.concat(...Object.values(paths.src.js.targets));
+
+// Supported browser versions (used by Babel and Autoprefixer)
 const supportedBrowsers = [
   'last 20 firefox versions',
   'last 20 and_ff versions',
@@ -135,6 +132,7 @@ gulp.task('js', () => (
             targets: {
               browsers: supportedBrowsers,
             },
+            modules: false,
           }],
         ],
       })
