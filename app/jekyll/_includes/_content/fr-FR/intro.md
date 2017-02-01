@@ -1,3 +1,5 @@
+![Portrait de Fabien Schurter]({{ "/img/ego.jpg"|asset_url }}){:.intro-img width="120"}
+
 ## Hey&nbsp;!
 
 Moi c’est Fabien, je suis **développeur web** depuis 6 ans. Merci de prendre le

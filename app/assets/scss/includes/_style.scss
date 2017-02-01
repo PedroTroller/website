@@ -96,6 +96,19 @@ a {
 }
 
 /*
+ * Intro
+ */
+
+.intro-img {
+  @extend .img-circle;
+  display: block;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+/*
  * Work example list
  */
 
