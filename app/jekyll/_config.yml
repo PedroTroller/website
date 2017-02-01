@@ -21,7 +21,9 @@ defaults:
 asset_url: /assets
 sections:
   - intro
+  - skills
   - work
+  - availability
   - contact
 polyfills:
   - default
