@@ -77,7 +77,7 @@ a {
 
 .section {
   max-width: $section-width;
-  margin: 56px auto;
+  margin: 36px auto 56px;
 
   @media screen and (max-width: $screen-xs-max) {
     & {
