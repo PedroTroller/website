@@ -53,12 +53,12 @@ paths.src.js.glob = Array.prototype.concat(...Object.values(paths.src.js.targets
 
 // Supported browser versions (used by Babel and Autoprefixer)
 const supportedBrowsers = [
-  'last 20 firefox versions',
-  'last 20 and_ff versions',
-  'last 20 chrome versions',
-  'last 20 and_chr versions',
-  'last 20 opera versions',
-  'last 20 op_mob versions',
+  'last 25 firefox versions',
+  'last 25 and_ff versions',
+  'last 25 chrome versions',
+  'last 25 and_chr versions',
+  'last 25 opera versions',
+  'last 25 op_mob versions',
   'safari >= 5',
   'ios_saf >= 7',
   'android >= 4',
