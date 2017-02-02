@@ -12,7 +12,11 @@ file that was distributed with this source code.
 <div class="notification-area" id="contact-form-notification-area"></div>
 <form class="contact-form" id="contact-form" action="{{ site.kontact_url }}/post" method="POST">
     <p class="form-row">
-        <textarea name="message" rows="10" required="required" placeholder="{{ site.i18n.contact_form.msg_placeholder }}"></textarea>
+        <textarea name="message"
+                  rows="10"
+                  required="required"
+                  placeholder="{{ site.i18n.contact_form.msg_placeholder }}">
+        </textarea>
     </p>
     <p class="form-row">
         <span class="captcha-wrapper">
@@ -30,10 +34,15 @@ file that was distributed with this source code.
                      height="39"
                      class="captcha-img" />
             </span>
-            <input type="text" name="captcha" required="required" placeholder="{{ site.i18n.contact_form.captcha_placeholder }}" />
+            <input type="text"
+                   name="captcha"
+                   required="required"
+                   placeholder="{{ site.i18n.contact_form.captcha_placeholder }}" />
         </span>
     </p>
     <p class="form-row">
-        <button type="submit" class="btn" data-loading-text="{{ site.i18n.contact_form.sending }}">{{ site.i18n.contact_form.send }}</button>
+        <button type="submit" class="btn" data-loading-text="{{ site.i18n.contact_form.sending }}">
+            {{ site.i18n.contact_form.send }}
+        </button>
     </p>
 </form>

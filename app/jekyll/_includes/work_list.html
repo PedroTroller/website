@@ -13,7 +13,10 @@ file that was distributed with this source code.
     {% for client in site.data.work[page.lang] %}
         <li class="work-example">
             <a class="work-example-link" href="{{ client[1].url }}" target="_blank" title="{{ client[0] }}">
-                <img class="work-example-img" src="{{ site.baseurl }}/data/img/{{ client[1].img }}" alt="" width="136" />
+                <img class="work-example-img"
+                     src="{{ site.baseurl }}/data/img/{{ client[1].img }}"
+                     alt=""
+                     width="136" />
             </a>
         </li>
     {% endfor %}
