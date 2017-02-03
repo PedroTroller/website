@@ -6,6 +6,7 @@ services:
       context: .
       args:
         ENVIRONMENT: dev
+    image: website_app
     env_file: .env
     volumes:
       - /opt/codebase/web
@@ -15,6 +16,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-frontend
+    image: website_frontend
     ports:
       - '80:80'
     depends_on:
