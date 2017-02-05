@@ -9,15 +9,15 @@ COPY . /opt/codebase
 WORKDIR /opt/codebase
 RUN apk update --no-cache && \
     apk add \
-      git             \
-      nodejs          \
-      ruby-dev        \
+      git \
+      nodejs \
+      ruby-dev \
       ruby-io-console \
-      ruby-json       \
-      ruby-bundler    \
-      libffi-dev      \
-      make            \
-      g++             \
+      ruby-json \
+      ruby-bundler \
+      libffi-dev \
+      make \
+      g++ \
     && \
     npm install --unsafe-perm $([ "$ENVIRONMENT" == 'dev' ] || echo '--production --no-spin') && \
     addgroup -S jekyll && \
@@ -26,17 +26,17 @@ RUN apk update --no-cache && \
     chmod -R g+rX . && \
     chmod -R g+w web && \
     apk del --purge \
-      git        \
-      ruby-dev   \
+      git \
+      ruby-dev \
       libffi-dev \
-      make       \
-      g++        \
+      make \
+      g++ \
     && \
     apk add ruby && \
-    rm -rf /tmp/*           \
+    rm -rf /tmp/* \
            /var/cache/apk/* \
-           /root/.bundle/*  \
-           /root/.npm/*     \
+           /root/.bundle/* \
+           /root/.npm/* \
            /root/.cache/*
 
 EXPOSE 4000

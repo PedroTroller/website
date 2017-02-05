@@ -1,7 +1,6 @@
 *
 !app/
 !config/
-!web/
 **/.*
 !package.json
 !npm-shrinkwrap.json
@@ -10,4 +9,3 @@
 !gulpfile.js
 !Gemfile*
 !LICENSE
-!.env.example

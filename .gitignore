@@ -1,9 +1,8 @@
 /.bundle/
 /node_modules/
 /vendor/
-/web/*
+/web/
 /.env
 *.jekyll-metadata
 *.cache
 *.log
-!.gitkeep
