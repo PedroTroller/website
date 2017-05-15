@@ -9,12 +9,14 @@ COPY . /opt/codebase
 WORKDIR /opt/codebase
 RUN apk update --no-cache && \
     apk add \
-      git \
       nodejs \
-      ruby-dev \
       ruby-io-console \
       ruby-json \
       ruby-bundler \
+    && \
+    apk add --virtual .build \
+      git \
+      ruby-dev \
       libffi-dev \
       make \
       g++ \
@@ -25,13 +27,7 @@ RUN apk update --no-cache && \
     chgrp -R jekyll . && \
     chmod -R g+rX . && \
     chmod -R g+w web && \
-    apk del --purge \
-      git \
-      ruby-dev \
-      libffi-dev \
-      make \
-      g++ \
-    && \
+    apk del --purge .build && \
     apk add ruby && \
     rm -rf /tmp/* \
            /var/cache/apk/* \
