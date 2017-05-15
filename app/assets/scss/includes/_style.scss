@@ -59,6 +59,10 @@ a {
   font-weight: $font-weight-bold;
 }
 
+abbr[title] {
+  text-decoration: none;
+}
+
 /*
  * Hide elements that will be revealed by WOW
  */
