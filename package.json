@@ -30,16 +30,16 @@
     "gulp-util": "^3.0",
     "gulp-plumber": "^1.1",
     "gulp-sass": "^3.1",
-    "gulp-autoprefixer": "^3.1",
+    "gulp-autoprefixer": "^4.0",
     "gulp-group-concat": "^1.1",
-    "gulp-uglify": "^2.0",
-    "uglify-js-harmony": "^2.6",
+    "gulp-uglify": "^2.1",
+    "uglify-js-harmony": "^2.7",
     "gulp-babel": "^6.1",
-    "babel-preset-env": "^1.1"
+    "babel-preset-env": "^1.4"
   },
   "devDependencies": {
-    "gulp-sourcemaps": "^2.4",
+    "gulp-sourcemaps": "^2.6",
     "gulp-livereload": "^3.8",
-    "eslint": "^3.14"
+    "eslint": "^3.19"
   }
 }
