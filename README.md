@@ -2,9 +2,7 @@
 
 [![Dependency Status](https://gemnasium.com/badges/github.com/fabschurt/website.svg)](https://gemnasium.com/github.com/fabschurt/website)
 
-This is the code for my professional website, which is of course not meant to be
-reused or deployed by anyone else but me, but free code hosting is cool, and I
-actually didn’t see a valid reason to keep this closed source.
+This is the code for my professional website.
 
 ## License
 
